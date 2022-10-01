@@ -1624,7 +1624,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664556675689),
+    lastupdate: new Date(1664632312155),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2392,6 +2392,73 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/01/UAF/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/01/UAF/"  itemprop="url">
+        UAF
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        TNND 说真的 堆开始的pwn就真的难度递增 网上的资料又少 又难理解 所以从UAF开始的各种堆利用手法 我都会倾尽自己全部的修辞能力和解释能力 尽可能让你理解的简单容易 因为我自己学的时候实在是太坐牢了
+UAF原理先搞懂这个到底是什么意思吧 uaf 全程 use after free 很好理解的吧
+就是当我们把一个chunk释放之后 再利用他
+怎么做到这一点？
+1234567891011...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-01T21:10:23+08:00">2022-10-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%A0%86/">堆</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%A0%86/" itemprop="url"><span itemprop="name">堆</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/01/UAF/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/30/pwn需要的一些工具安装/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
@@ -3007,73 +3074,6 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/22/linux操作命令学习前言/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/22/linux%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E5%89%8D%E8%A8%80/"  itemprop="url">
-        Linux操作命令学习前言
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        在完成HUBUCTF2022新生赛的pwn题时，遇到了一道比较有意思的题目，其关乎到了Linux的操作命令
-并且linux也是pwn的学习中，担当重任的角色，鉴于我对他的了解极少，所以开设一个专题，专门用来记录自己的linux学习
-[HUBUCTF 2022 新生赛]singout什么附件都没有给我们，那我们只能nc看看
-
-看起来好像直接调用了system(&#x2F;bin&#x2F;sh...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-22T17:05:37+08:00">2022-09-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/22/linux%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E5%89%8D%E8%A8%80/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3205,7 +3205,7 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           <li><a class="flat-box"
             title="/categories/%E5%A0%86/" href="/categories/%E5%A0%86/"
             active-action="action-categoriesE5A086"
-            ><div class='name'>堆</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
