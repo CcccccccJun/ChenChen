@@ -1624,7 +1624,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1664632312155),
+    lastupdate: new Date(1664730597578),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2392,6 +2392,74 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/03/溢出覆盖变量/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/"  itemprop="url">
+        溢出覆盖变量
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        其实这个知识点应该算是栈溢出后面就可以讲的了 顺序没把握好 不过还好这篇的例题有点干货 就不丢到基础知识扩展那个专题了 在这面说吧
+我们已经学习了基础的栈溢出对吧 总归就是覆盖栈上的高地址内的数据 通常我们都是用一些没有意义的垃圾数据去覆盖他
+但是有些题目 就可能会故意刁难我们
+比如下面这题
+
+是吧 他都把var[13]赋值为了0 结果要var[13]&gt;0并且&#x3D;17才能达到我...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-03T00:55:35+08:00">2022-10-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/01/UAF/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
@@ -3006,74 +3074,6 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/22/Linux内核/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/22/Linux%E5%86%85%E6%A0%B8/"  itemprop="url">
-        Linux内核
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        先从内核开始了解
-什么是内核?1.内核的作用是将Linux系统的应用程序的请求传递给硬件，并且充当底层驱动程序，对linux中的各种设备和组件进行寻址
-可以将其理解为中介，卖家(计算机)和买家(使用者)需要通过内核来进行交互
-2.从应用程序的角度来讲，内核是其所能接触到的最底层，即硬件和应用程序并不能直接交互
-3.内核实际上是一个资源管理器，负责分配资源(cpu，内存等)给应用程序和硬件
-4...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-22T17:36:45+08:00">2022-09-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/22/Linux%E5%86%85%E6%A0%B8/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3210,7 +3210,7 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           <li><a class="flat-box"
             title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
             active-action="action-categoriesE6A088"
-            ><div class='name'>栈</div><div class='badge'>(9)</div></a></li>
+            ><div class='name'>栈</div><div class='badge'>(10)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"

@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/2022/09/page/2/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/10/03/溢出覆盖变量/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,17 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Archive: 2022/9 - Chen</title>
+  <title>溢出覆盖变量 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chen">
-<meta property="og:url" content="http://example.com/archives/2022/09/page/2/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="溢出覆盖变量">
+<meta property="og:url" content="http://example.com/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="ChenBlog">
+<meta property="og:description" content="其实这个知识点应该算是栈溢出后面就可以讲的了 顺序没把握好 不过还好这篇的例题有点干货 就不丢到基础知识扩展那个专题了 在这面说吧 我们已经学习了基础的栈溢出对吧 总归就是覆盖栈上的高地址内的数据 通常我们都是用一些没有意义的垃圾数据去覆盖他 但是有些题目 就可能会故意刁难我们 比如下面这题  是吧 他都把var[13]赋值为了0 结果要var[13]&gt;0并且&#x3D;17才能达到我们系统">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-10-02T16:55:35.000Z">
+<meta property="article:modified_time" content="2022-10-02T17:07:55.242Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2042,7 +2044,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2311,7 +2313,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s1.328888.xyz/2022/09/13/KARVU.webp"></div>
 
@@ -2359,16 +2361,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/21/Ret2shellcode/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/03/溢出覆盖变量/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2377,700 +2371,235 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="ChenBlog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/21/Ret2shellcode/"  itemprop="url">
-        Ret2shellcode
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        这次我们再来介绍一个栈的经典题型
-在我们先前遇到的题目中，都有着出题人为我们提供的后门函数，如果没有后门函数，我们又该如何自己构建shellcode呢？
-带着这个疑问，我们开始今天的学习
-如何写入system（&#x2F;bin&#x2F;sh）？由于题目通常都会开启NX保护，所以我们要想在栈中写入字符串是不现实的打算
-我们好好想想，在内存块的五个分区中，还有哪个区块是可以为我们自由编辑的，...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        溢出覆盖变量
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-21T16:37:21+08:00">2022-09-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-03T00:55:35+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Oct 3, 2022</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>其实这个知识点应该算是栈溢出后面就可以讲的了 顺序没把握好 不过还好这篇的例题有点干货 就不丢到基础知识扩展那个专题了 在这面说吧</p>
+<p>我们已经学习了基础的栈溢出对吧 总归就是覆盖栈上的高地址内的数据 通常我们都是用一些没有意义的垃圾数据去覆盖他</p>
+<p>但是有些题目 就可能会故意刁难我们</p>
+<p>比如下面这题</p>
+<p><img src="https://s1.328888.xyz/2022/10/03/Pjafi.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/03/Pjafi.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Pjafi.png"></p>
+<p>是吧 他都把var[13]赋值为了0 结果要var[13]&gt;0并且&#x3D;17才能达到我们系统调用的目的</p>
+<p>这怎么整？</p>
+<p>我们唯一的输入点就在第十行 其中肯定有漏洞</p>
+<p>%s 读入字符串数据 注意这里的是%s 我们刚开始提到的干货就是这个</p>
+<p>用pwn脚本时，用str()发送数据是模拟交互输入，比如str(0xfc1)会发送过去 4033 这个字符串，就相当于我们与程序交互时，输入了4033这个数字，所以可以用”%d”来读取，并用小端序存储</p>
+<p>而p32&#x2F;p64是发送的字节流，也就是比特流（二进制流） 比如说我们要发送一个数据01 但是ide(基础知识里会讲)为了方便观察， 就转换成了<strong>\xc1\x0f\x00\x00\x00\x00\x00\x00</strong></p>
+<p>发送时，也是按照字节来发，所以要用”%s”来读取</p>
+<p>也就是说我们在覆盖var[13]时 需要注意不能用b””或者是str()</p>
+<p>说回题目</p>
+<p>scanf没有对输入的字节长度进行限制 存在了栈溢出漏洞</p>
+<p>我们只需要用垃圾数据填充var数组的前13个数据 然后用17填充var[13]</p>
+<p>当然 这里还得注意一下</p>
+<p>数组的每个值都是一个字长长度的 而这题是32位程序 所以我们的payload可以写成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = cyclic(13*4)+p32(17)</span><br></pre></td></tr></table></figure>
+
+<p>当然也可以写成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = p32(1)*13+p32(17)</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就成功覆盖了var[13]的值为17了</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2022/09/21/Ret2shellcode/' itemprop="url">
-            Read More
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-03T01:07:55+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Oct 3, 2022</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/19/pwn1-sctf-2016/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/&title=溢出覆盖变量 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/&title=溢出覆盖变量 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/&title=溢出覆盖变量 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/10/01/UAF/'>
+          <p class='title'>UAF<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>TNND 说真的 堆开始的pwn就真的难度递增 网上的资料又少 又难理解 所以从UAF开始的各种堆利用手法 我都会倾尽自己全部的修辞能力和解释能力 尽可能让你理解的简单容易 因为我自己学的时候实...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/19/pwn1-sctf-2016/"  itemprop="url">
-        pwn1_sctf_2016
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        buuctf中的一题，纯纯烧杯题，这题注重考查c++逆向(但是我还是觉得是动手调试的能力)
-老规矩了，checksec看一下保护机制和位数
 
-感觉像是栈溢出，不确定，ida看看
+    <div id="layoutHelper-comments"></div>
 
-哇，看到这函数列表懵逼了，不过别怕，仔细翻一番
-
-逮到三个看名字有用的，f5看一下
-main函数：
-12345int __cdecl main(int argc, const char **argv, const ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-19T20:00:48+08:00">2022-09-19</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/wp/">wp</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/19/pwn1-sctf-2016/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/18/栈的基础知识2/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/18/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/"  itemprop="url">
-        栈的基础知识2
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        想了想还是专门列一个板块来详讲虚拟内存和栈的详细结构，刚好自己这块的了解也是一知半解的，顺便扫盲一下
-cpu缓存从这个问题开始入手整个知识点体系吧
-通常情况下，我们可以用cache的大小来区分一个cpu的性能
-cache是什么？cache指的是cpu的三级缓存，L1，L2，L3
-由于cpu的运算能力远远大于数据传输
-所以cpu在接下来的操作会用到的数据就会存放到他自己的缓存中
-防止产生传输速...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-18T21:54:27+08:00">2022-09-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/18/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/18/HUBUCTF-新生赛-fmt/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/18/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-fmt/"  itemprop="url">
-        HUBUCTF-新生赛-fmt
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        老规矩走个流程，checksec看一下保护机制
-
-好像看不出什么，猜不出他想干啥，拖到ida里面瞧瞧
-123456789101112131415161718192021222324252627282930313233343536int __cdecl __noreturn main(int argc, const char **argv, const char **envp)&#123;  ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-18T13:21:44+08:00">2022-09-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/wp/">wp</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/18/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-fmt/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/HUBUCTF-新生赛-ez-pwn/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/"  itemprop="url">
-        HUBUCTF.新生赛.ez_pwn
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        ps:本题思路由youlin师傅指引
-checksec一下，查看一下保护机制
-
-保护全开 64位？有点被吓到了
-不过这种题估计都是flag已经准备好了或者自带shellcode
-拖进ida看看
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-17T22:27:18+08:00">2022-09-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/wp/">wp</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/ROP/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/17/ROP/"  itemprop="url">
-        ROP
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        动态链接和静态链接静态链接和动态链接的相关概念，我们在栈溢出篇曾粗略提到过
-我们说到，为了防止每次调用函数都需要将函数的libc库拷贝到文件中，加大文件的存储占用
-不如在程序运行时将动态库加载到内存中，多个程序运行只需要调用一份
-静态库特点：1.静态库对函数库的链接是放在编译时期完成的2.程序在运行时与函数库再无瓜葛，移植方便。3.浪费空间和资源，因为所有相关的目标文件与牵涉到的函数库被链接...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-17T09:26:39+08:00">2022-09-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/17/ROP/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/16/基础知识1/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/16/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/"  itemprop="url">
-        基础知识1
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        本文用于简单介绍部分基础知识，详细请自行了解
-并且为最初版的缘故，彼此之间并没有递进的关系，属于是我什么时候学到了就塞进来，所以此篇在学习时可以跳过，偶尔进来看看扩展知识点
-缓冲区缓冲区又称为缓存，它是内存空间的一部分。也就是说，在内存空间中预留了一定的存储空间，这些存储空间用来缓冲输入或输出的数据，这部分预留的空间就叫做缓冲区。
-缓冲区的作用是什么？我们为什么不能直接进行硬盘和计算机之间的...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-16T12:46:22+08:00">2022-09-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/16/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/15/32位栈溢出/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/15/32%E4%BD%8D%E6%A0%88%E6%BA%A2%E5%87%BA/"  itemprop="url">
-        栈溢出
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        继上文点到栈溢出的基础原理，本文来详细演示如何完成一题栈溢出
-checksec的使用及保护机制了解操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险
-在我们开始尝试做题之前，我们先得知道这道题开启了哪些安全机制，我们又该如何绕过其安全机制
-这里便使用到了checksec工具
-
-Arch：程序架构信息。判断是拖进64位IDA还是32位？exp编写时p64还是p32函数？
-R...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-15T12:26:15+08:00">2022-09-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/15/32%E4%BD%8D%E6%A0%88%E6%BA%A2%E5%87%BA/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/14/博客使用须知/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/14/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5/"  itemprop="url">
-        博客使用须知
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        在开始借助本博客的学习pwn前，有以下几点需要知道
-1.博客的建立初衷来自于本人在学习pwn时，面对庞杂的知识点，不知道从哪里开始学习，学习什么完后又要学习什么，所以将站在我的角度给予本人对于pwn学习方向的思路引导
-2.本文中的很多知识点描述并不全面，强烈建议也是必须建议你在看完本博客后，能借助博客提到的内容自行去wiki或其他渠道扩展知识面
-3.由于本人目前水平不足，只能提及一些我学习过...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-14T20:16:54+08:00">2022-09-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/14/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/13/栈的基础知识/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/13/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"  itemprop="url">
-        栈的基础知识
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        什么是栈？在了解栈相关的知识前，我们需要一些汇编代码的基础
-可以将谢师傅的视频作为阅读本文的前提，接下来所出现的名词将不再作解释（19分51秒到35分32秒，以及56分31秒到1时4分为栈部分内容）
-[pwn入门]0基础学习程序与计算机-2_哔哩哔哩_bilibili
-无妨从栈在语文中的定义理解—&gt;存储货物或供旅客住宿的地方,可引申为仓库、中转站。
-在计算机系统中，栈则是一个具有以上属...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-13T20:20:05+08:00">2022-09-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/13/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2022/09/">
-            <section class="post prev white-box shadow floatable blur" >
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 3
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2022/09/page/3/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;Next&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3079,162 +2608,42 @@ R...
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://s1.328888.xyz/2022/09/13/KRIZy.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Chen</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            active-action="action-categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/wp/" href="/categories/wp/"
-            active-action="action-categorieswp"
-            ><div class='name'>wp</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesE59FBAE7A180"
-            ><div class='name'>基础</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%A0%86/" href="/categories/%E5%A0%86/"
-            active-action="action-categoriesE5A086"
-            ><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
-            active-action="action-categoriesE6A088"
-            ><div class='name'>栈</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"
-            active-action="action-categoriesE8999AE68B9FE69CBA"
-            ><div class='name'>虚拟机</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop pjax">
-  
-  <header>
-    
-      <a target="_blank" rel="noopener" href='https://space.bilibili.com/185447556'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>b站账号</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3262,13 +2671,14 @@ R...
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3277,14 +2687,14 @@ R...
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3782,7 +3192,7 @@ R...
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/archives/2022/","name":"2022"}},{"@type":"ListItem","position":4,"item":{"@id":"http://example.com/archives/2022/9/","name":"9"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/03/溢出覆盖变量/","name":"溢出覆盖变量"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"溢出覆盖变量","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/","wordCount":0,"datePublished":"2022-10-02T16:55:35.000Z","dateModified":"2022-10-02T17:07:55.242Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
