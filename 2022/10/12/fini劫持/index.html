@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/09/13/pwn入门指南/"/>
+  <link rel="canonical" href="http://example.com/2022/10/12/fini劫持/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>pwn入门指南 - Chen</title>
+  <title>fini劫持 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="pwn入门指南">
-<meta property="og:url" content="http://example.com/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:title" content="fini劫持">
+<meta property="og:url" content="http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="本文旨在简要概括ctf中pwn方向的主要学习知识，以供不知道学习什么方向或者不知道如何学习pwn的人参考 什么是pwn就我个人在刚决定入门这个方向的时候，我是希望有人给予我一个清楚的定义，即这个方向是如何完成ctf中的题目。所以最为关键的引导，我决定通过一个简单的pwn题来向你体现pwn是一个怎样的方向，并且就我个人而言，我是不希望将pwn的教程写的又臭又长，接下来的一系列教程将以尽量幽默形象的语">
+<meta property="og:description" content="基础概念 一个程序在执行的时候 其并不是直接执行main函数 先是执行入口函数 入口函数对运行库和程序运行环境进行初始化，包括堆、I&#x2F;O、线程、全局变量的构造等等 在完成初始化之后，调用main函数，正式开始执行函数主体部分 main函数执行完毕之后，返回到入口函数，入口函数进行清理工作，包括全局变量析构、堆销毁、关闭I&#x2F;O等，然后进行系统调用结束进程 这里不具体到各个入口函数">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-09-13T06:11:35.000Z">
-<meta property="article:modified_time" content="2022-09-16T11:02:32.642Z">
+<meta property="article:published_time" content="2022-10-12T08:05:30.000Z">
+<meta property="article:modified_time" content="2022-10-12T08:25:57.046Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2362,7 +2362,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/13/pwn入门指南/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/12/fini劫持/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2383,7 +2383,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        pwn入门指南
+        fini劫持
       </h1>
       <div class='new-meta-box'>
         
@@ -2402,10 +2402,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+    <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">基础</span></a>
+        <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
       </span>
     
   </div>
@@ -2414,10 +2414,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-09-13T14:11:35+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-12T16:05:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 13, 2022</p>
+    <p>发布于：Oct 12, 2022</p>
   </a>
 </div>
 
@@ -2440,48 +2440,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>本文旨在简要概括ctf中pwn方向的主要学习知识，以供不知道学习什么方向或者不知道如何学习pwn的人参考</p>
-<h1 id="什么是pwn"><a href="#什么是pwn" class="headerlink" title="什么是pwn"></a>什么是pwn</h1><p>就我个人在刚决定入门这个方向的时候，我是希望有人给予我一个清楚的定义，即这个方向是如何完成ctf中的题目。所以最为关键的引导，我决定通过一个简单的pwn题来向你体现pwn是一个怎样的方向，并且就我个人而言，我是不希望将pwn的教程写的又臭又长，接下来的一系列教程将以尽量幽默形象的语言风格叙述，那让我们以fstar  21届的校赛pwn题第一题作为例题开讲</p>
-<h3 id="2022-NISACTF-pwn-ReorPwn"><a href="#2022-NISACTF-pwn-ReorPwn" class="headerlink" title="2022 NISACTF pwn-ReorPwn?"></a>2022 NISACTF pwn-ReorPwn?</h3><p><a target="_blank" rel="noopener" href="https://imgloc.com/i/KRmRr"><img src="https://s1.328888.xyz/2022/09/13/KRmRr.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/13/KRmRr.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="KRmRr.png"></a></p>
-<p>通常pwn题的附件是一个二进制文件，图中所用到的工具<strong>ida</strong>可以将二进制文件反编译成c语言代码</p>
-<p>到了这里，pwn手的两个学习方向你应该也清楚了—&gt;<strong>ida的使用和c语言的代码审计</strong></p>
-<p>依我个人的学习经历，我觉得c语言学习到指针和结构体的进度，就足够你完成栈(pwn的一种题型)的大部分知识</p>
-<p>ida的使用也不需要刻意去百度学习，你将在栈部分的学习中大致掌握使用技巧</p>
-<p>接着往下说，这里我假设你已经可以看懂本题的c语言表示，那么我们继续分析</p>
-<p>3~5行的setvbuf用意于清空<strong>缓存区</strong>(相关概念后续将进行补充)</p>
-<p>第六行 put输出了一行话，在pwn题中，题目描述，题目名称，又或者是程序中的语句，都可能是解题的关键提示</p>
-<p><strong>evcexe ot tnaw uoy tahw em lleT</strong>  第一眼 是不是觉得这不是一个正常的英文句子？</p>
-<p>不凡把他<strong>倒转</strong>过来试试 Tell me what you want to execve</p>
-<p>我们记住这段话，接着往下看</p>
-<p>第七行调用了gets函数，将用户输入的值赋给了变量a</p>
-<p>第八行出现了一个fun函数？似乎不是一个很常见的函数，有可能是出题人自己定义的一个函数，我们可以双击点进去查看</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/KRLEX"><img src="https://s1.328888.xyz/2022/09/13/KRLEX.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/13/KRLEX.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="KRLEX.png"></a></p>
-<p>将用户输入的a进行倒置 比如你输入了sh 此时return的值便为hs</p>
-<p>PS：这里介绍一个实用的小技巧，很多时候我们看不懂这段代码是干什么的怎么办，可以自己<strong>运行</strong>一下程序</p>
-<p>啊，你问如何运行这个程序， 你似乎不能双击打开他？</p>
-<p>这里就又牵扯到了<strong>windows和liunx文件类型</strong>(自行百度)</p>
-<p>总之，我们需要一台搭载linux操作系统的电脑，但面临的问题是，或许没有多余的资金来浪费又因为两台电脑间传输文件的困难</p>
-<p>所以我们这里引入一个新的概念，<strong>虚拟机</strong></p>
-<p>什么是虚拟机？我们先把这个疑问抛到一边，后续的文章我们再来介绍，本文的目的旨在笼统介绍pwn题</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/KRNGI"><img src="https://s1.328888.xyz/2022/09/13/KRNGI.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/13/KRNGI.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="KRNGI.png"></a></p>
-<p>将文件运行之后 我们需要给变量a赋值，这里随便写一个hello</p>
-<p>欸 这里好像报错了 仔细看 sh: 1：<strong>olleh</strong>：not found</p>
-<p>olleh？ 这不是hello倒过来吗 倒？前面的语句你是否还记得</p>
-<p> <strong>倒转？</strong></p>
-<p>灵感在你脑中乍现了吧</p>
-<p>我们虽然看不懂fun函数中的for 但是可以通过尝试的办法来明白他是起到了一个什么作用</p>
-<p>所以 我们输入的值 在被赋值给a后会被倒转 再执行<strong>system(a)</strong></p>
-<p>又一个疑问了 system(a)是什么？</p>
-<p>百度你可以获得system函数权威严谨的定义 这里我简单说一下 作为前期栈学习 你只需要了解 你的一切行为 都是为了获得目标终端的控制权限 从而获取flag</p>
-<p>这种方法通常可以是调用system(&#x2F;bin&#x2F;sh)这串代码来实现的</p>
-<p>所以 本题的思路已经很明显了 要想system函数中的值为&#x2F;bin&#x2F;sh的话 我们赋值的a 就要为<strong>hs&#x2F;nib&#x2F;</strong></p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/KROsm"><img src="https://s1.328888.xyz/2022/09/13/KROsm.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/13/KROsm.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="KROsm.png"></a></p>
-<p>可以看到 当我们输入hs&#x2F;nib&#x2F;后  我们再输入ls</p>
-<p>我们就列出了当前目录下的文件列表，这意味着我们成功调用了system(&#x2F;bin&#x2F;sh)</p>
-<p>完成了一次pwn</p>
-<p>到了这里 相信你已经对于pwn是什么有了一个清楚的认知</p>
-<p>如果你对此感有兴趣 欢迎主攻pwn方向 成为一名pwn爷</p>
-<p>本文结束</p>
+    <h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><p><img src="https://s1.328888.xyz/2022/10/12/8TeK5.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/12/8TeK5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8TeK5.png"></p>
+<p>一个程序在执行的时候 其并不是直接执行main函数</p>
+<p>先是执行入口函数</p>
+<p>入口函数对运行库和程序运行环境进行初始化，包括堆、I&#x2F;O、线程、全局变量的构造等等</p>
+<p>在完成初始化之后，调用main函数，正式开始执行函数主体部分</p>
+<p>main函数执行完毕之后，返回到入口函数，入口函数进行清理工作，包括全局变量析构、堆销毁、关闭I&#x2F;O等，然后进行系统调用结束进程</p>
+<p>这里不具体到各个入口函数的区别 因为属于概念问题 理解起来不会有难度 可以自行查阅wiki</p>
+<p>总之 如果只是为了做题而记忆 可以按下面理解</p>
+<h3 id="在静态编译下"><a href="#在静态编译下" class="headerlink" title="在静态编译下"></a>在静态编译下</h3><p>bss段中会存放一个fini数组</p>
+<p>在main函数结束后</p>
+<p>程序指向了fini函数</p>
+<p>其会先跳转到fini[1]存放的地址</p>
+<p>接着返回fini[0]存放的地址</p>
+<p>所以我们只需要将fini[1]修改为我们想要控制执行流的地方 再把fini[0]修改成fini函数</p>
+<p>程序就会陷入死循环 重复的执行fini[1]指向的地址</p>
+<h3 id="动态编译下"><a href="#动态编译下" class="headerlink" title="动态编译下"></a>动态编译下</h3><p><img src="https://s1.328888.xyz/2022/10/12/8h9S5.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/12/8h9S5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8h9S5.png"></p>
+<p>fini数组不会存储在bss段中 并且也只有一个字长</p>
+<p>(不知道是不是我遇到的这题的特殊情况)</p>
+<p>直接将这个地址的值覆盖成要重复执行的函数地址就行了</p>
+<p>不过在我遇到的这题中好像就只能跳转一次 不能理论无限执行</p>
 
   </div>
   
@@ -2506,10 +2484,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-16T19:02:32+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-12T16:25:57+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 16, 2022</p>
+    <p>更新于：Oct 12, 2022</p>
   </a>
 </div>
 
@@ -2528,7 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/&title=pwn入门指南 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/&title=fini劫持 - Chen&summary="
           
           >
           
@@ -2540,7 +2518,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/&title=pwn入门指南 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/&title=fini劫持 - Chen&summary="
           
           >
           
@@ -2552,7 +2530,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/&title=pwn入门指南 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/&title=fini劫持 - Chen&summary="
           
           >
           
@@ -2585,12 +2563,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/09/13/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>栈的基础知识</p>
-          <p class='content'>什么是栈？在了解栈相关的知识前，我们需要一些汇编代码的基础
-可以将谢师傅的视频作为阅读本文的前提，接下来所出现的名词将不再作解释（19分51秒到35分32秒，以及56分31秒到1时4分为栈部分内...</p>
-        </a>
       
+        <a class='next' href='/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/'>
+          <p class='title'>格式化字符串任意写&泄露基址<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>本篇主要讲述两个知识点： 格式化字符串任意写和泄露基址
+我们在最初的格式化字符串漏洞学习中 已经掌握了查看偏移和篡改地址的数据的能力
+但是如果是篡改puts函数的got表呢？
+我们知道 动态链接...</p>
+        </a>
       
     </div>
   
@@ -2605,7 +2585,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/10/12/fini%E5%8A%AB%E6%8C%81/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2647,7 +2627,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2022-NISACTF-pwn-ReorPwn"><span class="toc-text">2022 NISACTF pwn-ReorPwn?</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E4%B8%8B"><span class="toc-text">在静态编译下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BC%96%E8%AF%91%E4%B8%8B"><span class="toc-text">动态编译下</span></a></li></ol>
     </div>
   </section>
 
@@ -3221,7 +3201,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/基础/","name":"基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/13/pwn入门指南/","name":"pwn入门指南"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"pwn入门指南","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/","wordCount":0,"datePublished":"2022-09-13T06:11:35.000Z","dateModified":"2022-09-16T11:02:32.642Z","articleSection":"基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/12/fini劫持/","name":"fini劫持"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"fini劫持","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/","wordCount":0,"datePublished":"2022-10-12T08:05:30.000Z","dateModified":"2022-10-12T08:25:57.046Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

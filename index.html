@@ -1624,7 +1624,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1665552326974),
+    lastupdate: new Date(1665563169491),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2423,9 +2423,80 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/12/fini劫持/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/12/fini%E5%8A%AB%E6%8C%81/"  itemprop="url">
+        fini劫持
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        基础概念
+一个程序在执行的时候 其并不是直接执行main函数
+先是执行入口函数
+入口函数对运行库和程序运行环境进行初始化，包括堆、I&#x2F;O、线程、全局变量的构造等等
+在完成初始化之后，调用main函数，正式开始执行函数主体部分
+main函数执行完毕之后，返回到入口函数，入口函数进行清理工作，包括全局变量析构、堆销毁、关闭I&#x2F;O等，然后进行系统调用结束进程
+这里不具体到各个入...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-12T16:05:30+08:00">2022-10-12</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/12/fini%E5%8A%AB%E6%8C%81/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3041,78 +3112,6 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/虚拟机安装/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/29/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/"  itemprop="url">
-        虚拟机安装
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        虚拟机对于pwn手而言必不可缺，本人直到完成栈的大部分学习后，都没有搭建一个自己的虚拟机
-所以这个系列将记录我安装的过程，和安装过程中出现的问题
-下载vmware这个不手把手教，因为我已经下过了，不想删了再演示一遍，自己百度吧
-创建虚拟机这里我们选择Ubuntu系统，其对于pwn手更加友好
-
-打开vmware 点击创建新的虚拟机
-
-选择第二个 自定义高级 然后点击下一步
-
-这里不需要任何更改...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-29T19:02:21+08:00">2022-09-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" itemprop="url"><span itemprop="name">虚拟机</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/29/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3253,7 +3252,7 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           <li><a class="flat-box"
             title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
             active-action="action-categoriesE6A088"
-            ><div class='name'>栈</div><div class='badge'>(13)</div></a></li>
+            ><div class='name'>栈</div><div class='badge'>(14)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"
