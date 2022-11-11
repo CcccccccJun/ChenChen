@@ -1624,7 +1624,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1668088868533),
+    lastupdate: new Date(1668159683679),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2427,9 +2427,80 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/11/buu刷题记录/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/11/buu%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/"  itemprop="url">
+        buu刷题记录
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        不打算像pwn一样详细 记录一下自己在buu刷题过程学习的知识点
+[极客大挑战 2019]EasySQL
+靶机开启后 要求我们输入用户名和密码
+这里随便输入后 会发现账号密码都显示在url里  所以可以判断是get传参
+
+这里使用万能密码
+1payload = username=&#x27;or&#x27;1&#x27;=&#x27;1&amp;password=admin&#x27;or&...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-11T16:25:44+08:00">2022-11-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/web/">web</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/web/" itemprop="url"><span itemprop="name">web</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/11/buu%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3040,76 +3111,6 @@ UAF原理先搞懂这个到底是什么意思吧 uaf 全程 use after free 很�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/30/pwn需要的一些工具安装/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/30/pwn%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/"  itemprop="url">
-        pwn需要的一些工具安装
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        这篇文章用来记录搭建pwn手需要的环境 要下载什么工具以及如何下载 其他方向的可以当个参考
-vimVim是一个类似于Vi的著名的功能强大、高度可定制的文本编辑器
-1sudo apt install vim
-
-输入该行指令安装 安装完成后 在终端输入vim 查看是否安装成功 如果成功 会显示以下内容
-
-具体的使用方法这里就不教了
-gitGit是一个开源的分布式版本控制系统，可以有效、高速地处理...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-30T12:09:03+08:00">2022-09-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" itemprop="url"><span itemprop="name">虚拟机</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/30/pwn%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3118,7 +3119,7 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
       <div class="prev-next">
         
         <p class="current">
-          1 / 3
+          1 / 4
         </p>
         
           <a class="next" rel="next" href="/page/2/">
@@ -3226,6 +3227,11 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
             title="/categories/Linux/" href="/categories/Linux/"
             active-action="action-categoriesLinux"
             ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/web/" href="/categories/web/"
+            active-action="action-categoriesweb"
+            ><div class='name'>web</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/wp/" href="/categories/wp/"
