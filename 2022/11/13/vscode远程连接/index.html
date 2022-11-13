@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/09/17/hubuctf-新生赛-ez-pwn/"/>
+  <link rel="canonical" href="http://example.com/2022/11/13/vscode远程连接/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>HUBUCTF.新生赛.ez_pwn - Chen</title>
+  <title>vscode远程连接 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="HUBUCTF.新生赛.ez_pwn">
-<meta property="og:url" content="http://example.com/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/index.html">
+<meta property="og:title" content="vscode远程连接">
+<meta property="og:url" content="http://example.com/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="ps:本题思路由youlin师傅指引 checksec一下，查看一下保护机制  保护全开 64位？有点被吓到了 不过这种题估计都是flag已经准备好了或者自带shellcode 拖进ida看看 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556">
+<meta property="og:description" content="先把虚拟机需要的环境配置一下 1sudo apt install openssh-server  1sudo apt install curl  接着在物理机上创建一下ssh密匙 1ssh-keygen -t rsa -b 4096 -f %USERPROFILE%&#x2F;.ssh&#x2F;debian_rsa  然后自己下载一个vscode 下载后打开 在扩展中搜索remote  安装这个 然后进入到设置里面">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-09-17T14:27:18.000Z">
-<meta property="article:modified_time" content="2022-09-18T05:07:24.132Z">
+<meta property="article:published_time" content="2022-11-13T07:12:44.000Z">
+<meta property="article:modified_time" content="2022-11-13T07:35:08.604Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2362,7 +2362,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/HUBUCTF-新生赛-ez-pwn/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/13/vscode远程连接/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2383,7 +2383,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        HUBUCTF.新生赛.ez_pwn
+        vscode远程连接
       </h1>
       <div class='new-meta-box'>
         
@@ -2402,10 +2402,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/wp/">wp</a>
+    <a class="category-link" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
+        <a href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" itemprop="url"><span itemprop="name">虚拟机</span></a>
       </span>
     
   </div>
@@ -2414,10 +2414,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-09-17T22:27:18+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-13T15:12:44+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 17, 2022</p>
+    <p>发布于：Nov 13, 2022</p>
   </a>
 </div>
 
@@ -2440,42 +2440,36 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>ps:本题思路由youlin师傅指引</p>
-<p>checksec一下，查看一下保护机制</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/o5rqS"><img src="https://s1.328888.xyz/2022/09/17/o5rqS.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/17/o5rqS.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="o5rqS.png"></a></p>
-<p>保护全开 64位？有点被吓到了</p>
-<p>不过这种题估计都是flag已经准备好了或者自带shellcode</p>
-<p>拖进ida看看</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v4; <span class="comment">// [rsp+4h] [rbp-8Ch] BYREF</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [rsp+8h] [rbp-88h]</span></span><br><span class="line">  <span class="type">int</span> v6; <span class="comment">// [rsp+Ch] [rbp-84h]</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> seed[<span class="number">2</span>]; <span class="comment">// [rsp+10h] [rbp-80h]</span></span><br><span class="line">  FILE *stream; <span class="comment">// [rsp+18h] [rbp-78h]</span></span><br><span class="line">  <span class="type">char</span> v9[<span class="number">32</span>]; <span class="comment">// [rsp+20h] [rbp-70h] BYREF</span></span><br><span class="line">  <span class="type">char</span> s[<span class="number">8</span>]; <span class="comment">// [rsp+40h] [rbp-50h] BYREF</span></span><br><span class="line">  __int64 v11; <span class="comment">// [rsp+48h] [rbp-48h]</span></span><br><span class="line">  __int64 v12; <span class="comment">// [rsp+50h] [rbp-40h]</span></span><br><span class="line">  __int64 v13; <span class="comment">// [rsp+58h] [rbp-38h]</span></span><br><span class="line">  __int64 v14; <span class="comment">// [rsp+60h] [rbp-30h]</span></span><br><span class="line">  __int64 v15; <span class="comment">// [rsp+68h] [rbp-28h]</span></span><br><span class="line">  __int64 v16; <span class="comment">// [rsp+70h] [rbp-20h]</span></span><br><span class="line">  __int64 v17; <span class="comment">// [rsp+78h] [rbp-18h]</span></span><br><span class="line">  <span class="type">unsigned</span> __int64 v18; <span class="comment">// [rsp+88h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v18 = __readfsqword(<span class="number">0x28</span>u);</span><br><span class="line">  setvbuf(<span class="built_in">stdin</span>, <span class="number">0LL</span>, <span class="number">2</span>, <span class="number">0LL</span>);</span><br><span class="line">  setvbuf(<span class="built_in">stdout</span>, <span class="number">0LL</span>, <span class="number">2</span>, <span class="number">0LL</span>);</span><br><span class="line">  setvbuf(<span class="built_in">stderr</span>, <span class="number">0LL</span>, <span class="number">2</span>, <span class="number">0LL</span>);</span><br><span class="line">  *(_QWORD *)seed = time(<span class="number">0LL</span>);</span><br><span class="line">  *(_QWORD *)s = <span class="number">0LL</span>;</span><br><span class="line">  v11 = <span class="number">0LL</span>;</span><br><span class="line">  v12 = <span class="number">0LL</span>;</span><br><span class="line">  v13 = <span class="number">0LL</span>;</span><br><span class="line">  v14 = <span class="number">0LL</span>;</span><br><span class="line">  v15 = <span class="number">0LL</span>;</span><br><span class="line">  v16 = <span class="number">0LL</span>;</span><br><span class="line">  v17 = <span class="number">0LL</span>;</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Who goes there?&quot;</span>);</span><br><span class="line">  gets(v9);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Welcome to my challenge, %s. No one has ever succeeded before. Will you be the first?\n&quot;</span>, v9);</span><br><span class="line">  srand(seed[<span class="number">0</span>]);</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt;= <span class="number">99</span>; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    v6 = rand() % <span class="number">100000</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;I am thinking of a number from 1-100000. What is it?&quot;</span>);</span><br><span class="line">    __isoc99_scanf(<span class="string">&quot;%d&quot;</span>, &amp;v4);</span><br><span class="line">    <span class="keyword">if</span> ( v6 != v4 )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">&quot;You have failed. Goodbye.&quot;</span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;Impressive.&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;You&#x27;ve guessed all of my numbers. Here is your reward.&quot;</span>);</span><br><span class="line">  stream = fopen(<span class="string">&quot;flag.txt&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span> ( stream )</span><br><span class="line">  &#123;</span><br><span class="line">    fgets(s, <span class="number">50</span>, stream);</span><br><span class="line">    <span class="built_in">puts</span>(s);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Goodbye.&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>先把虚拟机需要的环境配置一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openssh-server</span><br></pre></td></tr></table></figure>
 
-<p>用时间做了种子，循环一百次，每次都随机一个数，我们需要输对这个数，算是经典的猜数字吧</p>
-<p>一开始看到我们可以自定义赋值的v4和随机数v6是相邻的字节，所以想通过溢出来覆盖v6，使得if判断成立，不过貌似不行</p>
-<p>所以还是正常做法吧</p>
-<p>随机数，我目前知道的两种做法，一种是溢出数据覆盖seed，这样我们在知晓种子的值的情况下，因为c语言的rand是<strong>伪随机</strong>(下面就要降到了，我知道你很急，但你先别急)，所以就可以知道随机数的值</p>
-<p>还有一种办法是本题将要使用到的，这道题我们可以发现他是用当前时间作为种子，来生成随机数，所以我们只要在exp中也是用当前时间作为种子，就可以得到一样的随机数（这里看不懂的话，是伪随机的概念不清楚）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">from ctypes import *</span><br><span class="line">io=remote(<span class="string">&quot;1.14.71.254&quot;</span>,<span class="number">28056</span>)</span><br><span class="line">libc = cdll.LoadLibrary(<span class="string">&#x27;/lib/x86_64-linux-gnu/libc.so.6&#x27;</span>)</span><br><span class="line">seed = libc.time(<span class="number">0</span>)</span><br><span class="line">libc.srand(seed)</span><br><span class="line">io.sendlineafter(b<span class="number">&#x27;</span>Who goes there?<span class="string">&#x27;, b&#x27;</span>chen<span class="number">&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i in range(<span class="number">100</span>):</span><br><span class="line">    buf = libc.rand() % <span class="number">100000</span> + <span class="number">1</span></span><br><span class="line">    io.sendlineafter(b<span class="number">&#x27;</span>What is it?<span class="string">&#x27;, str(buf))</span></span><br><span class="line"><span class="string">    io.recvuntil(b&#x27;</span>\n<span class="number">&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install curl</span><br></pre></td></tr></table></figure>
 
-<p>几个疑点</p>
-<h3 id="1-cdll-LoadLibrary的用法："><a href="#1-cdll-LoadLibrary的用法：" class="headerlink" title="1.cdll.LoadLibrary的用法："></a>1.cdll.LoadLibrary的用法：</h3><p>看了很多篇猜数字的题解啊，竟然没有一个人对这个函数用法有解释，那没办法了，只能自己wiki了</p>
-<p>这个函数就是在python中重新加载文件库</p>
-<p>还是有限制的：<strong>在64位的windows系统中，一个64位进程不能加载一个32位dll，同理一个32位进程也不能加载一个64位dll</strong>。</p>
-<p>查资料的时候还看到这个限制的特殊情况，不过看不明白，估计了解的价值也不大，先丢在这，有空来填这个坑，感兴趣的可以自己先看<a target="_blank" rel="noopener" href="https://blog.csdn.net/wowocpp/article/details/105382257">(3条消息) python 调用 C++ dll 32位 64位 问题 ctypes.cdll.LoadLibrary_wowocpp的博客-CSDN博客_python调用32位dll</a></p>
-<p>还有一种更深的用法是这个代码库将允许原生Linux程序从一个WindowsDLL文件中加载或调用功能函数</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34370877/article/details/116549216">(3条消息) linux运行dll文件命令,LoadLibrary：一款能够允许Linux程序从DLL文件中加载或调用函数的工具…_七分醉玲珑的博客-CSDN博客</a></p>
-<p>因为涉及到linux和windows的进程间通信和内核相关知识，我自己也还没有搞懂，留个坑吧，看以后有没有时间填上</p>
-<h3 id="2-伪随机"><a href="#2-伪随机" class="headerlink" title="2.伪随机"></a>2.伪随机</h3><p>这里介绍一下c语言中的伪随机</p>
-<p>一些基础的c语言知识这里就不多解释了，比如说srand用法和种子的概念</p>
-<p>先看看一段代码吧</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)</span><br><span class="line">	  &#123;</span><br><span class="line">	    <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>,rand());</span><br><span class="line">	  &#125;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接着在物理机上创建一下ssh密匙</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -f %USERPROFILE%/.ssh/debian_rsa</span><br></pre></td></tr></table></figure>
 
-<p>输出10个随机数，我们两次运行试试</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/oMNLw"><img src="https://s1.328888.xyz/2022/09/18/oMNLw.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/18/oMNLw.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="oMNLw.png"></a></p>
-<p>生成的随机数都一样？</p>
-<p>我们不妨这么理解，所谓的rand函数就是根据每个种子分配一张表格，所谓的随机数是从这个表格调用的，所以当我们第二次运行时，由于种子没改变，那么这张表格的数据也不会改变</p>
-<p>那么我们如何获得真正意义上的随机数？想一下有什么东西的数据是一直在变化的</p>
-<p>我们把目光瞄向时间，函数srand( (unsigned)time( NULL ) ) 中time返回的是1970年1月1日0点到现在时间流失的秒数值</p>
-<p>因此，我们这下没法得知种子是多少，也就无法知道这个种子对应的随机数表是什么</p>
-<p>但是我们重加载了libc库，同步获取了time返回的种子值，由于time是以秒作为单位的，我们每次for循环得出的随机数和题目的随机数几乎没有差距，所以这道题的随机数就呼之欲出了</p>
+<p>然后自己下载一个vscode</p>
+<p>下载后打开 在扩展中搜索remote</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zFfZA1"><img src="https://s1.ax1x.com/2022/11/13/zFfZA1.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/13/zFfZA1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zFfZA1.png"></a></p>
+<p>安装这个 然后进入到设置里面勾选这个</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zFfmh6"><img src="https://s1.ax1x.com/2022/11/13/zFfmh6.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/13/zFfmh6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zFfmh6.png"></a></p>
+<p>然后左下角会多出来一个绿色的图标 按图上的点击顺序</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zFfJAI"><img src="https://s1.ax1x.com/2022/11/13/zFfJAI.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/13/zFfJAI.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zFfJAI.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zFfa38"><img src="https://s1.ax1x.com/2022/11/13/zFfa38.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/13/zFfa38.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zFfa38.png"></a></p>
+<p>选择第一个</p>
+<p>然后自行配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host 名称</span><br><span class="line">HostName ip地址</span><br><span class="line">User 虚拟机用户名</span><br><span class="line">IdentityFile &quot;C:\Users\xxxxx\.ssh\debian_rsa&quot;  //物理机的ssh私匙目录</span><br></pre></td></tr></table></figure>
+
+<p>接着试着连接一下</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zFhAxS"><img src="https://s1.ax1x.com/2022/11/13/zFhAxS.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/13/zFhAxS.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zFhAxS.png"></a></p>
+<p>输入密码后就连接上了虚拟机</p>
+<p>但是每次都输入密码太麻烦了 我们之前弄的ssh就是为了免密连接</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zFhuan"><img src="https://s1.ax1x.com/2022/11/13/zFhuan.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/13/zFhuan.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zFhuan.png"></a></p>
+<p>在虚拟机对应目录下 创建一个文件authorized_keys</p>
+<p>接着把物理机中该文件的内容复制到虚拟机刚刚创建的文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxxx\.ssh\debian_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以做到免密连接了 </p>
 
   </div>
   
@@ -2500,10 +2494,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-18T13:07:24+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-13T15:35:08+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 18, 2022</p>
+    <p>更新于：Nov 13, 2022</p>
   </a>
 </div>
 
@@ -2522,7 +2516,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/&title=HUBUCTF.新生赛.ez_pwn - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/&title=vscode远程连接 - Chen&summary="
           
           >
           
@@ -2534,7 +2528,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/&title=HUBUCTF.新生赛.ez_pwn - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/&title=vscode远程连接 - Chen&summary="
           
           >
           
@@ -2546,7 +2540,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/&title=HUBUCTF.新生赛.ez_pwn - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/&title=vscode远程连接 - Chen&summary="
           
           >
           
@@ -2579,20 +2573,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/09/18/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-fmt/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>HUBUCTF-新生赛-fmt</p>
-          <p class='content'>老规矩走个流程，checksec看一下保护机制
+      
+        <a class='next' href='/2022/11/12/ciscn-2019-es-2/'>
+          <p class='title'>ciscn_2019_es_2<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>出处buuctf
+checksec看一下保护机制
 
-好像看不出什么，猜不出他想干啥，拖到ida里面瞧瞧
-1234567891011121314151617181920212223242526272...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/09/17/ROP/'>
-          <p class='title'>ROP<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>动态链接和静态链接静态链接和动态链接的相关概念，我们在栈溢出篇曾粗略提到过
-我们说到，为了防止每次调用函数都需要将函数的libc库拷贝到文件中，加大文件的存储占用
-不如在程序运行时将动态库加载到...</p>
+ida打开 主函数应该是vul 跟进看一下
+12345678910int vul()&#123;  char s[40]; // [esp+0...</p>
         </a>
       
     </div>
@@ -2608,7 +2596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2640,19 +2628,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-cdll-LoadLibrary%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="toc-text">1.cdll.LoadLibrary的用法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BC%AA%E9%9A%8F%E6%9C%BA"><span class="toc-text">2.伪随机</span></a></li></ol>
-    </div>
-  </section>
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -3224,7 +3202,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/wp/","name":"wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/17/HUBUCTF-新生赛-ez-pwn/","name":"HUBUCTF.新生赛.ez_pwn"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"HUBUCTF.新生赛.ez_pwn","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/","wordCount":0,"datePublished":"2022-09-17T14:27:18.000Z","dateModified":"2022-09-18T05:07:24.132Z","articleSection":"wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/虚拟机/","name":"虚拟机"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/13/vscode远程连接/","name":"vscode远程连接"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vscode远程连接","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/","wordCount":0,"datePublished":"2022-11-13T07:12:44.000Z","dateModified":"2022-11-13T07:35:08.604Z","articleSection":"虚拟机","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

