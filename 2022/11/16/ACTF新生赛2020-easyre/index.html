@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/10/12/fini劫持/"/>
+  <link rel="canonical" href="http://example.com/2022/11/16/actf新生赛2020-easyre/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>fini劫持 - Chen</title>
+  <title>ACTF新生赛2020_easyre - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="fini劫持">
-<meta property="og:url" content="http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/index.html">
+<meta property="og:title" content="ACTF新生赛2020_easyre">
+<meta property="og:url" content="http://example.com/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="基础概念 一个程序在执行的时候 其并不是直接执行main函数 先是执行入口函数 入口函数对运行库和程序运行环境进行初始化，包括堆、I&#x2F;O、线程、全局变量的构造等等 在完成初始化之后，调用main函数，正式开始执行函数主体部分 main函数执行完毕之后，返回到入口函数，入口函数进行清理工作，包括全局变量析构、堆销毁、关闭I&#x2F;O等，然后进行系统调用结束进程 这里不具体到各个入口函数">
+<meta property="og:description" content="upx加壳 32位 脱壳完后代码 12345678910111213141516171819202122232425262728int __cdecl main(int argc, const char **argv, const char **envp)&amp;#123;  _BYTE v4[12]; &#x2F;&#x2F; [esp+12h] [ebp-2Eh] BYREF  _DWORD v5[3]; &#x2F;&#x2F; [es">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-10-12T08:05:30.000Z">
-<meta property="article:modified_time" content="2022-10-12T08:25:57.046Z">
+<meta property="article:published_time" content="2022-11-16T11:12:28.000Z">
+<meta property="article:modified_time" content="2022-11-16T11:18:34.905Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2363,7 +2363,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/12/fini劫持/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/16/ACTF新生赛2020-easyre/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2384,7 +2384,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        fini劫持
+        ACTF新生赛2020_easyre
       </h1>
       <div class='new-meta-box'>
         
@@ -2403,10 +2403,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
+    <a class="category-link" href="/categories/reverse/">reverse</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
+        <a href="/categories/reverse/" itemprop="url"><span itemprop="name">reverse</span></a>
       </span>
     
   </div>
@@ -2415,10 +2415,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-12T16:05:30+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-16T19:12:28+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Oct 12, 2022</p>
+    <p>发布于：Nov 16, 2022</p>
   </a>
 </div>
 
@@ -2441,26 +2441,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><p><img src="https://s1.328888.xyz/2022/10/12/8TeK5.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/12/8TeK5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8TeK5.png"></p>
-<p>一个程序在执行的时候 其并不是直接执行main函数</p>
-<p>先是执行入口函数</p>
-<p>入口函数对运行库和程序运行环境进行初始化，包括堆、I&#x2F;O、线程、全局变量的构造等等</p>
-<p>在完成初始化之后，调用main函数，正式开始执行函数主体部分</p>
-<p>main函数执行完毕之后，返回到入口函数，入口函数进行清理工作，包括全局变量析构、堆销毁、关闭I&#x2F;O等，然后进行系统调用结束进程</p>
-<p>这里不具体到各个入口函数的区别 因为属于概念问题 理解起来不会有难度 可以自行查阅wiki</p>
-<p>总之 如果只是为了做题而记忆 可以按下面理解</p>
-<h3 id="在静态编译下"><a href="#在静态编译下" class="headerlink" title="在静态编译下"></a>在静态编译下</h3><p>bss段中会存放一个fini数组</p>
-<p>在main函数结束后</p>
-<p>程序指向了fini函数</p>
-<p>其会先跳转到fini[1]存放的地址</p>
-<p>接着返回fini[0]存放的地址</p>
-<p>所以我们只需要将fini[1]修改为我们想要控制执行流的地方 再把fini[0]修改成fini函数</p>
-<p>程序就会陷入死循环 重复的执行fini[1]指向的地址</p>
-<h3 id="动态编译下"><a href="#动态编译下" class="headerlink" title="动态编译下"></a>动态编译下</h3><p><img src="https://s1.328888.xyz/2022/10/12/8h9S5.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/12/8h9S5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="8h9S5.png"></p>
-<p>fini数组不会存储在bss段中 并且也只有一个字长</p>
-<p>(不知道是不是我遇到的这题的特殊情况)</p>
-<p>直接将这个地址的值覆盖成要重复执行的函数地址就行了</p>
-<p>不过在我遇到的这题中好像就只能跳转一次 不能理论无限执行</p>
+    <p>upx加壳 32位</p>
+<p>脱壳完后代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  _BYTE v4[<span class="number">12</span>]; <span class="comment">// [esp+12h] [ebp-2Eh] BYREF</span></span><br><span class="line">  _DWORD v5[<span class="number">3</span>]; <span class="comment">// [esp+1Eh] [ebp-22h]</span></span><br><span class="line">  _BYTE v6[<span class="number">5</span>]; <span class="comment">// [esp+2Ah] [ebp-16h] BYREF</span></span><br><span class="line">  <span class="type">int</span> v7; <span class="comment">// [esp+2Fh] [ebp-11h]</span></span><br><span class="line">  <span class="type">int</span> v8; <span class="comment">// [esp+33h] [ebp-Dh]</span></span><br><span class="line">  <span class="type">int</span> v9; <span class="comment">// [esp+37h] [ebp-9h]</span></span><br><span class="line">  <span class="type">char</span> v10; <span class="comment">// [esp+3Bh] [ebp-5h]</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [esp+3Ch] [ebp-4h]</span></span><br><span class="line"></span><br><span class="line">  __main();</span><br><span class="line">  qmemcpy(v4, <span class="string">&quot;*F&#x27;\&quot;N,\&quot;(I?+@&quot;</span>, <span class="keyword">sizeof</span>(v4));</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Please input:&quot;</span>);</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, v6);</span><br><span class="line">  <span class="keyword">if</span> ( v6[<span class="number">0</span>] != <span class="string">&#x27;A&#x27;</span> || v6[<span class="number">1</span>] != <span class="number">67</span> || v6[<span class="number">2</span>] != <span class="number">84</span> || v6[<span class="number">3</span>] != <span class="number">70</span> || v6[<span class="number">4</span>] != <span class="number">123</span> || v10 != <span class="number">125</span> )</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  v5[<span class="number">0</span>] = v7;</span><br><span class="line">  v5[<span class="number">1</span>] = v8;</span><br><span class="line">  v5[<span class="number">2</span>] = v9;</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt;= <span class="number">11</span>; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( v4[i] != _data_start__[*(v5 + i) - <span class="number">1</span>] )</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;You are correct!&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意一下数组的一个元素是四个字节 所以v5存储的是用户输入的12个字节</p>
+<p><strong><em>data_start</em>_[*(v5 + i) - 1]</strong>       即用户输入的字符转化为ascii码后再-1  这个值为n v4等于 &#x3D; _data_start[n]</p>
+<p>所以逆向程序可以写成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">42</span>,<span class="number">70</span>,<span class="number">39</span>,<span class="number">34</span>,<span class="number">78</span>,<span class="number">44</span>,<span class="number">34</span>,<span class="number">40</span>,<span class="number">73</span>,<span class="number">63</span>,<span class="number">43</span>,<span class="number">64</span>]</span><br><span class="line">b = <span class="string">&quot;~&#125;|&#123;zyxwvutsrqponmlkjihgfedcba`_^]\\[ZYXWVUTSRQPONMLKJIHGFEDCBA@?&gt;=&lt;;:9876543210/.-,+*)(&#x27;&amp;%$# !\&quot;&quot;</span></span><br><span class="line">flag = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    flag = <span class="built_in">chr</span>(b.find(<span class="built_in">chr</span>(i))+<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(flag,end=<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
 
   </div>
   
@@ -2485,10 +2474,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-12T16:25:57+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-16T19:18:34+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 12, 2022</p>
+    <p>更新于：Nov 16, 2022</p>
   </a>
 </div>
 
@@ -2507,7 +2496,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/&title=fini劫持 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/&title=ACTF新生赛2020_easyre - Chen&summary="
           
           >
           
@@ -2519,7 +2508,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/&title=fini劫持 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/&title=ACTF新生赛2020_easyre - Chen&summary="
           
           >
           
@@ -2531,7 +2520,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/&title=fini劫持 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/&title=ACTF新生赛2020_easyre - Chen&summary="
           
           >
           
@@ -2564,21 +2553,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/11/02/ISCTF2022-null/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>ISCTF2022-null</p>
-          <p class='content'>看一下保护机制
-
-再拖到ida查看一下main函数
-12345678910111213141516171819202122232425262728293031323334353637383940...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/'>
-          <p class='title'>格式化字符串任意写&泄露基址<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>本篇主要讲述两个知识点： 格式化字符串任意写和泄露基址
-我们在最初的格式化字符串漏洞学习中 已经掌握了查看偏移和篡改地址的数据的能力
-但是如果是篡改puts函数的got表呢？
-我们知道 动态链接...</p>
+        <a class='next' href='/2022/11/14/ciscn-2019-s-3/'>
+          <p class='title'>ciscn_2019_s_3<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>12345Arch:     amd64-64-littleRELRO:    Partial RELROStack:    No canary foundNX:       NX enable...</p>
         </a>
       
     </div>
@@ -2594,7 +2572,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/10/12/fini%E5%8A%AB%E6%8C%81/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2626,19 +2604,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E4%B8%8B"><span class="toc-text">在静态编译下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BC%96%E8%AF%91%E4%B8%8B"><span class="toc-text">动态编译下</span></a></li></ol>
-    </div>
-  </section>
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
 
   
 
@@ -3210,7 +3178,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/12/fini劫持/","name":"fini劫持"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"fini劫持","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/12/fini%E5%8A%AB%E6%8C%81/","wordCount":0,"datePublished":"2022-10-12T08:05:30.000Z","dateModified":"2022-10-12T08:25:57.046Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/reverse/","name":"reverse"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/16/ACTF新生赛2020-easyre/","name":"ACTF新生赛2020_easyre"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ACTF新生赛2020_easyre","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/","wordCount":0,"datePublished":"2022-11-16T11:12:28.000Z","dateModified":"2022-11-16T11:18:34.905Z","articleSection":"reverse","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

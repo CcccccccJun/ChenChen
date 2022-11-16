@@ -1625,7 +1625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1668597112071),
+    lastupdate: new Date(1668597526566),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2368,6 +2368,76 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/09/密码学笔记/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"  itemprop="url">
+        密码学笔记
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        自己用的密码学笔记 不准备讲的跟pwn一样详细
+MD5hash算法一类 32位数字和字母混合码
+base
+base16：包含数字0-9，大写字母A-F 
+base32：包含数字2-7，大写字母A-Z,特殊符号&#x3D;&#x3D;&#x3D; 
+base64：包含数字0-9，大写字母A-Z，小写字母a-z，特殊符号+、&#x2F; 、&#x3D;&#x3D;、&#x3D;等
+
+32和64区...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-09T23:12:10+08:00">2022-10-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81/">密码</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%AF%86%E7%A0%81/" itemprop="url"><span itemprop="name">密码</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/06/简单爆破partial-write/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
@@ -2981,73 +3051,6 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/26/栈迁移/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/"  itemprop="url">
-        栈迁移
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        我们在基础知识扩展的时候，说到了为了避免有些题目供我们构造的字节数过少，以至于无法给system函数传参的时候该怎么解决
-今天所要讲到的内容，也是和栈溢出字节数不够有关
-当可以供我们编写的字节数仅够覆盖到ret addr时，并且该程序内并没有后门函数可以供我们利用，我们又该如何实现系统调用呢？
-我们以往的简单栈溢出是通过覆盖ret addr的办法控制程序执行流导向后门函数的位置
-但是其本质上...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-26T21:40:18+08:00">2022-09-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3170,6 +3173,11 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
             title="/categories/Linux/" href="/categories/Linux/"
             active-action="action-categoriesLinux"
             ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/reverse/" href="/categories/reverse/"
+            active-action="action-categoriesreverse"
+            ><div class='name'>reverse</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/web/" href="/categories/web/"
