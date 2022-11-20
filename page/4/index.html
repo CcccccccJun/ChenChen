@@ -1625,7 +1625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1668917868304),
+    lastupdate: new Date(1668932952053),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2368,6 +2368,73 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/21/Ret2shellcode/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/09/21/Ret2shellcode/"  itemprop="url">
+        Ret2shellcode
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        这次我们再来介绍一个栈的经典题型
+在我们先前遇到的题目中，都有着出题人为我们提供的后门函数，如果没有后门函数，我们又该如何自己构建shellcode呢？
+带着这个疑问，我们开始今天的学习
+如何写入system（&#x2F;bin&#x2F;sh）？由于题目通常都会开启NX保护，所以我们要想在栈中写入字符串是不现实的打算
+我们好好想想，在内存块的五个分区中，还有哪个区块是可以为我们自由编辑的，...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-09-21T16:37:21+08:00">2022-09-21</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/09/21/Ret2shellcode/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/19/pwn1-sctf-2016/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
@@ -2975,70 +3042,6 @@ R...
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/13/pwn入门指南/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"  itemprop="url">
-        pwn入门指南
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        本文旨在简要概括ctf中pwn方向的主要学习知识，以供不知道学习什么方向或者不知道如何学习pwn的人参考
-什么是pwn就我个人在刚决定入门这个方向的时候，我是希望有人给予我一个清楚的定义，即这个方向是如何完成ctf中的题目。所以最为关键的引导，我决定通过一个简单的pwn题来向你体现pwn是一个怎样的方向，并且就我个人而言，我是不希望将pwn的教程写的又臭又长，接下来的一系列教程将以尽量幽默形...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-13T14:11:35+08:00">2022-09-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">基础</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3053,8 +3056,14 @@ R...
           </a>
         
         <p class="current">
-          4 / 4
+          4 / 5
         </p>
+        
+          <a class="next" rel="next" href="/page/5/">
+            <section class="post next white-box shadow floatable blur">
+              &nbsp;Next&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
         
       </div>
     
@@ -3159,7 +3168,7 @@ R...
           <li><a class="flat-box"
             title="/categories/reverse/" href="/categories/reverse/"
             active-action="action-categoriesreverse"
-            ><div class='name'>reverse</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>reverse</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/web/" href="/categories/web/"
