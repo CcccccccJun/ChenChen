@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/10/09/密码学笔记/"/>
+  <link rel="canonical" href="http://example.com/2022/11/23/sql注入笔记/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>密码学笔记 - Chen</title>
+  <title>sql注入笔记 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="密码学笔记">
-<meta property="og:url" content="http://example.com/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="sql注入笔记">
+<meta property="og:url" content="http://example.com/2022/11/23/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="自己用的密码学笔记 不准备讲的跟pwn一样详细 MD5hash算法一类 32位数字和字母混合码 base base16：包含数字0-9，大写字母A-F  base32：包含数字2-7，大写字母A-Z,特殊符号&#x3D;&#x3D;&#x3D;  base64：包含数字0-9，大写字母A-Z，小写字母a-z，特殊符号+、&#x2F; 、&#x3D;&#x3D;、&#x3D;等  32和64区别 b">
+<meta property="og:description" content="主要是记录自己学习sql注入吧 不准备作为详细的教程 SQL注入（精讲，原理，实战，绕过，防御）_哔哩哔哩_bilibili 2022.11.23解释型语言和编译型语言 因为解释性语言是边执行边解释语句 所以可以做到构造特殊的参数来执行恶意代码 123?&#x3D;1&amp;#x27;?&#x3D;1 and 1&#x3D;1?&#x3D;1 and 1&#x3D;2  诸如这样的 可以探测是否存在sql注入漏洞 配了台kali用来安装sqlmap 以">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-10-09T15:12:10.000Z">
-<meta property="article:modified_time" content="2022-10-09T15:42:40.792Z">
+<meta property="article:published_time" content="2022-11-23T08:32:34.000Z">
+<meta property="article:modified_time" content="2022-11-23T09:19:01.558Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2363,7 +2363,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/09/密码学笔记/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/23/sql注入笔记/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2384,7 +2384,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        密码学笔记
+        sql注入笔记
       </h1>
       <div class='new-meta-box'>
         
@@ -2403,10 +2403,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81/">密码</a>
+    <a class="category-link" href="/categories/web/">web</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%AF%86%E7%A0%81/" itemprop="url"><span itemprop="name">密码</span></a>
+        <a href="/categories/web/" itemprop="url"><span itemprop="name">web</span></a>
       </span>
     
   </div>
@@ -2415,10 +2415,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-09T23:12:10+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-23T16:32:34+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Oct 9, 2022</p>
+    <p>发布于：Nov 23, 2022</p>
   </a>
 </div>
 
@@ -2441,27 +2441,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>自己用的密码学笔记 不准备讲的跟pwn一样详细</p>
-<h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><p>hash算法一类 32位数字和字母混合码</p>
-<h2 id="base"><a href="#base" class="headerlink" title="base"></a>base</h2><ol>
-<li>base16：包含数字0-9，大写字母A-F </li>
-<li>base32：包含数字2-7，大写字母A-Z,特殊符号&#x3D;&#x3D;&#x3D; </li>
-<li>base64：包含数字0-9，大写字母A-Z，小写字母a-z，特殊符号+、&#x2F; 、&#x3D;&#x3D;、&#x3D;等</li>
-</ol>
-<h3 id="32和64区别"><a href="#32和64区别" class="headerlink" title="32和64区别"></a>32和64区别</h3><ol>
-<li>base32没有小写字母，注意base32与base64都有＝号</li>
-<li>base32编码可以用于文件系统的名称（不区分大小写情况）。而base64编码后数据量相比原先不是增加很多，可以用于网络传输。</li>
-</ol>
-<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>统一资源定位符 一般%</p>
-<h2 id="ROT13编码"><a href="#ROT13编码" class="headerlink" title="ROT13编码"></a>ROT13编码</h2><p>ROT13（回转13位，rotate by 13 places，有时中间加了个连字符称作ROT-13）是一种简易的替换式密码。</p>
-<p>只有这些出现在英文字母里头的字元受影响；<br>数字、符号、空白字元以及所有其他字元都不变。</p>
-<h2 id="摩斯密码"><a href="#摩斯密码" class="headerlink" title="摩斯密码"></a>摩斯密码</h2><p>这个没啥好说的 很容易辨识</p>
-<h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>根据图自己看偏移吧</p>
-<p><img src="https://s1.328888.xyz/2022/10/09/g5VSB.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/09/g5VSB.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="g5VSB.png"></p>
-<h2 id="Quoted-printable"><a href="#Quoted-printable" class="headerlink" title="Quoted-printable"></a>Quoted-printable</h2><p>Quoted-printable将任何8-bit字节值可编码为3个字符：一个等号”&#x3D;”后跟随两个十六进制数字(0–9或A–F)表示该字节的数值</p>
-<h2 id="rabit"><a href="#rabit" class="headerlink" title="rabit"></a>rabit</h2><p>Rabbit 是一种<strong>高速流密码</strong>，于 2003 年在 FSE 研讨会上首次提出。 Rabbit 使用一个 128 位密钥和一个 64 位初始化向量 核心组件是一个位流生成器，该流生成器每次迭代都会加密 128 个消息位。</p>
-<p><img src="https://s1.328888.xyz/2022/10/09/g5U3I.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/09/g5U3I.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="g5U3I.png"></p>
-<h2 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h2><p>所谓栅栏密码，就是把要加密的明文分成N个一组，然后把每组的第1个字连起来，形成一段无规律的话。 不过栅栏密码本身有一个潜规则，就是组成栅栏的字母一般不会太多</p>
+    <p>主要是记录自己学习sql注入吧 不准备作为详细的教程</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Q54y1D7VV/?spm_id_from=333.337.search-card.all.click&vd_source=8543a418a87bc93ee104e52809d057c2">SQL注入（精讲，原理，实战，绕过，防御）_哔哩哔哩_bilibili</a></p>
+<h2 id="2022-11-23"><a href="#2022-11-23" class="headerlink" title="2022.11.23"></a>2022.11.23</h2><p>解释型语言和编译型语言 因为解释性语言是边执行边解释语句 所以可以做到构造特殊的参数来执行恶意代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?=1&#x27;</span><br><span class="line">?=1 and 1=1</span><br><span class="line">?=1 and 1=2</span><br></pre></td></tr></table></figure>
+
+<p>诸如这样的 可以探测是否存在sql注入漏洞</p>
+<p>配了台kali用来安装sqlmap 以及配置除了pwn以外的环境</p>
 
   </div>
   
@@ -2486,10 +2472,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-09T23:42:40+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-23T17:19:01+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 9, 2022</p>
+    <p>更新于：Nov 23, 2022</p>
   </a>
 </div>
 
@@ -2508,7 +2494,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/&title=密码学笔记 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/23/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/&title=sql注入笔记 - Chen&summary="
           
           >
           
@@ -2520,7 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/&title=密码学笔记 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/23/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/&title=sql注入笔记 - Chen&summary="
           
           >
           
@@ -2532,7 +2518,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/&title=密码学笔记 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/23/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/&title=sql注入笔记 - Chen&summary="
           
           >
           
@@ -2565,20 +2551,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>格式化字符串任意写&泄露基址</p>
-          <p class='content'>本篇主要讲述两个知识点： 格式化字符串任意写和泄露基址
-我们在最初的格式化字符串漏洞学习中 已经掌握了查看偏移和篡改地址的数据的能力
-但是如果是篡改puts函数的got表呢？
-我们知道 动态链接...</p>
+        <a class='prev' href='/2022/11/23/mrctf2020-shellcode/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>mrctf2020_shellcode</p>
+          <p class='content'>这题虽然是很简单的shellcode 但是因为禁用了ida的反编译 需要我们阅读汇编理解程序 就当作提高汇编理解能力了
+12345678[!] Could not populate PLT: i...</p>
         </a>
       
       
-        <a class='next' href='/2022/10/06/%E7%AE%80%E5%8D%95%E7%88%86%E7%A0%B4partial-write/'>
-          <p class='title'>简单爆破partial write<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>原理分析本篇介绍ret2text的一种特殊情况
-先前我们学习过的是没有pie的情况下 这时候我们backdoor函数的地址清清楚楚
-我们可以直接栈溢出覆盖 控制程序执行流 但是如果开了pie呢？...</p>
+        <a class='next' href='/2022/11/22/HUBUCTF-2022-%E6%96%B0%E7%94%9F%E8%B5%9B/'>
+          <p class='title'>HUBUCTF 2022 新生赛<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>HowToGetShell1234567&lt;?phpshow_source(__FILE__);$mess=$_POST[&#x27;mess&#x27;];if(preg_match(&q...</p>
         </a>
       
     </div>
@@ -2594,7 +2576,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/11/23/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2636,7 +2618,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MD5"><span class="toc-text">MD5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#base"><span class="toc-text">base</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#32%E5%92%8C64%E5%8C%BA%E5%88%AB"><span class="toc-text">32和64区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL"><span class="toc-text">URL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROT13%E7%BC%96%E7%A0%81"><span class="toc-text">ROT13编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%A9%E6%96%AF%E5%AF%86%E7%A0%81"><span class="toc-text">摩斯密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="toc-text">凯撒密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quoted-printable"><span class="toc-text">Quoted-printable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rabit"><span class="toc-text">rabit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81"><span class="toc-text">栅栏密码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2022-11-23"><span class="toc-text">2022.11.23</span></a></li></ol>
     </div>
   </section>
 
@@ -3210,7 +3192,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/密码/","name":"密码"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/09/密码学笔记/","name":"密码学笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"密码学笔记","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/","wordCount":0,"datePublished":"2022-10-09T15:12:10.000Z","dateModified":"2022-10-09T15:42:40.792Z","articleSection":"密码","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/23/sql注入笔记/","name":"sql注入笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"sql注入笔记","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/23/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/23/sql%E6%B3%A8%E5%85%A5%E7%AC%94%E8%AE%B0/","wordCount":0,"datePublished":"2022-11-23T08:32:34.000Z","dateModified":"2022-11-23T09:19:01.558Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

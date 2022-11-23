@@ -1625,7 +1625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669108965313),
+    lastupdate: new Date(1669210888852),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2395,6 +2395,70 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/23/mrctf2020-shellcode/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/23/mrctf2020-shellcode/"  itemprop="url">
+        mrctf2020_shellcode
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        这题虽然是很简单的shellcode 但是因为禁用了ida的反编译 需要我们阅读汇编理解程序 就当作提高汇编理解能力了
+12345678[!] Could not populate PLT: invalid syntax (unicorn.py, line 110)[*] &#x27;/home/chen/pwn&#x27;    Arch:     amd64-64-little    R...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-23T21:27:30+08:00">2022-11-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/wp/">wp</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/23/mrctf2020-shellcode/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/21/ZJCTF-2019-easyheap/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
@@ -2992,78 +3056,24 @@ main函数：
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/HUBUCTF-新生赛-ez-pwn/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/"  itemprop="url">
-        HUBUCTF.新生赛.ez_pwn
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        ps:本题思路由youlin师傅指引
-checksec一下，查看一下保护机制
-
-保护全开 64位？有点被吓到了
-不过这种题估计都是flag已经准备好了或者自带shellcode
-拖进ida看看
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-17T22:27:18+08:00">2022-09-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/wp/">wp</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
+    
+      <br>
+      <div class="prev-next">
+        
+        <p class="current">
+          1 / 2
+        </p>
+        
+          <a class="next" rel="next" href="/categories/wp/page/2/">
+            <section class="post next white-box shadow floatable blur">
+              &nbsp;Next&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
+        
+      </div>
     
   
 
@@ -3173,12 +3183,12 @@ checksec一下，查看一下保护机制
           <li><a class="flat-box"
             title="/categories/web/" href="/categories/web/"
             active-action="action-categoriesweb"
-            ><div class='name'>web</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>web</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/wp/" href="/categories/wp/"
             active-action="action-categorieswp"
-            ><div class='name'>wp</div><div class='badge'>(10)</div></a></li>
+            ><div class='name'>wp</div><div class='badge'>(11)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%9F%BA%E7%A1%80/"
