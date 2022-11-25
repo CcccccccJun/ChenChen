@@ -1625,7 +1625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669307322508),
+    lastupdate: new Date(1669376725671),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2369,6 +2369,75 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/12/格式化字符串任意写-泄露基址/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/"  itemprop="url">
+        格式化字符串任意写&泄露基址
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        本篇主要讲述两个知识点： 格式化字符串任意写和泄露基址
+我们在最初的格式化字符串漏洞学习中 已经掌握了查看偏移和篡改地址的数据的能力
+但是如果是篡改puts函数的got表呢？
+我们知道 动态链接的情况下 当我们调用一个函数时
+他会寻址其got表内存储的真实地址(即对应函数在libc文件中的地址) 从而成功调用
+如果我们将其got表内存储的真实地址修改为其他函数的真实地址
+那么当程序调用原函数...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-10-12T10:25:53+08:00">2022-10-12</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/09/密码学笔记/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
@@ -2983,75 +3052,6 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/堆基础知识/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"  itemprop="url">
-        堆基础知识
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        从堆部分开始 我们可以认为自己已经初步成为了一名pwn手 大部分的比赛的题目其实都是堆 这是一个复杂的知识块 接下来 我们将花费数月的时间来学习他
-什么是堆[
-回顾一下学习栈时的内存分布
-我们注意到了堆和栈的不同点
-栈是由高地址向低地址增长 而堆是由低地址向高地址增长
-并且栈是程序加载进内存后就会生成，而堆需要相关函数(比如malloc，free等)后才会生成
-更进一步来说堆是动态分配的（由...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-29T13:05:29+08:00">2022-09-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%A0%86/">堆</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%A0%86/" itemprop="url"><span itemprop="name">堆</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3184,7 +3184,7 @@ gitGit是一个开源的分布式版本控制系统，可以有效、高速地�
           <li><a class="flat-box"
             title="/categories/web/" href="/categories/web/"
             active-action="action-categoriesweb"
-            ><div class='name'>web</div><div class='badge'>(5)</div></a></li>
+            ><div class='name'>web</div><div class='badge'>(6)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/wp/" href="/categories/wp/"

