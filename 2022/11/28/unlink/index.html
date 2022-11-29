@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/linux/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/11/28/unlink/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,17 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Category: Linux - Chen</title>
+  <title>unlink - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chen">
-<meta property="og:url" content="http://example.com/categories/Linux/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unlink">
+<meta property="og:url" content="http://example.com/2022/11/28/unlink/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="ChenBlog">
+<meta property="og:description" content="很多时候 堆题的操作都是篡改got表 从而getshell 为了达到这一目的 就需要我们得到任意地址写的机会 其中unlink就是一个典型的办法 原理堆块合并向后合并本次演示基于的二进制文件 这里就不展示反编译后的代码了 其拥有堆溢出的机会 所以我们可以通过这个修改chunk的size域 先来看一下用于调试的代码 12345create(0,0x18)create(1,0x28)create(2,">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-11-28T15:31:20.000Z">
+<meta property="article:modified_time" content="2022-11-29T05:30:46.675Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2312,7 +2314,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s1.ax1x.com/2022/11/11/zCx6gA.png"></div>
 
@@ -2359,27 +2361,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/22/Linux内核/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/28/unlink/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2388,138 +2372,243 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="ChenBlog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/22/Linux%E5%86%85%E6%A0%B8/"  itemprop="url">
-        Linux内核
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        先从内核开始了解
-什么是内核?1.内核的作用是将Linux系统的应用程序的请求传递给硬件，并且充当底层驱动程序，对linux中的各种设备和组件进行寻址
-可以将其理解为中介，卖家(计算机)和买家(使用者)需要通过内核来进行交互
-2.从应用程序的角度来讲，内核是其所能接触到的最底层，即硬件和应用程序并不能直接交互
-3.内核实际上是一个资源管理器，负责分配资源(cpu，内存等)给应用程序和硬件
-4...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        unlink
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%A0%86/">堆</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%A0%86/" itemprop="url"><span itemprop="name">堆</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-22T17:36:45+08:00">2022-09-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-28T23:31:20+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Nov 28, 2022</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>很多时候 堆题的操作都是篡改got表 从而getshell 为了达到这一目的 就需要我们得到任意地址写的机会</p>
+<p>其中unlink就是一个典型的办法</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="堆块合并"><a href="#堆块合并" class="headerlink" title="堆块合并"></a>堆块合并</h3><h3 id="向后合并"><a href="#向后合并" class="headerlink" title="向后合并"></a>向后合并</h3><p>本次演示基于的二进制文件 这里就不展示反编译后的代码了 其拥有堆溢出的机会 所以我们可以通过这个修改chunk的size域</p>
+<p>先来看一下用于调试的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create(<span class="number">0</span>,<span class="number">0x18</span>)</span><br><span class="line">create(<span class="number">1</span>,<span class="number">0x28</span>)</span><br><span class="line">create(<span class="number">2</span>,<span class="number">0x28</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x18</span>)+<span class="string">b&quot;\x61&quot;</span></span><br><span class="line">edit(<span class="number">0</span>,payload)</span><br></pre></td></tr></table></figure>
+
+<p>申请了三个堆块 chunk0是用于堆溢出覆盖chunk1的size域</p>
+<p>gdb查看一下当前堆的状况</p>
+<p><img src="https://pic.imgdb.cn/item/6385926716f2c2beb119d0b7.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/6385926716f2c2beb119d0b7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>可以看到chunk1和chunk2已经成功合并了  并且你要注意一下大小 chunk1我们申请的是0x28 但是由于堆的机制  64位的情况下申请的堆块的基本单位是0x10 所以此时这个堆块的用户空间是0x20 而gdb上显示的是0x31(0x20+0x10+0x1)</p>
+<p>所以溢出覆盖size域的大小应该是chunk实际占用的大小</p>
+<p><img src="https://pic.imgdb.cn/item/6385937216f2c2beb11ae6e3.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/6385937216f2c2beb11ae6e3.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>如果利用这种机制呢？我们chunk此时是和chunk1合并了 但是我们仍然有一个指向chunk2的指针不是吗？</p>
+<p>如果我们此时再edit chunk2 输入的数据会存放在哪里呢</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create(<span class="number">0</span>,<span class="number">0x18</span>)</span><br><span class="line">create(<span class="number">1</span>,<span class="number">0x28</span>)</span><br><span class="line">create(<span class="number">2</span>,<span class="number">0x28</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x18</span>)+<span class="string">b&quot;\x61&quot;</span></span><br><span class="line">edit(<span class="number">0</span>,payload)</span><br><span class="line">edit(<span class="number">2</span>,<span class="string">b&quot;aaaaaaaa&quot;</span>)</span><br><span class="line">gdb.attach(io)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/6385948316f2c2beb11c1a08.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/6385948316f2c2beb11c1a08.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>其仍然有效 此时你有没有一些利用的想法 利用这个系统觉得不存在的指针？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">create(<span class="number">0</span>,<span class="number">0x18</span>)</span><br><span class="line">create(<span class="number">1</span>,<span class="number">0x68</span>)</span><br><span class="line">create(<span class="number">2</span>,<span class="number">0x68</span>)</span><br><span class="line">create(<span class="number">3</span>,<span class="number">0x20</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x18</span>)+<span class="string">b&quot;\xe1&quot;</span></span><br><span class="line">edit(<span class="number">0</span>,payload)</span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">create(<span class="number">4</span>,<span class="number">0x68</span>)</span><br><span class="line">create(<span class="number">5</span>,<span class="number">0x68</span>)</span><br><span class="line">delete(<span class="number">5</span>)</span><br><span class="line">edit(<span class="number">2</span>,<span class="string">b&quot;aaaaaaaa&quot;</span>)</span><br><span class="line">gdb.attach(io)</span><br></pre></td></tr></table></figure>
+
+<p>看一下这个流程 看看能不能领会其用意</p>
+<p>我们逐步分析一下</p>
+<p>申请的chunk0，1，2没有什么疑问 是为了合并chunk</p>
+<p>chunk3是为了防止chunk1释放以后和top chunk合并</p>
+<p>紧接着申请了一个0x68大小的chunk4 系统就会把之前存储在unsortedbin的0xe0大小的chunk分割</p>
+<p>此时chunk4申请到的内存空间和chunk1(未合并前)是一样的</p>
+<p>此时我们再次申请0x68大小的chunk 分配给chunk5的就是原先chunk2的空间了</p>
+<p>但是这里注意一下 chunk2的指针是不是仍然存在 那我们就拥有了两个指向同一内存空间的指针</p>
+<p>我们哪怕释放掉了这个chunk 我们也可以edit其内容 如果这个chunk被释放到了fastbin呢？那么我们edit其chunk内容 是不是输入的第一个字长就是覆盖了fd域的空间 也就是说 我们伪造了一个fake chunk 让系统以为  当前的单向链表 这个chunk的下一个是我们伪造的内存空间</p>
+<p><img src="https://pic.imgdb.cn/item/638598ab16f2c2beb120f59e.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/638598ab16f2c2beb120f59e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>可以看到 系统把aaaaaaaa当成了一个chunk的地址</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2022/09/22/Linux%E5%86%85%E6%A0%B8/' itemprop="url">
-            Read More
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-29T13:30:46+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Nov 29, 2022</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/22/linux操作命令学习前言/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/11/28/unlink/&title=unlink - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/11/28/unlink/&title=unlink - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/11/28/unlink/&title=unlink - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/'>
+          <p class='title'>NISACTF常态化题库<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>babypop这是一题简单的反序列化pop链构造
+1234567891011121314151617181920212223242526272829303132333435363738 &lt;...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/11/28/unlink/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/22/linux%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E5%89%8D%E8%A8%80/"  itemprop="url">
-        Linux操作命令学习前言
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        在完成HUBUCTF2022新生赛的pwn题时，遇到了一道比较有意思的题目，其关乎到了Linux的操作命令
-并且linux也是pwn的学习中，担当重任的角色，鉴于我对他的了解极少，所以开设一个专题，专门用来记录自己的linux学习
-[HUBUCTF 2022 新生赛]singout什么附件都没有给我们，那我们只能nc看看
 
-看起来好像直接调用了system(&#x2F;bin&#x2F;sh...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-22T17:05:37+08:00">2022-09-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/22/linux%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E5%89%8D%E8%A8%80/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
+    <div id="layoutHelper-comments"></div>
 
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2528,177 +2617,52 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2022/11/11/zCx4US.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Chen</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            active-action="action-categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/reverse/" href="/categories/reverse/"
-            active-action="action-categoriesreverse"
-            ><div class='name'>reverse</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/web/" href="/categories/web/"
-            active-action="action-categoriesweb"
-            ><div class='name'>web</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/wp/" href="/categories/wp/"
-            active-action="action-categorieswp"
-            ><div class='name'>wp</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesE59FBAE7A180"
-            ><div class='name'>基础</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%A0%86/" href="/categories/%E5%A0%86/"
-            active-action="action-categoriesE5A086"
-            ><div class='name'>堆</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81/" href="/categories/%E5%AF%86%E7%A0%81/"
-            active-action="action-categoriesE5AF86E7A081"
-            ><div class='name'>密码</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
-            active-action="action-categoriesE6A088"
-            ><div class='name'>栈</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"
-            active-action="action-categoriesE8999AE68B9FE69CBA"
-            ><div class='name'>虚拟机</div><div class='badge'>(4)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop pjax">
-  
-  <header>
-    
-      <a target="_blank" rel="noopener" href='https://space.bilibili.com/185447556'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>b站账号</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%9D%97%E5%90%88%E5%B9%B6"><span class="toc-text">堆块合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E5%90%8E%E5%90%88%E5%B9%B6"><span class="toc-text">向后合并</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2726,13 +2690,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3246,7 +3211,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Linux/","name":"Linux"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/堆/","name":"堆"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/28/unlink/","name":"unlink"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"unlink","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/28/unlink/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/28/unlink/","wordCount":0,"datePublished":"2022-11-28T15:31:20.000Z","dateModified":"2022-11-29T05:30:46.675Z","articleSection":"堆","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
