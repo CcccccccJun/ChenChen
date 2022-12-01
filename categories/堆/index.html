@@ -1625,7 +1625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1669699881355),
+    lastupdate: new Date(1669870064425),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2411,9 +2411,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         很多时候 堆题的操作都是篡改got表 从而getshell 为了达到这一目的 就需要我们得到任意地址写的机会
 其中unlink就是一个典型的办法
-原理堆块合并向后合并本次演示基于的二进制文件 这里就不展示反编译后的代码了 其拥有堆溢出的机会 所以我们可以通过这个修改chunk的size域
+其主要分为两种情况 向后合并和向前合并
+向后合并本次演示基于的二进制文件 这里就不展示反编译后的代码了 其拥有堆溢出的机会 所以我们可以通过这个修改chunk的size域
 先来看一下用于调试的代码
-12345create(0,0x18)create(1,0x28)create...
+12345create(0,0x18)create...
       
     
   </div>
