@@ -44,7 +44,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-14T12:10:07.000Z">
-<meta property="article:modified_time" content="2022-12-14T13:36:52.732Z">
+<meta property="article:modified_time" content="2022-12-15T15:37:30.441Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1627,7 +1627,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1671025024086),
+    lastupdate: new Date(1671118665225),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2446,10 +2446,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>本篇的篇幅将会十分长 将从0开始写起 梳理和补缺知识点 并且由于是构建一个逻辑性的知识梳理 所以不会像wiki一样详细 可能大部分是一个体系的指导或者记录一些难懂的知识点</p>
 <p>并且这种基础知识 不同于呆板的文科学习 如果只是背诵八股文 那么依然达不到用处</p>
 <p>希望读者阅读完整篇后 能够形成自己的理解</p>
-<h1 id="Linux虚拟内存"><a href="#Linux虚拟内存" class="headerlink" title="Linux虚拟内存"></a>Linux虚拟内存</h1><p>在步入虚拟内存的学习之前，个人觉得还是要熟悉一下linux内核 方便于我们对于内存分配的理解</p>
 <h2 id="Linux内核1"><a href="#Linux内核1" class="headerlink" title="Linux内核1"></a>Linux内核1</h2><p>你可以把linux内核理解为一个中介 其负责硬件和软件的通信</p>
 <p>对应用程序来说 他有什么请求的时候就会将其通过内核传递给硬件 而内核又充当一个底层驱动程序 对设备和组件进行寻址 并且内核是应用程序逻辑上的最底层</p>
 <p>同时 内核也相当于一个库 系统调用即是通过这个库实现 应用程序进行系统调用就像调用普通函数一样</p>
+<p><img src="http://10.147.19.236:18010/download/attachments/983055/image2022-12-8_19-22-44.png?version=1&modificationDate=1670498565302&api=v2" class="lazyload" data-srcset="http://10.147.19.236:18010/download/attachments/983055/image2022-12-8_19-22-44.png?version=1&modificationDate=1670498565302&api=v2" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"> </p>
 <p>如图所示 为GNU&#x2F;linux的基本体系结构 蓝色部分是用户空间 下方是内核空间</p>
 <p>内核空间的最上方是系统调用接口 下面依次是通用的内核代码和特殊的内核代码(略)</p>
 <p>内核也可以拆分成两部分 <strong>微内核</strong>和<strong>宏内核</strong></p>
@@ -2505,7 +2505,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>为什么会有虚拟内存这个概念？当我们电脑的物理内存不够时 虚拟内存机制可以支持计算机在硬盘中划出一块空间来充当内存使用</p>
 <p>并且多个程序可以共有同一块内存区 大大提高了计算机的运算性能和效率</p>
 <p>虚拟内存的实现有三种方式 <strong>分页 分段 段页式</strong></p>
-<p>分页: 以下所叙述的 前提是没有开启虚拟存储机制(不赘述 自行了解)</p>
+<p><strong>分页:</strong></p>
+<p>以下所叙述的 前提是没有开启虚拟存储机制(不赘述 自行了解)</p>
 <p>接下来我们清楚两个主角 物理内存和虚拟内存</p>
 <p>所谓的分页是将这二者划分成大小相同的”块” 前者称为页框 后者为页面</p>
 <p>而虚拟内存是远远大于物理内存的 所以其分配到的”块”是不能都有对应的物理内存的</p>
@@ -2548,7 +2549,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>“在&#x2F;不在”位的值是一个布尔类型 1时代表此页表项所指引的页框不在虚拟内存上 如果调用到了这个页表项 就会触发缺页中断</p>
 <p>保护位字面意思 用来防止非法调用 上图是比较低级的页表项 好的页表项还会有三位 代表可读 可写 可执行</p>
 <p>修改位 如果这个页表项所指引页面被修改了 那么其对应在硬盘上的值也必须被修改 如果没有 那么这个页面就可以直接被丢弃 差不多你可以理解为 你在玩游戏 你使用了一个道具 那么虚拟内存调用到这个的时候 就会把你硬盘中道具的</p>
-<p>分段:</p>
+<p><strong>分段:</strong></p>
 <p>这一部分还是很简单的 至少对于分页来说</p>
 <p>将虚拟内存分为了多个段落 并且每个段落的长度并不是相等的 这部分和glibc内存管理是一样的 这里就不重复说了 讲一点不一样的</p>
 <p>和分页机制类似 分段机制下的虚拟内存地址也包括两个部分 段选择子和段内偏移量</p>
@@ -2567,6 +2568,37 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>什么是内存交换 当我们出现了外部内存碎片的情况下 解决办法就是将图片管理器的内存接到浏览器的后面</p>
 <p>先把这一块内存写到硬盘上 再读取回来 就接在了浏览器的后面</p>
 <p>但是由于这样的内存交换需要将整个进程和硬盘交互 但是我们前面已经讲过了 硬盘的读写速度是远远比不上内存的 所以会被效率造成严重的拖累</p>
+<p><strong>段页式:</strong></p>
+<p>字面意思 结合了分段和分页两种机制的一种虚拟内存分配方式</p>
+<p>其将虚拟内存按照逻辑 分段后 再段中分页 然后和物理内存对应 这样的优点就是又有分段试的管理又有分页式的调用</p>
+<p>缺点就是在调用的过程中要不断的查表 既有段表又有页表 增加了硬件成本</p>
+<p>接下来详细介绍一下段页式内存映射的原理</p>
+<p>虚拟内存这回由三部分构成 段号 段内页号 页内偏移</p>
+<p>有了前面的基础 这回就很好理解了</p>
+<p>内存先访问段表 然后访问页表 接着加上页内偏移 就得到了物理内存地址</p>
+<p>到这里我们就已经普及完了内存的一些知识点 理解完这些你应该对内存差不多有了大概的概念 接着我们说回到linux内核的子系统之一内存管理</p>
+<h2 id="Linux内核2"><a href="#Linux内核2" class="headerlink" title="Linux内核2"></a>Linux内核2</h2><p>32位计算机的情况下 linux的虚拟内存分为两个部分 一是3GB大小的用户空间 二是1GB大小的内核空间</p>
+<p>内核空间是所有进程所共享的</p>
+<p>Linux内核所需求的内存一般都是以字节为单位 所以对于使用分页机制来说 若直接分配一页内存 会造成内存浪费</p>
+<p>于是有一个叫slab分配器的东西 来专门负责小内存分配</p>
+<p>不过其依然是通过申请大内存 然后对自己申请来的内存进行细分管理</p>
+<p>除了分配小内存外 其还有第二个作用 就是提供一个类似于堆块缓存区的东西</p>
+<p>(给不是pwn手的简单介绍一下堆块缓存区bins 就是比如说申请了一个范围大小的chunk 将其释放以后 其不会回到原本的内存里面 会被放到大小对应的垃圾桶(bins) 如果下次调用小于或者等于(并不是都适用的 要分辨是哪种bins) 就会从bins中分配)</p>
+<p>这样子的好处就是当内核频繁调用小内存时 可以快速分配对象 提高效率</p>
+<p>不过总得用slab分配器的术语来描述一下:</p>
+<p>slab维护着对象的缓存 内核中有些结构 初始化所花费的时间高于为其分配空间的时间 所以就会新增一个slab使用构造函数为其初始化</p>
+<p>即使这个结构被释放了  他也会保持初始化状态 下次生成就不用初始化</p>
+<p>如果你会一点汇编 你会发现 经常性的会出现地址跳转的指令 比如此时正在执行0x1000地址处的指令 现在要跳转到0x1100</p>
+<p>你以为只是很简单的跳转？ 其实不然 原理涉及到了slab的着色机制</p>
+<p>我们前面已经说了 cpu有自己的三级缓存 在执行指令时 一级缓存是交互最快的地方 而缓存中调用地址是采取缓存行的形式</p>
+<p>比如说此时缓存行一行是64字节 那么:</p>
+<p><img src="https://img-blog.csdn.net/20170221094906494?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzgzNzIwOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" class="lazyload" data-srcset="https://img-blog.csdn.net/20170221094906494?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzgzNzIwOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="这里写图片描述"></p>
+<p>再假设此时读取的物理内存基址是0x1000 那么第0缓存行读取的地址范围就是0x1000~0x1040</p>
+<p>但是这时候要调用0x1100地址处的指令呢 是不是就得将0x1000<del>0x1040物理内存地址的数据写回硬盘 然后载入0x1100</del>0x1140</p>
+<p>但是这样子如果频繁调用的话 效率太低 造成大量的时间消耗 于是采取了slab着色 为0x1100带上偏移 这样子计算的时候就可以代入到第1缓存行 这样子就不用频繁交换</p>
+<p>所以着色其实就是加上偏移 只不过不同对象的偏移不一样 颜色也不一样</p>
+<p>ps:slab内容远远不及于此 但是我感觉深究下去也不是个头 并且现阶段没有必要了解那么深 所以点到为此</p>
+<p>linux内核相关的知识点就讲到这里 剩下的模块我自己也没有个概念 先写到这里吧 剩下的可能下个月再更新 毕竟我自己也还没有把基础部分的计算机组成原理学明白 还要想一想逻辑关系怎么组成</p>
 
   </div>
   
@@ -2591,10 +2623,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-14T21:36:52+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-15T23:37:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 14, 2022</p>
+    <p>更新于：Dec 15, 2022</p>
   </a>
 </div>
 
@@ -2733,7 +2765,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B81"><span class="toc-text">Linux内核1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98"><span class="toc-text">内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#I-x2F-O%E6%80%BB%E7%BA%BF"><span class="toc-text">I&#x2F;O总线</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B81"><span class="toc-text">Linux内核1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98"><span class="toc-text">内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#I-x2F-O%E6%80%BB%E7%BA%BF"><span class="toc-text">I&#x2F;O总线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B82"><span class="toc-text">Linux内核2</span></a></li></ol>
     </div>
   </section>
 
@@ -3307,7 +3339,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/基础/","name":"基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/14/计组原理/","name":"计组原理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"计组原理","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/","wordCount":0,"datePublished":"2022-12-14T12:10:07.000Z","dateModified":"2022-12-14T13:36:52.732Z","articleSection":"基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/基础/","name":"基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/14/计组原理/","name":"计组原理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"计组原理","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/","wordCount":0,"datePublished":"2022-12-14T12:10:07.000Z","dateModified":"2022-12-15T15:37:30.441Z","articleSection":"基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
