@@ -44,7 +44,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-14T12:10:07.000Z">
-<meta property="article:modified_time" content="2022-12-15T15:37:30.441Z">
+<meta property="article:modified_time" content="2023-01-10T17:31:47.628Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1627,7 +1627,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672567516629),
+    lastupdate: new Date(1673371919978),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2449,7 +2449,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h2 id="Linux内核1"><a href="#Linux内核1" class="headerlink" title="Linux内核1"></a>Linux内核1</h2><p>你可以把linux内核理解为一个中介 其负责硬件和软件的通信</p>
 <p>对应用程序来说 他有什么请求的时候就会将其通过内核传递给硬件 而内核又充当一个底层驱动程序 对设备和组件进行寻址 并且内核是应用程序逻辑上的最底层</p>
 <p>同时 内核也相当于一个库 系统调用即是通过这个库实现 应用程序进行系统调用就像调用普通函数一样</p>
-<p><img src="http://10.147.19.236:18010/download/attachments/983055/image2022-12-8_19-22-44.png?version=1&modificationDate=1670498565302&api=v2" class="lazyload" data-srcset="http://10.147.19.236:18010/download/attachments/983055/image2022-12-8_19-22-44.png?version=1&modificationDate=1670498565302&api=v2" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"> </p>
+<p><img src="https://pic.imgdb.cn/item/63bd8cfbbe43e0d30e64fcdb.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63bd8cfbbe43e0d30e64fcdb.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>如图所示 为GNU&#x2F;linux的基本体系结构 蓝色部分是用户空间 下方是内核空间</p>
 <p>内核空间的最上方是系统调用接口 下面依次是通用的内核代码和特殊的内核代码(略)</p>
 <p>内核也可以拆分成两部分 <strong>微内核</strong>和<strong>宏内核</strong></p>
@@ -2460,14 +2460,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>进程调度：linux系统是一个动态的系统 怎么理解这句话 其通过不断变化的各种进程来适应不断变化的计算需求</p>
 <p>也就是说 linux中的所有操作 你都可以将其视为一个进程</p>
 <p>比如说 我接下来编译如下的二进制文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;``int` `main()&#123;``  ``close(1);``  ``close(2);``  ``system(``&quot;/bin/sh&quot;``);``  ``return` `0;``&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">close(<span class="number">1</span>);</span><br><span class="line">close(<span class="number">2</span>);</span><br><span class="line">system(<span class="string">&quot;/bin/sh&quot;</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>按理来说应该会直接进行了系统调用 随后我们直接cat flag就能获取flag了是吧 但是运行之后发现</p>
-<p><img src="http://10.147.19.236:18010/download/attachments/983055/image2022-12-8_20-0-56.png?version=1&modificationDate=1670500857336&api=v2" class="lazyload" data-srcset="http://10.147.19.236:18010/download/attachments/983055/image2022-12-8_20-0-56.png?version=1&modificationDate=1670500857336&api=v2" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p><img src="https://pic.imgdb.cn/item/63bd8d18be43e0d30e65706e.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63bd8d18be43e0d30e65706e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>没有回显 这是因为关闭了文件描述符1和2 其对应着标准输出和标准错误 文件描述符相当于一个索引值 其代表的是一个进程 也就是说 在当前终端 输出(即与屏幕的通信接口)被关闭了 这个进程被中断了 那么这里可以用重定向(不解释)</p>
 <p>回归正文 linux中的所有进程都源于一个父进程 即fork函数 先调用了这个函数 然后才有了其他的子进程</p>
 <p>并且 每一个子进程都有其自己的PID(可以理解为名字) 比如我们可以用 ps -e来查看当前所有的进程</p>
-<p><img src="http://10.147.19.236:18010/download/thumbnails/983055/image2022-12-8_20-7-59.png?version=1&modificationDate=1670501280173&api=v2" class="lazyload" data-srcset="http://10.147.19.236:18010/download/thumbnails/983055/image2022-12-8_20-7-59.png?version=1&modificationDate=1670501280173&api=v2" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p><img src="https://pic.imgdb.cn/item/63bd8d2ebe43e0d30e65baf6.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63bd8d2ebe43e0d30e65baf6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>(进程数量过多 这里仅仅这是截取了开头的小部分)</p>
 <p>不过这里的PID在进程结束以后 是可以被其他的进程获取的 即其是重复使用的</p>
 <p>可见进程对于linux系统的重要性 所以 内核中的其他四个子系统都是依赖于进程调度的 通过其来挂起或者恢复进程</p>
@@ -2475,7 +2475,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>当然了 进程的信息肯定不单单只有PID 其还包括进程的优先级、地址的空间等信息 这些内容都会存储在其(单个进程)的一个独立的数据结构中 这个结构称为进程控制块 进程管理也就是管理这些块</p>
 <p>内存管理: 提起内存 那么牵扯到的东西就多了 小到cpu的缓存 大到虚拟内存 需要极大的篇幅来叙述 所以我们接下来将偏移正文很长时间 来从0朔源起内存这一个概念</p>
 <h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><p>最早的图灵机也有内存的概念 如果其要计算1+1 那么就会将1 + 1这三个放上带子 随后由读写头读入到控制器中</p>
-<p><img src="http://10.147.19.236:18010/download/attachments/983055/image2022-12-8_20-26-29.png?version=1&modificationDate=1670502390399&api=v2" class="lazyload" data-srcset="http://10.147.19.236:18010/download/attachments/983055/image2022-12-8_20-26-29.png?version=1&modificationDate=1670502390399&api=v2" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p><img src="https://pic.imgdb.cn/item/63bd8d6fbe43e0d30e669840.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63bd8d6fbe43e0d30e669840.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>这一点和现如今使用的I&#x2F;O总线类似 其分为地址总线 数据总线 控制总线</p>
 <p>数据总线将读写到的数据传输给控制总线(I&#x2F;O总线不在这里展开)</p>
 <p>这一做法主要是因为数据的读取速度远远慢于计算速度 并且这样可以减少读取数据的次数</p>
@@ -2544,7 +2544,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>但是二级页表不用这种担心 所以其实大部分情况下 二级页表是分配不到那么多的 所以实际上 增加二级页表机制以后</p>
 <p>一个进程所需要的页表项空间为： 4KB+(二级页表占用率)x4MB 得到的值是小于原本的4MB的 这样子就成功节约了空间</p>
 <p>下面为补充知识 个人认为可掌握可不掌握</p>
-<p><img src="http://10.147.19.236:18010/download/attachments/983055/image2022-12-13_20-48-38.png?version=1&modificationDate=1670935718422&api=v2" class="lazyload" data-srcset="http://10.147.19.236:18010/download/attachments/983055/image2022-12-13_20-48-38.png?version=1&modificationDate=1670935718422&api=v2" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p><img src="https://pic.imgdb.cn/item/63bd8d96be43e0d30e67160b.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63bd8d96be43e0d30e67160b.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>上图是页表项的详细结构 其中 页框号就是页号 用来索引物理内存地址 相当重要</p>
 <p>“在&#x2F;不在”位的值是一个布尔类型 1时代表此页表项所指引的页框不在虚拟内存上 如果调用到了这个页表项 就会触发缺页中断</p>
 <p>保护位字面意思 用来防止非法调用 上图是比较低级的页表项 好的页表项还会有三位 代表可读 可写 可执行</p>
@@ -2592,13 +2592,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>你以为只是很简单的跳转？ 其实不然 原理涉及到了slab的着色机制</p>
 <p>我们前面已经说了 cpu有自己的三级缓存 在执行指令时 一级缓存是交互最快的地方 而缓存中调用地址是采取缓存行的形式</p>
 <p>比如说此时缓存行一行是64字节 那么:</p>
-<p><img src="https://img-blog.csdn.net/20170221094906494?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzgzNzIwOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" class="lazyload" data-srcset="https://img-blog.csdn.net/20170221094906494?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMzgzNzIwOQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="这里写图片描述"></p>
+<p><img src="https://pic.imgdb.cn/item/63bd8daabe43e0d30e67563a.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63bd8daabe43e0d30e67563a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>再假设此时读取的物理内存基址是0x1000 那么第0缓存行读取的地址范围就是0x1000~0x1040</p>
 <p>但是这时候要调用0x1100地址处的指令呢 是不是就得将0x1000<del>0x1040物理内存地址的数据写回硬盘 然后载入0x1100</del>0x1140</p>
 <p>但是这样子如果频繁调用的话 效率太低 造成大量的时间消耗 于是采取了slab着色 为0x1100带上偏移 这样子计算的时候就可以代入到第1缓存行 这样子就不用频繁交换</p>
 <p>所以着色其实就是加上偏移 只不过不同对象的偏移不一样 颜色也不一样</p>
 <p>ps:slab内容远远不及于此 但是我感觉深究下去也不是个头 并且现阶段没有必要了解那么深 所以点到为此</p>
-<p>linux内核相关的知识点就讲到这里 剩下的模块我自己也没有个概念 先写到这里吧 剩下的可能下个月再更新 毕竟我自己也还没有把基础部分的计算机组成原理学明白 还要想一想逻辑关系怎么组成</p>
+<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><p>首先需要知道cpu是怎么执行程序的</p>
+<p>CPU又称中央处理器 字面意思是计算机的核心 和人脑一样的地位 其内部包括许多零件 诸如寄存器 控制单元 逻辑运算单元等</p>
+<p>其中寄存器负责管理运算数据的存储 以及指令地址和指令内容 分别由三种寄存器种类存储:</p>
+<p>通用寄存器 程序计数器 指令寄存器</p>
+<p>并且cpu拥有自己的缓存区 称为cache 分别有L1 L2 L3 </p>
+<p>其中L1缓存区分为指令缓存和数据缓存 二者大小一致</p>
+<p>cpu对于cache的读写速度远远大于内存 而上述三个cache 随着数字的增大 缓存空间逐渐增加 读写速度逐渐降低</p>
+<p>cpu可以拥有多个核心 而每个核心都有自己特有的L1 L2 cache，L3 cache是所有核心所共享的</p>
+<p>cpu和计算机的交互是通过IO总线来实现的 IO总线分为 地址总线 控制总线 数据总线</p>
+<p>当cpu读写数据的时候 先通过地址总线来确定目标的地址 再通过控制总线决定是写入还是写出 最后由数据总线传输数据</p>
+<p>我们先来看一下下面的一段程序:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">20</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当cpu执行printf语句的时候 需要将a[0]的值读入cache 但是cpu并不能刚好读入单个数据或者是刚好适应不同调用情况的字节数据 其单次读写数据的单位是cache line 上文讲述slab着色器的时候也说到过了 这里复述的详细一点</p>
+<p>假设此cpu的cache line是64字节 那么当其需要a[0]数据的时候 会把a[0]后面的数据也一并读入 直到满足64字节 </p>
+<p>第一块64字节的数据会被放置为cache line 0  当需要更多字节的数据的时候 就会依法炮制 放置在cache line1 如此递增</p>
+<p>假设cache一共有8行 而内存被分为了32个块 这也就意味着必然会有两块以上的内存共用一块cache line</p>
+<p>其遵守的是取模运算 比如说第15个内存块 实际上对应的是第7个cache line</p>
+<p>而cpu为了避免搞混单个cache line中的不同内存块 在对应的cache line中还存储了tag标记 相当于slab着色器</p>
+<p>除了tag标记外 cache line中还存储着两个重要信息 一个是有效位 一个是偏移量</p>
+<p>有效位为0时 不管cache中是否有需要的内存数据 仍然会去内存中读取</p>
+<p>偏移量的存在则是因为cpu所需的内存数据并不一定都是刚好一个cache line 就比如说上面的程序</p>
+<p>所需的仅仅是cache line中的一个内存片段 也就需要偏移量来界定一个范围</p>
+<p>cache line是为了避免频繁的cpu访问内存带来的读写效率降低</p>
+<p>但是其存在着一个缺陷 也就是意味着一块cache line中可能并不全是所需要的数据 出现了缓存命中率的问题 其又分为数据缓存命中率和指令缓存命中率</p>
+<p>先说数据缓存命中率吧 来看下面的一个程序</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">5</span>][<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[<span class="number">0</span>][i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i][<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你觉得哪一个for循环执行所消耗的时间会更加短 是第一个? 那为什么呢</p>
+<p>其调用的数据在内存地址中都是连续的 也就意味着单次的cache line写入就可以做到覆盖所有要调用的数据</p>
+<p>而第二个for循环调用的数据是间断的 需要花费更多的时间在cpu和内存的交互中</p>
+<p>当我们需要遍历数组这种情况时 最好选择连续的内存空间 可以有效提高程序的运行时间和数据缓存命中率</p>
+<p>而指令缓存命中率是什么呢？</p>
 
   </div>
   
@@ -2623,10 +2655,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-15T23:37:30+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-01-11T01:31:47+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 15, 2022</p>
+    <p>更新于：Jan 11, 2023</p>
   </a>
 </div>
 
@@ -2772,7 +2804,7 @@ checksec看一下保护机制
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B81"><span class="toc-text">Linux内核1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98"><span class="toc-text">内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#I-x2F-O%E6%80%BB%E7%BA%BF"><span class="toc-text">I&#x2F;O总线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B82"><span class="toc-text">Linux内核2</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B81"><span class="toc-text">Linux内核1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98"><span class="toc-text">内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#I-x2F-O%E6%80%BB%E7%BA%BF"><span class="toc-text">I&#x2F;O总线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B82"><span class="toc-text">Linux内核2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU"><span class="toc-text">CPU</span></a></li></ol>
     </div>
   </section>
 
@@ -3346,7 +3378,7 @@ checksec看一下保护机制
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/基础/","name":"基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/14/计组原理/","name":"计组原理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"计组原理","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/","wordCount":0,"datePublished":"2022-12-14T12:10:07.000Z","dateModified":"2022-12-15T15:37:30.441Z","articleSection":"基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/基础/","name":"基础"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/14/计组原理/","name":"计组原理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"计组原理","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/","wordCount":0,"datePublished":"2022-12-14T12:10:07.000Z","dateModified":"2023-01-10T17:31:47.628Z","articleSection":"基础","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
