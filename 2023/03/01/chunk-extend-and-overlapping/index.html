@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/page/6/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/03/01/chunk-extend-and-overlapping/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,17 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Archive - Chen</title>
+  <title>chunk extend and overlapping - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chen">
-<meta property="og:url" content="http://example.com/archives/page/6/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chunk extend and overlapping">
+<meta property="og:url" content="http://example.com/2023/03/01/chunk-extend-and-overlapping/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="ChenBlog">
+<meta property="og:description" content="chunk extend的利用手法是基于plmalloc对于堆块的各种宏定义 其是通过计算chunk首地址和size大小来推断出上一个chunk或者是下一个chunk的地址 12&#x2F;* Ptr to next physical malloc_chunk. *&#x2F;#define next_chunk(p) ((mchunkptr)(((char *) (p)) + chunksize(p)))  获取下">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-03-01T04:50:33.000Z">
+<meta property="article:modified_time" content="2023-03-01T09:36:35.686Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2043,7 +2045,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2312,7 +2314,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://s1.ax1x.com/2022/11/11/zCx6gA.png"></div>
 
@@ -2360,1122 +2362,267 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow floatable blur">
-			
-			
-				
-				
-					
-						
-						<h2>2023</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/03/01/chunk-extend-and-overlapping/">
-									<time>03-01</time>
-									
-										chunk extend and overlapping
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/27/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96%E5%AF%B9%E4%BA%8Epwn%E5%87%BA%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97/">
-									<time>02-27</time>
-									
-										内联汇编对于pwn出题的一些心得
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/25/tcachebinattack/">
-									<time>02-25</time>
-									
-										tcachebinattack
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/23/fastbinattack/">
-									<time>02-23</time>
-									
-										fastbinattack
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/22/ciscn%E5%8E%86%E5%B9%B4%E5%9B%BD%E8%B5%9B%E5%A4%8D%E7%8E%B0/">
-									<time>02-22</time>
-									
-										ciscn历年国赛复现
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/19/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-Not-Bad/">
-									<time>02-19</time>
-									
-										极客大挑战 2019 Not Bad
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/18/VNCTF2023/">
-									<time>02-18</time>
-									
-										VNCTF2023
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/17/%E4%BF%AE%E6%94%B9TCB%E6%9D%A5%E7%BB%95%E8%BF%87canary/">
-									<time>02-17</time>
-									
-										修改TCB来绕过canary
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/15/axb-2019-fmt64/">
-									<time>02-15</time>
-									
-										axb_2019_fmt64
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/11/%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6shellcode/">
-									<time>02-11</time>
-									
-										可见字符shellcode
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/05/2023%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91calc/">
-									<time>02-05</time>
-									
-										2023西湖论剑calc
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/04/mprotect%E4%BF%AE%E6%94%B9bss%E6%AE%B5%E6%9D%83%E9%99%90/">
-									<time>02-04</time>
-									
-										mprotect修改bss段权限
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/03/house-of-force/">
-									<time>02-03</time>
-									
-										house of force
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/02/02/2023%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91%E5%88%9D%E8%B5%9Bpwn-Message-Board/">
-									<time>02-02</time>
-									
-										2022西湖论剑初赛pwn-Message Board
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/01/29/roarctf-2019-easy-pwn/">
-									<time>01-29</time>
-									
-										roarctf_2019_easy_pwn
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/01/27/SROP/">
-									<time>01-27</time>
-									
-										SROP
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/01/10/hgame2023/">
-									<time>01-10</time>
-									
-										hgame2023
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/01/01/iofile%E6%B3%84%E9%9C%B2libc%E5%9F%BA%E5%9D%80/">
-									<time>01-01</time>
-									
-										iofile泄露libc基址
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2022</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/">
-									<time>12-19</time>
-									
-										对于shellcode的一些理解
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/19/hitcontraining-heapcreator/">
-									<time>12-19</time>
-									
-										hitcontraining_heapcreator
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/18/gyctf-2020-borrowstack/">
-									<time>12-18</time>
-									
-										gyctf_2020_borrowstack
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/18/%E5%B0%8F%E6%9E%97%E5%9B%BE%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/">
-									<time>12-18</time>
-									
-										小林图解网络笔记
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/16/others-babystack/">
-									<time>12-16</time>
-									
-										others_babystack
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/14/%E8%AE%A1%E7%BB%84%E5%8E%9F%E7%90%86/">
-									<time>12-14</time>
-									
-										计组原理
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/04/pwnable-start/">
-									<time>12-04</time>
-									
-										pwnable_start
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/28/unlink/">
-									<time>11-28</time>
-									
-										unlink
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/25/NISACTF%E5%B8%B8%E6%80%81%E5%8C%96%E9%A2%98%E5%BA%93/">
-									<time>11-25</time>
-									
-										NISACTF常态化题库
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/24/inndy-rop/">
-									<time>11-24</time>
-									
-										inndy_rop
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/23/mrctf2020-shellcode/">
-									<time>11-23</time>
-									
-										mrctf2020_shellcode
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/22/HUBUCTF-2022-%E6%96%B0%E7%94%9F%E8%B5%9B/">
-									<time>11-22</time>
-									
-										HUBUCTF 2022 新生赛
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/21/unsortedbin%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/">
-									<time>11-21</time>
-									
-										unsortedbin泄露基址
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/21/ZJCTF-2019-easyheap/">
-									<time>11-21</time>
-									
-										ZJCTF 2019.easyheap
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/20/SUCTF2019-signin/">
-									<time>11-20</time>
-									
-										SUCTF2019_signin
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/20/SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B/">
-									<time>11-20</time>
-									
-										SWPUCTF 2021 新生赛
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/18/Black-Watch-%E5%85%A5%E7%BE%A4%E9%A2%98/">
-									<time>11-18</time>
-									
-										Black Watch 入群题
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/18/FlareOn4-login/">
-									<time>11-18</time>
-									
-										FlareOn4_login
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/17/NISACTF-2022/">
-									<time>11-17</time>
-									
-										NISACTF 2022
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/16/ACTF%E6%96%B0%E7%94%9F%E8%B5%9B2020-easyre/">
-									<time>11-16</time>
-									
-										ACTF新生赛2020_easyre
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/14/ciscn-2019-s-3/">
-									<time>11-14</time>
-									
-										ciscn_2019_s_3
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/14/babyheap-0ctf-2017/">
-									<time>11-14</time>
-									
-										babyheap_0ctf_2017
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/13/vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">
-									<time>11-13</time>
-									
-										vscode远程连接
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/11/buu%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">
-									<time>11-11</time>
-									
-										buu刷题记录
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/02/ISCTF2022-null/">
-									<time>11-02</time>
-									
-										ISCTF2022-null
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/12/fini%E5%8A%AB%E6%8C%81/">
-									<time>10-12</time>
-									
-										fini劫持
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/12/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BB%BB%E6%84%8F%E5%86%99-%E6%B3%84%E9%9C%B2%E5%9F%BA%E5%9D%80/">
-									<time>10-12</time>
-									
-										格式化字符串任意写&泄露基址
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/09/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/">
-									<time>10-09</time>
-									
-										密码学笔记
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/06/%E7%AE%80%E5%8D%95%E7%88%86%E7%A0%B4partial-write/">
-									<time>10-06</time>
-									
-										简单爆破partial write
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/06/HNCTF2022-ret2csu/">
-									<time>10-06</time>
-									
-										HNCTF2022.ret2csu
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/">
-									<time>10-03</time>
-									
-										栈溢出-特殊情况
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/">
-									<time>10-03</time>
-									
-										溢出覆盖变量
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/10/01/UAF/">
-									<time>10-01</time>
-									
-										UAF
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/30/pwn%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/">
-									<time>09-30</time>
-									
-										pwn需要的一些工具安装
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/30/%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">
-									<time>09-30</time>
-									
-										复制粘贴问题解决
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/29/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/">
-									<time>09-29</time>
-									
-										虚拟机安装
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/29/%E5%A0%86%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-									<time>09-29</time>
-									
-										堆基础知识
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/26/%E6%A0%88%E8%BF%81%E7%A7%BB/">
-									<time>09-26</time>
-									
-										栈迁移
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/25/ret2csu/">
-									<time>09-25</time>
-									
-										ret2csu
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/23/ret2libc/">
-									<time>09-23</time>
-									
-										ret2libc
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/22/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E7%A1%80%E6%BC%8F%E6%B4%9E/">
-									<time>09-22</time>
-									
-										格式化字符串基础漏洞
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/21/Ret2shellcode/">
-									<time>09-21</time>
-									
-										Ret2shellcode
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/19/pwn1-sctf-2016/">
-									<time>09-19</time>
-									
-										pwn1_sctf_2016
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/18/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%862/">
-									<time>09-18</time>
-									
-										栈的基础知识2
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/18/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-fmt/">
-									<time>09-18</time>
-									
-										HUBUCTF-新生赛-fmt
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/17/HUBUCTF-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-pwn/">
-									<time>09-17</time>
-									
-										HUBUCTF.新生赛.ez_pwn
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/17/ROP/">
-									<time>09-17</time>
-									
-										ROP
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/16/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%861/">
-									<time>09-16</time>
-									
-										基础知识1
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/15/32%E4%BD%8D%E6%A0%88%E6%BA%A2%E5%87%BA/">
-									<time>09-15</time>
-									
-										栈溢出
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/13/%E6%A0%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-									<time>09-13</time>
-									
-										栈的基础知识
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/09/13/pwn%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">
-									<time>09-13</time>
-									
-										pwn入门指南
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-	  </article>
-	
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/chunk-extend-and-overlapping/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        chunk extend and overlapping
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%A0%86/">堆</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%A0%86/" itemprop="url"><span itemprop="name">堆</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-03-01T12:50:33+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Mar 1, 2023</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>chunk extend的利用手法是基于plmalloc对于堆块的各种宏定义 其是通过计算chunk首地址和size大小来推断出上一个chunk或者是下一个chunk的地址</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Ptr to next physical malloc_chunk. */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> next_chunk(p) ((mchunkptr)(((char *) (p)) + chunksize(p)))</span></span><br></pre></td></tr></table></figure>
+
+<p>获取下一个chunk的地址既是通过当前chunk地址加上当前chunk大小</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Size of the chunk below P.  Only valid if prev_inuse (P).  */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> prev_size(p) ((p)-&gt;mchunk_prev_size)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Ptr to previous physical malloc_chunk.  Only valid if prev_inuse (P).  */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> prev_chunk(p) ((mchunkptr)(((char *) (p)) - prev_size(p)))</span></span><br></pre></td></tr></table></figure>
+
+<p>获取上一个chunk的地址则是通过当前chunk的地址减去前一个chunk的大小</p>
+<p>也就是说 只要我们修改了chunk的size域和prev_size域 就可以使plmalloc误判chunk</p>
+<h2 id="堆溢出覆盖下一个chunk的size域"><a href="#堆溢出覆盖下一个chunk的size域" class="headerlink" title="堆溢出覆盖下一个chunk的size域"></a>堆溢出覆盖下一个chunk的size域</h2><p>这个手法主要有两种适用的题型 一种是有伴随堆块的情况下 并且没有堆溢出 通过这种手法可以修改伴随堆块的内容</p>
+<p>第二种是libc2.27的情况下 tcachebin的存在会使得我们打unsortedbin造成很大的影响 要么就是填满链表要么就是申请一个超过tcachebin大小的chunk并释放 有的题目会对这两种解决办法进行限制 这个时候就可以利用这种办法来合并chunk 从而获得一个超过tcachebin范围的堆块</p>
+<p>下面来分别演示一下</p>
+<h3 id="环境-ubuntu22-二进制文件依赖的libc2-27-目测2-23以上的版本都可以"><a href="#环境-ubuntu22-二进制文件依赖的libc2-27-目测2-23以上的版本都可以" class="headerlink" title="环境:ubuntu22 (二进制文件依赖的libc2.27) 目测2.23以上的版本都可以"></a>环境:ubuntu22 (二进制文件依赖的libc2.27) 目测2.23以上的版本都可以</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x20</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">add(<span class="number">0x20</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">add(<span class="number">0x10</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">debug()</span><br></pre></td></tr></table></figure>
+
+<p>首先申请三个堆块 chunk1用来堆溢出 覆盖chunk2的size域 chunk3用来和chunk2合并</p>
+<p>唯一要注意的是覆盖size域的值 需要包括两个堆块的prev_size域和size域</p>
+<p><img src="https://pic.imgdb.cn/item/63ff0c72f144a01007ba0762.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63ff0c72f144a01007ba0762.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>所以此时用来覆盖chunk2的size域的数值应为0x51</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x20</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">add(<span class="number">0x20</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">add(<span class="number">0x10</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x28</span>)+<span class="string">b&#x27;\x51&#x27;</span></span><br><span class="line">edit(<span class="number">0</span>,<span class="built_in">len</span>(payload),payload)</span><br><span class="line">debug()</span><br></pre></td></tr></table></figure>
+
+<p>此时chunk2就和chunk3合并了</p>
+<p><img src="https://pic.imgdb.cn/item/63ff0d0ff144a01007bb11d4.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63ff0d0ff144a01007bb11d4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>此时chunk2的指针指向的仍然是chunk2的首地址 但是plmalloc已经误判了chunk2  原本其是一个0x31大小的chunk 此时plmalloc误判其还包含了chunk3 所以释放chunk2就会一并释放chunk3</p>
+<p><img src="https://pic.imgdb.cn/item/63ff0d8ff144a01007bc32dd.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63ff0d8ff144a01007bc32dd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>可以看到一并放入了tcache 这里之所以没有和top chunk合并 是因为tcache中的chunk  Inuse位仍然为1</p>
+<p>此时我们申请一个0x40大小的chunk 就可以获得原本chunk3的空间 从而对chunk3的内容进行任意修改</p>
+<p>此外还有一种情况 如果chunk2先被释放进入tcachebin后再更改size域会发生什么呢</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x20</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">add(<span class="number">0x410</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">add(<span class="number">0x10</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x28</span>)+p64(<span class="number">0x441</span>)</span><br><span class="line">delete(<span class="number">1</span>)</span><br><span class="line">edit(<span class="number">0</span>,<span class="built_in">len</span>(payload),payload)</span><br><span class="line">debug()</span><br></pre></td></tr></table></figure>
+
+<p>此时注意 chunk2不能位于fastbin或者是tcachebin中  如果位于二者中 下一个chunk的Inuse位就不会为0 这样就不会合并</p>
+<p>gdb动调看一下是否合并成功</p>
+<p><img src="https://pic.imgdb.cn/item/63ff1440f144a01007c707e8.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63ff1440f144a01007c707e8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="环境-ubuntu16-二进制依赖libc2-23"><a href="#环境-ubuntu16-二进制依赖libc2-23" class="headerlink" title="环境: ubuntu16 二进制依赖libc2.23"></a>环境: ubuntu16 二进制依赖libc2.23</h3><p>这类的利用手法被称为overpadding</p>
+<p>你可以理解为反方向的合并 刚才是由chunk2吞并chunk3 修改的是chunk2的size域 现在我们来修改chunk3的prev_size域和size域 从而使得chunk2合并chunk3</p>
+<p>这里的知识点其实和unlink有点相似 unlink也是通过构造fake chunk 伪造好next chunk的prev_size和size</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x80</span>,<span class="string">b&#x27;aaaa&#x27;</span>) <span class="comment">#0</span></span><br><span class="line">add(<span class="number">0x10</span>,<span class="string">b&#x27;aaaa&#x27;</span>) <span class="comment">#1</span></span><br><span class="line">add(<span class="number">0x80</span>,<span class="string">b&#x27;aaaa&#x27;</span>) <span class="comment">#2</span></span><br><span class="line"></span><br><span class="line">add(<span class="number">0x10</span>,<span class="string">b&#x27;aaaa&#x27;</span>) <span class="comment">#3</span></span><br></pre></td></tr></table></figure>
+
+<p>首先申请四个chunk 前三个用来负责合并  第四个用来保证不和top chunk合并</p>
+<p>我们以chunk1来为堆溢出的起点 覆盖chunk2的prev_size和size域 不过在此之前还需要先释放chunk0到unsortedbin中(只要不是fastbin和tcachebin就可以) 这样才能使得后面的合并生效</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="number">0x80</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">add(<span class="number">0x10</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">add(<span class="number">0x80</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line"></span><br><span class="line">add(<span class="number">0x10</span>,<span class="string">b&#x27;aaaa&#x27;</span>)</span><br><span class="line">delete(<span class="number">0</span>)</span><br><span class="line">payload = cyclic(<span class="number">0x10</span>)+p64(<span class="number">0xb0</span>)+p64(<span class="number">0x90</span>)</span><br><span class="line">edit(<span class="number">1</span>,<span class="built_in">len</span>(payload),payload)</span><br></pre></td></tr></table></figure>
+
+<p>注意一下chunk2的size域  Inuse位一定要为0 否则不会合并</p>
+<p>此时我们释放chunk2 来看看是否合并成功</p>
+<p><img src="https://pic.imgdb.cn/item/63ff1bccf144a01007d27839.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/63ff1bccf144a01007d27839.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>这种一般是伴随堆块先申请的情况可以利用  从而获取到低地址处堆块任意写的机会</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-01T17:36:35+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Mar 1, 2023</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/03/01/chunk-extend-and-overlapping/&title=chunk extend and overlapping - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/03/01/chunk-extend-and-overlapping/&title=chunk extend and overlapping - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/03/01/chunk-extend-and-overlapping/&title=chunk extend and overlapping - Chen&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/02/27/%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96%E5%AF%B9%E4%BA%8Epwn%E5%87%BA%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97/'>
+          <p class='title'>内联汇编对于pwn出题的一些心得<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言如果只运用c语言进行编写pwn题目 对于一些寄存器或者栈结构一类的没有办法操控
+这时候利用内联汇编就可以巧妙的解决问题的所在
+同时由于我想学习免杀 其中有一种利用方法为内联汇编花指令 刚好可...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/03/01/chunk-extend-and-overlapping/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3484,172 +2631,52 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2022/11/11/zCx4US.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Chen</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/reverse/" href="/categories/reverse/"
-            active-action="action-categoriesreverse"
-            ><div class='name'>reverse</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/web/" href="/categories/web/"
-            active-action="action-categoriesweb"
-            ><div class='name'>web</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/wp/" href="/categories/wp/"
-            active-action="action-categorieswp"
-            ><div class='name'>wp</div><div class='badge'>(24)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%9F%BA%E7%A1%80/"
-            active-action="action-categoriesE59FBAE7A180"
-            ><div class='name'>基础</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%A0%86/" href="/categories/%E5%A0%86/"
-            active-action="action-categoriesE5A086"
-            ><div class='name'>堆</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AF%86%E7%A0%81/" href="/categories/%E5%AF%86%E7%A0%81/"
-            active-action="action-categoriesE5AF86E7A081"
-            ><div class='name'>密码</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%88/" href="/categories/%E6%A0%88/"
-            active-action="action-categoriesE6A088"
-            ><div class='name'>栈</div><div class='badge'>(18)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/"
-            active-action="action-categoriesE8999AE68B9FE69CBA"
-            ><div class='name'>虚拟机</div><div class='badge'>(4)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop pjax">
-  
-  <header>
-    
-      <a target="_blank" rel="noopener" href='https://space.bilibili.com/185447556'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>b站账号</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E4%B8%8B%E4%B8%80%E4%B8%AAchunk%E7%9A%84size%E5%9F%9F"><span class="toc-text">堆溢出覆盖下一个chunk的size域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83-ubuntu22-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E4%BE%9D%E8%B5%96%E7%9A%84libc2-27-%E7%9B%AE%E6%B5%8B2-23%E4%BB%A5%E4%B8%8A%E7%9A%84%E7%89%88%E6%9C%AC%E9%83%BD%E5%8F%AF%E4%BB%A5"><span class="toc-text">环境:ubuntu22 (二进制文件依赖的libc2.27) 目测2.23以上的版本都可以</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83-ubuntu16-%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BE%9D%E8%B5%96libc2-23"><span class="toc-text">环境: ubuntu16 二进制依赖libc2.23</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3677,13 +2704,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3692,14 +2720,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -4197,7 +3225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/堆/","name":"堆"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/01/chunk-extend-and-overlapping/","name":"chunk extend and overlapping"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"chunk extend and overlapping","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/01/chunk-extend-and-overlapping/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/01/chunk-extend-and-overlapping/","wordCount":0,"datePublished":"2023-03-01T04:50:33.000Z","dateModified":"2023-03-01T09:36:35.686Z","articleSection":"堆","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
