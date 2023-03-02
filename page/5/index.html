@@ -1625,7 +1625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1677663467599),
+    lastupdate: new Date(1677733880007),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2368,6 +2368,74 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/14/babyheap-0ctf-2017/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/11/14/babyheap-0ctf-2017/"  itemprop="url">
+        babyheap_0ctf_2017
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        查看一下保护机制
+12345Arch:     amd64-64-littleRELRO:    Full RELROstack:    Canary foundNX:       NX enabledPIE:      PIE enabled
+
+FULL RELRO要注意一下
+ida反编译一下
+123456789101112131415161718192021222324252627282...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-11-14T09:24:11+08:00">2022-11-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/wp/">wp</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/11/14/babyheap-0ctf-2017/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/13/vscode远程连接/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
@@ -2982,74 +3050,6 @@ base64：包含数字0-9，大写字母A-Z，小写字母a-z，特殊符号+、&
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/03/溢出覆盖变量/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/"  itemprop="url">
-        溢出覆盖变量
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        其实这个知识点应该算是栈溢出后面就可以讲的了 顺序没把握好 不过还好这篇的例题有点干货 就不丢到基础知识扩展那个专题了 在这面说吧
-我们已经学习了基础的栈溢出对吧 总归就是覆盖栈上的高地址内的数据 通常我们都是用一些没有意义的垃圾数据去覆盖他
-但是有些题目 就可能会故意刁难我们
-比如下面这题
-
-是吧 他都把var[13]赋值为了0 结果要var[13]&gt;0并且&#x3D;17才能达到我...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-10-03T00:55:35+08:00">2022-10-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3191,7 +3191,7 @@ base64：包含数字0-9，大写字母A-Z，小写字母a-z，特殊符号+、&
           <li><a class="flat-box"
             title="/categories/%E5%A0%86/" href="/categories/%E5%A0%86/"
             active-action="action-categoriesE5A086"
-            ><div class='name'>堆</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>堆</div><div class='badge'>(9)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%AF%86%E7%A0%81/" href="/categories/%E5%AF%86%E7%A0%81/"
