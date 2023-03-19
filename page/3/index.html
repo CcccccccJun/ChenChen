@@ -1625,7 +1625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1677758779045),
+    lastupdate: new Date(1679236890932),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2368,6 +2368,137 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/01/iofile泄露libc基址/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/01/01/iofile%E6%B3%84%E9%9C%B2libc%E5%9F%BA%E5%9D%80/"  itemprop="url">
+        iofile泄露libc基址
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        部分堆题没有给予我们打印堆块中间的机会 这种情况下 无法通过unsortedbin来泄露基址 这里学习一种新办法 通过io file来泄露基址
+在一个程序中 初始的文件描述符为1,2,3 分别对应着标准输入 标准输出 标准错误 当我们调用scanf函数或者read函数的时候 就会通过调用文件描述符0来从终端输入数据 也就意味着我们可以利用这一点来做到泄露数据
+在linux系统中的IO库 存在...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-01-01T17:21:57+08:00">2023-01-01</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%A0%86/">堆</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%A0%86/" itemprop="url"><span itemprop="name">堆</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/01/01/iofile%E6%B3%84%E9%9C%B2libc%E5%9F%BA%E5%9D%80/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/19/对于shellcode的一些理解/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Chen">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Chen">
+    <meta itemprop="description" content="ChenBlog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"  itemprop="url">
+        对于shellcode的一些理解
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        仅凭一段机器码 为什么shellcode可以篡改程序执行流 使其达到我们想要的结果
+并且shellcode不同于rop链 并不能只是简单的覆盖ret addr为shellcode就可以达到效果 二者不同在哪里？
+为什么bss段如果没有可执行权限的话就不能执行shellcode 但是同样的情况下就可以通过在bss段上写入rop链 随后栈迁移来控制程序执行流？ 这些疑问一一来解决一下
+首先 什么...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-19T15:50:51+08:00">2022-12-19</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%9F%BA%E7%A1%80/">基础</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">基础</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/19/%E5%AF%B9%E4%BA%8Eshellcode%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/19/hitcontraining-heapcreator/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
@@ -2888,134 +3019,6 @@ checksec看一下保护机制
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/24/inndy-rop/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/11/24/inndy-rop/"  itemprop="url">
-        inndy_rop
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        这一题以前没遇到过 算是蛮新奇的 所以记录下来 还学到了ROPgadget的新用法
-123456[*] &#x27;/home/chen/pwn&#x27;    Arch:     i386-32-little    RELRO:    Partial RELRO    Stack:    No canary found    NX:       NX enabled    PIE:   ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-11-24T23:34:05+08:00">2022-11-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/wp/">wp</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/11/24/inndy-rop/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/23/mrctf2020-shellcode/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Chen">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Chen">
-    <meta itemprop="description" content="ChenBlog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/11/23/mrctf2020-shellcode/"  itemprop="url">
-        mrctf2020_shellcode
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        这题虽然是很简单的shellcode 但是因为禁用了ida的反编译 需要我们阅读汇编理解程序 就当作提高汇编理解能力了
-12345678[!] Could not populate PLT: invalid syntax (unicorn.py, line 110)[*] &#x27;/home/chen/pwn&#x27;    Arch:     amd64-64-little    R...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-11-23T21:27:30+08:00">2022-11-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/wp/">wp</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/wp/" itemprop="url"><span itemprop="name">wp</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/11/23/mrctf2020-shellcode/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3030,7 +3033,7 @@ checksec看一下保护机制
           </a>
         
         <p class="current">
-          3 / 7
+          3 / 8
         </p>
         
           <a class="next" rel="next" href="/page/4/">
